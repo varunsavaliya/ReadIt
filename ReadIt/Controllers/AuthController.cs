@@ -14,7 +14,7 @@ namespace ReadIt.Controllers
         {
             _auth = auth;
         }
-        [HttpGet("login")]
+        [HttpPost("login")]
         public AuthModel Login([FromBody] UserModel user)
         {
             return _auth.CheckLogin(user);

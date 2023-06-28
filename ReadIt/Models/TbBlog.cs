@@ -27,7 +27,7 @@ public partial class TbBlog
 
     public virtual TbUser CreatedByNavigation { get; set; }
 
-    public virtual TbBlogMedium TbBlogMedium { get; set; }
+    public virtual ICollection<TbBlogMedium> TbBlogMedia { get; set; } = new List<TbBlogMedium>();
 
     public virtual ICollection<TbComment> TbComments { get; set; } = new List<TbComment>();
 }

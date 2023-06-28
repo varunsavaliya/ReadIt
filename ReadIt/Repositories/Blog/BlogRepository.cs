@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
 using ReadIt.Models;
 using ReadIt.ViewModels;
 
@@ -45,11 +46,13 @@ namespace ReadIt.Repositories.Blog
             ResponseListModel<BlogModel> response = new();
             try
             {
-                List<TbBlog> blogs = _context.TbBlogs.Where(blog => blog.IsActive == true).ToList();
+                List<TbBlog> blogs = _context.TbBlogs.Where(blog => blog.IsActive == true).Include(blog => blog.CreatedByNavigation).ToList();
                 List<BlogModel> allBlogs = new();
                 foreach (var blog in blogs)
                 {
-                    allBlogs.Add(_mapper.Map<BlogModel>(blog));
+                    BlogModel blogModel = _mapper.Map<BlogModel>(blog);
+                    blogModel.CreatedByName = blog.CreatedByNavigation.Name;
+                    allBlogs.Add(blogModel);
                 }
                 response.Items = allBlogs;
                 response.Success = true;
@@ -83,7 +86,7 @@ namespace ReadIt.Repositories.Blog
 
                 _context.SaveChanges();
 
-                response.Message = "Your blog has been updated successfully";
+                response.Message = "Your blog has been added successfully";
                 response.Success = true;
             }
             catch (Exception ex)

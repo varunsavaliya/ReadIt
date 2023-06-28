@@ -11,6 +11,7 @@
         public string Tags { get; set; }
 
         public long CreatedBy { get; set; }
+        public string CreatedByName { get; set; }
 
         public long CategoryId { get; set; }
         public IFormFile file { get; set; }

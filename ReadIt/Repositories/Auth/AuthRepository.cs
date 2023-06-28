@@ -28,7 +28,7 @@ namespace ReadIt.Repositories.Auth
 
                 TbUser validUser = users.FirstOrDefault(user1 =>
                     user1.Email.Equals(user.Email) &&
-                    user1.Password.Equals(user.Password));
+                    user1.Password.Equals(user.Password) && user1.IsActive == true);
 
                 if (validUser != null)
                 {

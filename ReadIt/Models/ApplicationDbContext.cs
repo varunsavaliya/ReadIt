@@ -66,7 +66,6 @@ public partial class ApplicationDbContext : DbContext
 
             entity.ToTable("tbBlogMedia");
 
-            entity.Property(e => e.Id).ValueGeneratedOnAdd();
             entity.Property(e => e.CreatedOn)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
@@ -76,8 +75,8 @@ public partial class ApplicationDbContext : DbContext
                 .IsUnicode(false);
             entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
 
-            entity.HasOne(d => d.IdNavigation).WithOne(p => p.TbBlogMedium)
-                .HasForeignKey<TbBlogMedium>(d => d.Id)
+            entity.HasOne(d => d.Blog).WithMany(p => p.TbBlogMedia)
+                .HasForeignKey(d => d.BlogId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_tbBlogMedia_tbBlog_Id");
         });

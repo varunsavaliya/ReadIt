@@ -17,5 +17,5 @@ public partial class TbBlogMedium
 
     public bool? IsActive { get; set; }
 
-    public virtual TbBlog IdNavigation { get; set; }
+    public virtual TbBlog Blog { get; set; }
 }
