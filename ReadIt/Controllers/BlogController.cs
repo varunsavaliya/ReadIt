@@ -28,25 +28,6 @@ namespace ReadIt.Controllers
             return _blogService.GetById(id);
         }
 
-        [HttpPost]
-        [Authorize]
-        public ResponseModel Create([FromBody] BlogModel blog)
-        {
-            return _blogService.Create(blog);
-        }
-
-        [HttpPut("{id}")]
-        [Authorize]
-        public ResponseModel Update([FromBody] BlogModel blog, [FromRoute] long id)
-        {
-            return _blogService.Update(blog, id);
-        }
-
-        [HttpDelete("{id}")]
-        [Authorize]
-        public ResponseModel Delete([FromRoute] long id)
-        {
-            return _blogService.Delete(id);
-        }
+        
     }
 }

@@ -2,7 +2,7 @@
     <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
     <mat-card-content>
         <h3>{{blog.title}}</h3>
-        <p>{{blog.description}}</p>
+        <p>{{blog.description}}...<a routerLink="/blog/{{blog.id}}">Read more</a></p>
     </mat-card-content>
     <mat-card-header>
       <div mat-card-avatar class="example-header-image"></div>

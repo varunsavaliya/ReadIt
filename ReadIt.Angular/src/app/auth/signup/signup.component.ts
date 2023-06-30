@@ -1,8 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/apiservices/auth.service';
 import { UserModel } from 'src/app/core/models/user.model';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-signup',
@@ -10,21 +12,15 @@ import { UserModel } from 'src/app/core/models/user.model';
   styleUrls: ['./signup.component.css']
 })
 export class SignupComponent {
-
-  constructor(private authService: AuthService, private router: Router) { }
+  dialogConfig = new MatDialogConfig();
+  modalDialog: MatDialogRef<LoginComponent, any> | undefined;
+  constructor(public dialogRef: MatDialogRef<SignupComponent>, private authService: AuthService, private router: Router, private matDialog: MatDialog) { }
 
   signUpForm = new FormGroup({
-    name:new FormControl('',[Validators.required]),
-    password:new FormControl('',[Validators.required]),
-    // repassword:new FormControl('',[Validators.required,  this.checkPasswords.bind(this)]),
-    email:new FormControl('',[Validators.required]),
+    name: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+    email: new FormControl('', [Validators.required]),
   });
-  // checkPasswords(control: FormControl): any {
-  //   const pass: string | null = this.signUpForm.controls.password.value;
-  //   const confirmPass: string | null = control.value;
-
-  //   return pass === confirmPass ? null : { notSame: true };
-  // }
   get name() {
     return this.signUpForm.get('name');
   }
@@ -37,33 +33,41 @@ export class SignupComponent {
   get email() {
     return this.signUpForm.get('email');
   }
-    public signupInvalid!: boolean;
-    private formSubmitAttempt!: boolean;
-    private returnUrl!: string;
+  public signupInvalid!: boolean;
+  private formSubmitAttempt!: boolean;
+  private returnUrl!: string;
 
-    onSignUp(){
-      if (this.signUpForm.valid) {
-        const user: UserModel = {
-          id: 0,
-          email: this.signUpForm.controls.email.value,
-          password: this.signUpForm.controls.password.value,
-          name: this.signUpForm.controls.name.value,
-          bio: null,
-          avatar: null
-        };
-        if (this.signUpForm != null) {
-        }
-        this.authService.signup(user).subscribe({
-          next: (response) => {
-            if (response.success) {
-              localStorage.setItem('token', response.token);
-              this.router.navigate(['']);
-              console.log(response.message);
-            } else {
-              console.log(response.message);
-            }
-          }
-        })
+  onSignUp() {
+    if (this.signUpForm.valid) {
+      const user: UserModel = {
+        id: 0,
+        email: this.signUpForm.controls.email.value,
+        password: this.signUpForm.controls.password.value,
+        name: this.signUpForm.controls.name.value,
+        bio: null,
+        avatar: null
+      };
+      if (this.signUpForm != null) {
       }
+      this.authService.signup(user).subscribe({
+        next: (response) => {
+          if (response.success) {
+            this.closeSignUpModal();
+            localStorage.setItem('token', response.token);
+            localStorage.setItem('user', JSON.stringify(response.data));
+          } else {
+            console.log(response.message);
+          }
+        }
+      })
     }
+  }
+  closeSignUpModal() {
+    this.dialogRef.close();
+  }
+
+  openLoginModal() {
+    this.dialogRef.close();
+    this.matDialog.open(LoginComponent, this.dialogConfig);
+  }
 }

@@ -1,0 +1,7 @@
+.blog-table {
+  width: 50%;
+}
+
+.mat-mdc-table {
+  table-layout: inherit;
+}

@@ -10,14 +10,15 @@ import { AuthModel } from '../models/response.model';
 })
 export class AuthService {
 
-  baseApiUrl : string = environment.baseApiUrl;
+  private ApiUrl : string = environment.baseApiUrl  + 'api/Auth/';
+
   constructor(private http: HttpClient) { }
 
   login(user: UserModel):Observable<AuthModel>{
-    return this.http.post<AuthModel>(this.baseApiUrl + 'api/Auth/login', user);
+    return this.http.post<AuthModel>(this.ApiUrl + 'login', user);
   }
   
   signup(user: UserModel):Observable<AuthModel>{
-    return this.http.post<AuthModel>(this.baseApiUrl + 'api/Auth/signup', user);
+    return this.http.post<AuthModel>(this.ApiUrl + 'signup', user);
   }
 }

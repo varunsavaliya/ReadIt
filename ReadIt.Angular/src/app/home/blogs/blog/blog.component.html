@@ -1,0 +1,18 @@
+<!-- blog.component.html -->
+<div class="blog-container">
+    <img src="./../../../../assets/OIP.jfif" alt="Main Image" class="main-image" />
+  
+    <h1 class="blog-title">{{blog.title}}</h1>
+  
+    <p class="blog-info">
+        Published on: {{ blog.createdOn | date }} | Author: {{ blog.createdByName }}
+    </p>
+    
+    <div class="blog-tags">
+        <div class="capsule" *ngFor="let tag of blogTags">{{tag}}</div>
+        <button disabled mat-raised-button class="capsule" color="primary">{{blog.categoryName}}</button>
+    </div>
+    
+    <p class="blog-description">{{blog.description}}</p>
+  </div>
+  

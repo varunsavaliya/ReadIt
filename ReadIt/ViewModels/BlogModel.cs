@@ -14,6 +14,9 @@
         public string CreatedByName { get; set; }
 
         public long CategoryId { get; set; }
+        public string CategoryName { get; set; }
+        public DateTime CreatedOn { get; set; }
+
         public IFormFile file { get; set; }
     }
 }

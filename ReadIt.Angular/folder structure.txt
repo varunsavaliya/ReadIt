@@ -1,0 +1,25 @@
+-core
+	-apiservices
+	-models
+	-services
+
+-auth
+	-login
+	-signup
+
+-home
+	-blog
+		-blog-list
+		-blog-card
+		-Banner
+		-Categories
+	-authors
+	-articles
+
+-profile
+	-add-blog
+	-user-blogs
+	-user-profile
+
+-shared
+	-header

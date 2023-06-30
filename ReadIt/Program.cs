@@ -8,6 +8,8 @@ using ReadIt.Repositories.Auth;
 using ReadIt.Repositories.Category;
 using ReadIt.Repositories.Blog;
 using ReadIt.Repositories.Comment;
+using ReadIt.Repositories.UserBlogs;
+using ReadIt.Repositories.Author;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +20,8 @@ builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IBlogRepository, BlogRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
+builder.Services.AddScoped<IUserBlogsRepository, UserBlogsRepository>();
+builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
 
 
 
@@ -58,6 +62,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors(policy => policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin());
+
 app.UseHttpsRedirection();
 
 

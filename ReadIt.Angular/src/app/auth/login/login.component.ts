@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/apiservices/auth.service';
 import { UserModel } from 'src/app/core/models/user.model';
+import { SignupComponent } from '../signup/signup.component';
 
 @Component({
   selector: 'app-login',
@@ -11,8 +12,9 @@ import { UserModel } from 'src/app/core/models/user.model';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
-  constructor(public dialogRef: MatDialogRef<LoginComponent>, private authService: AuthService, private router: Router) { }
+  dialogConfig = new MatDialogConfig();
+  modalDialog: MatDialogRef<SignupComponent, any> | undefined;
+  constructor(public dialogRef: MatDialogRef<LoginComponent>, private authService: AuthService, private router: Router, private matDialog: MatDialog) { }
 
   loginForm = new FormGroup({
     password: new FormControl('', [Validators.required]),
@@ -43,19 +45,23 @@ export class LoginComponent {
       this.authService.login(user).subscribe({
         next: (response) => {
           if (response.success) {
+            this.closeLoginModal()
             localStorage.setItem('token', response.token);
-            this.router.navigate(['']);
-            console.log(response.message);
+            localStorage.setItem('user', JSON.stringify(response.data));
           } else {
             this.loginInvalid = true;
-            console.log(response.message);
           }
         }
       })
     }
   }
 
-  closeModal() {
+  closeLoginModal() {
     this.dialogRef.close();
+  }
+
+  openSignUpModal(){
+    this.dialogRef.close();
+    this.matDialog.open(SignupComponent, this.dialogConfig);
   }
 }

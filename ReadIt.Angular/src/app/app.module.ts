@@ -9,10 +9,13 @@ import { HttpClientModule, HttpClient, HTTP_INTERCEPTORS } from '@angular/common
 import { AuthInterceptorService } from './core/services/auth-interceptor.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
+import { FooterComponent } from './shared/footer/footer.component';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    FooterComponent,
   ],
   imports: [
     AppRoutingModule,
@@ -20,7 +23,8 @@ import { CommonModule } from '@angular/common';
     HttpClientModule,
     BrowserAnimationsModule,
     BrowserModule,
-    CommonModule
+    CommonModule,
+    FormsModule,
   ],
   providers: [HttpClient,
     {

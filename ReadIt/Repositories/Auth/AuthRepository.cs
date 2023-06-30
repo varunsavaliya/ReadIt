@@ -32,6 +32,7 @@ namespace ReadIt.Repositories.Auth
 
                 if (validUser != null)
                 {
+                    validUser.Password = null;
                     response.Data = _mapper.Map<UserModel>(validUser);
                     response.Token = JWTExtention.GetJwtToken(validUser, _configuration);
                     response.Success = true;
@@ -65,6 +66,7 @@ namespace ReadIt.Repositories.Auth
 
                 TbUser validUser = _context.TbUsers.FirstOrDefault(validUser => validUser.Email.Equals(user.Email));
 
+                validUser.Password = null;
                 response.Data = _mapper.Map<UserModel>(validUser);
                 response.Token = JWTExtention.GetJwtToken(validUser, _configuration);
                 response.Success = true;
