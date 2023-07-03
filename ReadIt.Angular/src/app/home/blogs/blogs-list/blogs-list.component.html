@@ -1,5 +1,15 @@
-<mat-grid-list cols="3">
-  <mat-grid-tile *ngFor="let blog of allBlogs">
-    <app-blog-card [blog]="blog"></app-blog-card>
-  </mat-grid-tile>
-</mat-grid-list>
+<section class="ftco-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12" *ngFor="let blog of allBlogs">
+        <app-blog-card [blog]="blog"></app-blog-card>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- <mat-grid-list cols="1">
+    <mat-grid-tile *ngFor="let blog of allBlogs">
+      <app-blog-card [blog]="blog"></app-blog-card>
+    </mat-grid-tile>
+  </mat-grid-list> -->

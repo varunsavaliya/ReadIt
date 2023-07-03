@@ -9,6 +9,7 @@ import { ArticlesComponent } from './articles/articles.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { BlogsListComponent } from './blogs/blogs-list/blogs-list.component';
 import { BlogComponent } from './blogs/blog/blog.component';
+import { BannerComponent } from './blogs/banner/banner.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { BlogComponent } from './blogs/blog/blog.component';
     ArticlesComponent,
     AuthorsComponent,
     BlogsListComponent,
-    BlogComponent
+    BlogComponent,
+    BannerComponent
   ],
   imports: [
     CommonModule,

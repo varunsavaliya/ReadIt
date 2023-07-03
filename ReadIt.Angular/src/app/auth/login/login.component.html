@@ -1,5 +1,47 @@
-<div id="modal-content-wrapper">
-    <header id="modal-header">
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Log In</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+                    <mat-form-field class="full-width-input">
+                        <input type="email" matInput placeholder="Email*   " formControlName="email" required />
+                        <mat-error><span *ngIf="
+              !loginForm.get('email')?.valid && loginForm.get('email')?.touched
+            ">Please provide a valid email address</span></mat-error>
+                    </mat-form-field>
+                    <mat-form-field class="full-width-input">
+                        <input matInput type="password" placeholder="Password*" formControlName="password" required />
+                        <mat-error><span *ngIf="
+              !loginForm.get('password')?.valid &&
+              loginForm.get('password')?.touched
+            ">Password is required</span></mat-error>
+                    </mat-form-field>
+                    <mat-error *ngIf="loginInvalid" class="mb-3">The email and password were not recognised</mat-error>
+                    <!-- <div fxLayout="column" fxLayoutAlign="center center" fxLayoutGap="20px">
+                <span>Don't have an account?
+                    <a role="button" class="text-primary text-decoration-none" (click)="openSignUpModal()">SignUp here</a></span>
+                    <div fxLayout="row" fxLayoutGap="20px">
+                        <button mat-raised-button color="primary">Login</button>
+                        <button mat-raised-button id="modal-close-button" (click)="closeLoginModal()">Close</button>
+                    </div>
+            </div> -->
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- <header id="modal-header">
         <h1 id="modal-title" class="text-center mt-2">Log In</h1>
     </header>
     <mat-card>
@@ -29,8 +71,5 @@
                 </div>
             </form>
         </mat-card-content>
-    </mat-card>
+    </mat-card> -->
 </div>
-
-
-

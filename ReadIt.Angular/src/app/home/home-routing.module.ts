@@ -4,9 +4,10 @@ import { ArticlesComponent } from './articles/articles.component';
 import { AuthorsComponent } from './authors/authors.component';
 import { BlogComponent } from './blogs/blog/blog.component';
 import { BlogsListComponent } from './blogs/blogs-list/blogs-list.component';
+import { HomeComponent } from './home.component';
 
 const routes: Routes = [
-  { path: '', component: BlogsListComponent },
+  { path: '', component: HomeComponent },
   { path: 'articles', component: ArticlesComponent},
   { path: 'authors', component: AuthorsComponent},
   { path: 'blog/:id', component: BlogComponent},

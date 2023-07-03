@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/apiservices/auth.service';
 import { UserModel } from 'src/app/core/models/user.model';
 import { SignupComponent } from '../signup/signup.component';
+import * as $ from 'jquery';
+
 
 @Component({
   selector: 'app-login',
@@ -12,10 +14,11 @@ import { SignupComponent } from '../signup/signup.component';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
+
   dialogConfig = new MatDialogConfig();
   modalDialog: MatDialogRef<SignupComponent, any> | undefined;
-  constructor(public dialogRef: MatDialogRef<LoginComponent>, private authService: AuthService, private router: Router, private matDialog: MatDialog) { }
-
+  constructor(private elementRef: ElementRef, private authService: AuthService, private router: Router, private matDialog: MatDialog) { }
+  
   loginForm = new FormGroup({
     password: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required]),
@@ -29,7 +32,15 @@ export class LoginComponent {
   public loginInvalid!: boolean;
   private formSubmitAttempt!: boolean;
   private returnUrl!: string;
-
+  
+  openModal() {
+    debugger
+    const modalElement = this.elementRef.nativeElement.querySelector('#myModal');
+    if (modalElement) {
+      ($(modalElement) as any).modal('show');
+    }
+    // this.elementRef.nativeElement.querySelector('#myModal').modal('show');
+  }
   onLogin() {
     if (this.loginForm.valid) {
       const user: UserModel = {
@@ -45,7 +56,7 @@ export class LoginComponent {
       this.authService.login(user).subscribe({
         next: (response) => {
           if (response.success) {
-            this.closeLoginModal()
+            // this.closeLoginModal()
             localStorage.setItem('token', response.token);
             localStorage.setItem('user', JSON.stringify(response.data));
           } else {
@@ -56,12 +67,12 @@ export class LoginComponent {
     }
   }
 
-  closeLoginModal() {
-    this.dialogRef.close();
-  }
+  // closeLoginModal() {
+  //   this.dialogRef.close();
+  // }
 
-  openSignUpModal(){
-    this.dialogRef.close();
-    this.matDialog.open(SignupComponent, this.dialogConfig);
-  }
+  // openSignUpModal(){
+  //   this.dialogRef.close();
+  //   this.matDialog.open(SignupComponent, this.dialogConfig);
+  // }
 }

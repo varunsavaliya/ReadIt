@@ -1,41 +1,30 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row
-    fxLayout="row"
-    fxLayoutGap="20px"
-    fxLayoutAlign="space-between center"
-  >
-    <div class="left-menu-items" fxLayout="row" fxLayoutGap="20px">
-      <button mat-button [routerLink]="['']">
-        <h1>ReadIt</h1>
-      </button>
-      <span class="menu-spacer"></span>
-      <div class="menu-item">
-        <button mat-button [routerLink]="['']"><span>Blogs</span></button>
-        <button mat-button [routerLink]="['articles']">
-          <span>Articles</span>
-        </button>
-        <button mat-button [routerLink]="['authors']">
-          <span>Authors</span>
-        </button>
-      </div>
+<nav class="navbar px-md-0 navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+  <div class="container">
+    <a class="navbar-brand" [routerLink]="['']">Read<i>it</i>.</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav"
+      aria-expanded="false" aria-label="Toggle navigation">
+      <span class="oi oi-menu"></span> Menu
+    </button>
+    <div class="collapse navbar-collapse" id="ftco-nav">
+      <ul class="navbar-nav ml-auto" fxLayout="row" fxLayoutAlign="space-between center">
+        <li class="nav-item active"><a [routerLink]="['']" class="nav-link">Blogs</a></li>
+        <li class="nav-item"><a [routerLink]="['articles']" class="nav-link">Articles</a></li>
+        <li class="nav-item"><a [routerLink]="['authors']" class="nav-link">Authors</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link" role="button" *ngIf="!isLoggedIn; else logOut" (click)="openLoginModal()">Login</a>
+          <ng-template #logOut>
+            <a class="nav-link dropdown-toggle" id="profileDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              {{ userName }}
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="profileDropdown">
+              <li><a class="dropdown-item" routerLink="profile">Profile</a></li>
+              <li><a class="dropdown-item" [routerLink]="['profile','user-blogs']">Manage Content</a></li>
+              <li><a class="dropdown-item" role="button" (click)="logout()">Logout</a></li>
+            </ul>
+          </ng-template>
+        </li>
+      </ul>
     </div>
-    <span class="flex-spacer"></span>
-    <!-- Added flex spacer -->
-    <div class="right-menu-item" fxLayout="row" fxLayoutAlign="end center">
-      <a mat-button *ngIf="!isLoggedIn; else logOut" (click)="openLoginModal()">
-        <span>Login</span>
-      </a>
-
-      <ng-template #logOut>
-        <button mat-button [matMenuTriggerFor]="profile">{{ userName }}</button>
-        <mat-menu #profile="matMenu">
-          <button mat-menu-item routerLink="profile">Profile</button>
-          <button mat-menu-item [routerLink]="['profile','user-blogs']">Manage Content</button>
-          <button mat-menu-item (click)="logout()">
-              <span>Logout</span>
-          </button>
-        </mat-menu>
-      </ng-template>
-    </div>
-  </mat-toolbar-row>
-</mat-toolbar>
+  </div>
+</nav>
