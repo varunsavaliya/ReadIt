@@ -20,14 +20,13 @@ export class HeaderComponent {
       this.userName = this.userAuthService.getUserName();
     }
   }
-  constructor( private loginComponent: LoginComponent, private userAuthService: UserAuthService, private matDialog: MatDialog, private router: Router) { }
+  constructor( private userAuthService: UserAuthService, private matDialog: MatDialog, private router: Router) { }
 
   openLoginModal() {
-    this.loginComponent.openModal();
-    // this.matDialog.open(LoginComponent, this.dialogConfig).afterClosed().subscribe(() => {
-    //   this.userName = this.userAuthService.getUserName();
-    //   this.isLoggedIn = this.userAuthService.isLoggedIn();
-    // });
+    this.matDialog.open(LoginComponent, this.dialogConfig).afterClosed().subscribe(() => {
+      this.userName = this.userAuthService.getUserName();
+      this.isLoggedIn = this.userAuthService.isLoggedIn();
+    });
   }
 
   logout() {

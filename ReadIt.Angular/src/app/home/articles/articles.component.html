@@ -1,1 +1,13 @@
-<p>articles works!</p>
+<app-banner heading="Articles" description="Far far away, behind the word mountains, far from the countries Vokalia and
+Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
+at the coast of the Semantics, a large language ocean."></app-banner>
+
+<section class="ftco-section bg-light">
+    <div class="container">
+      <div class="row d-flex">
+        <div class="col-md-4 d-flex" *ngFor="let article of articles">
+          <app-article [article]="article"></app-article>
+        </div>
+      </div>
+    </div>
+  </section>

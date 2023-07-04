@@ -12,6 +12,8 @@ import { CommonModule } from '@angular/common';
 import { FooterComponent } from './shared/footer/footer.component';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
+import { BannerComponent } from './home/banner/banner.component';
+import { HomeModule } from './home/home.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,15 +27,15 @@ import { LoginComponent } from './auth/login/login.component';
     BrowserAnimationsModule,
     BrowserModule,
     CommonModule,
-    FormsModule,
+    FormsModule
   ],
   providers: [HttpClient,
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
       multi: true
-    },
-  LoginComponent],
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,64 +1,70 @@
-<div class="add-form-container" fxLayout="column" fxLayoutAlign="center center">
-    <h4 class="form-title my-3">Add Blog</h4>
-    <form [formGroup]="blogForm" class="blogForm" novalidate (ngSubmit)="onSubmit()">
-        <mat-form-field class="field-full-width" appearance="outline">
-            <mat-label>Title</mat-label>
-            <input matInput placeholder="Title" formControlName="title" />
-            <mat-error>
-                <span *ngIf="
-            !blogForm.get('title')?.valid && blogForm.get('title')?.touched
-          ">Title is required</span>
-            </mat-error>
-        </mat-form-field>
+<app-banner heading="Add New Blog"></app-banner>
 
-        <mat-form-field class="field-full-width" appearance="outline">
-            <mat-label>Description</mat-label>
-            <textarea matInput placeholder="Description" formControlName="description"></textarea>
-            <mat-error>
-                <span *ngIf="
+<div class="container">
+
+    <div class="add-form-container" fxLayout="column" fxLayoutAlign="center center">
+        <h4 class="form-title my-3">Add Blog</h4>
+        <form [formGroup]="blogForm" class="blogForm" novalidate (ngSubmit)="onSubmit()">
+            <mat-form-field class="field-full-width" appearance="outline">
+                <mat-label>Title</mat-label>
+                <input matInput placeholder="Title" formControlName="title" />
+                <mat-error>
+                    <span *ngIf="
+                !blogForm.get('title')?.valid && blogForm.get('title')?.touched
+                ">Title is required</span>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="field-full-width" appearance="outline">
+                <mat-label>Description</mat-label>
+                <textarea matInput placeholder="Description" formControlName="description"></textarea>
+                <mat-error>
+                    <span *ngIf="
             !blogForm.get('description')?.valid &&
             blogForm.get('description')?.touched
-          ">Description is required</span>
-            </mat-error>
-        </mat-form-field>
+            ">Description is required</span>
+                </mat-error>
+            </mat-form-field>
 
-        <mat-form-field class="field-full-width" appearance="outline">
-            <mat-label>Select Category</mat-label>
-            <mat-select formControlName="category">
-                <mat-option value="">Select Category</mat-option>
-                <mat-option *ngFor="let category of allCategories" [value]="category.id">{{category.name}}</mat-option>
-            </mat-select>
-            <mat-error>
-                <span *ngIf="
+            <mat-form-field class="field-full-width" appearance="outline">
+                <mat-label>Select Category</mat-label>
+                <mat-select formControlName="category">
+                    <mat-option value="">Select Category</mat-option>
+                    <mat-option *ngFor="let category of allCategories"
+                        [value]="category.id">{{category.name}}</mat-option>
+                </mat-select>
+                <mat-error>
+                    <span *ngIf="
             !blogForm.get('category')?.valid && blogForm.get('category')?.touched
-          ">Select category of your blog</span>
-            </mat-error>
-        </mat-form-field>
+            ">Select category of your blog</span>
+                </mat-error>
+            </mat-form-field>
 
-        <mat-form-field class="field-full-width" appearance="outline">
-            <mat-label>Tags</mat-label>
-            <textarea matInput placeholder="Enter tags by comma" formControlName="tags"></textarea>
-            <mat-error>
-                <span *ngIf="
+            <mat-form-field class="field-full-width" appearance="outline">
+                <mat-label>Tags</mat-label>
+                <textarea matInput placeholder="Enter tags by comma" formControlName="tags"></textarea>
+                <mat-error>
+                    <span *ngIf="
             !blogForm.get('tags')?.valid &&
             blogForm.get('tags')?.touched
-          ">Tags is required</span>
-            </mat-error>
-        </mat-form-field>
+            ">Tags is required</span>
+                </mat-error>
+            </mat-form-field>
 
-        <!-- <mat-form-field class="field-full-width" appearance="outline">
-            <mat-label>Blog Image</mat-label>
-            <input type="file" formControlName="blogImage" />
-            <mat-error>
-                <span *ngIf="!blogForm.get('blogImage')?.valid && blogForm.get('blogImage')?.touched">
-                    Blog image is required
+            <!-- <mat-form-field class="field-full-width" appearance="outline">
+        <mat-label>Blog Image</mat-label>
+        <input type="file" formControlName="blogImage" />
+        <mat-error>
+            <span *ngIf="!blogForm.get('blogImage')?.valid && blogForm.get('blogImage')?.touched">
+                Blog image is required
                 </span>
             </mat-error>
         </mat-form-field> -->
 
-        <div fxLayout="row" fxLayoutAlign="center center">
-            <button mat-raised-button color="primary" class="mx-2">Submit</button>
-            <button mat-stroked-button type="button" color="primary" class="mx-2">Cancel</button>
-        </div>
-    </form>
+            <div fxLayout="row" fxLayoutAlign="center center" class="my-3">
+                <button class="btn btn-primary  py-3 px-5 mx-2">Submit</button>
+                <a [routerLink]="['/profile','user-blogs']" type="button" class="btn border-warning py-3 px-5 mx-2">Cancel</a>
+            </div>
+        </form>
+    </div>
 </div>

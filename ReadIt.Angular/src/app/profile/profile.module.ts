@@ -8,6 +8,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { CoreModule } from '../core/core.module';
 import { AddBlogComponent } from './blogs/add-blog/add-blog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeModule } from '../home/home.module';
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CoreModule,
     FormsModule,
     ReactiveFormsModule,
+    HomeModule
   ]
 })
 export class ProfileModule { }

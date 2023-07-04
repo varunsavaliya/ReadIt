@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\New folder\\ReadIt\\ReadIt.csproj": {}
+    "D:\\Projects\\New folder\\ReadIt.Angular\\Read It Project\\ReadIt\\ReadIt\\ReadIt.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\New folder\\ReadIt\\ReadIt.csproj": {
+    "D:\\Projects\\New folder\\ReadIt.Angular\\Read It Project\\ReadIt\\ReadIt\\ReadIt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\New folder\\ReadIt\\ReadIt.csproj",
+        "projectUniqueName": "D:\\Projects\\New folder\\ReadIt.Angular\\Read It Project\\ReadIt\\ReadIt\\ReadIt.csproj",
         "projectName": "ReadIt",
-        "projectPath": "D:\\Projects\\New folder\\ReadIt\\ReadIt.csproj",
+        "projectPath": "D:\\Projects\\New folder\\ReadIt.Angular\\Read It Project\\ReadIt\\ReadIt\\ReadIt.csproj",
         "packagesPath": "C:\\Users\\pct35\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\New folder\\ReadIt\\obj\\",
+        "outputPath": "D:\\Projects\\New folder\\ReadIt.Angular\\Read It Project\\ReadIt\\ReadIt\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

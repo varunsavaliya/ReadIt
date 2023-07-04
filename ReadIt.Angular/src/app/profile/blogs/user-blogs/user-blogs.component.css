@@ -1,7 +1,3 @@
-.blog-table {
-  width: 50%;
-}
-
-.mat-mdc-table {
-  table-layout: inherit;
+table span, mat-paginator{
+  font-family:"Poppins", Arial, sans-serif;
 }
