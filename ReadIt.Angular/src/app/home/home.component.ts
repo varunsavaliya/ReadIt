@@ -9,22 +9,5 @@ import { Blog  } from '../core/models/blog';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-constructor(private blogService: BlogService){}
 
-apiResponse: ResponseListModel<Blog> = {
-items : [],
-success: false,
-message: ''
-};
-
-allBlogs: any[] = [];
-
-ngOnInit(){
-  this.blogService.getAll().subscribe({
-    next: (response) => {
-      this.apiResponse = response;
-      this.allBlogs = this.apiResponse.items;
-    }
-  })
-}
 }

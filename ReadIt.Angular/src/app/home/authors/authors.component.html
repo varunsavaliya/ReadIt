@@ -6,6 +6,6 @@
         <app-author [author]="author"></app-author>
       </div>
     </div>
+    <app-pagination *ngIf="authors.length > 0" [totalRecords]="totalAuthors" [recordsPerPage]="authorsPerPage" [currentPage]="currentPage" (pageChange)="onPageChange($event)"></app-pagination>
   </div>
 </section>
- 

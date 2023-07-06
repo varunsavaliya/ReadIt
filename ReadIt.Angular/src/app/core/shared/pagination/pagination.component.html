@@ -1,0 +1,18 @@
+<div class="row mt-5 m-0" *ngIf="totalPages > 1">
+    <div class="col text-center">
+      <div class="block-27">
+        <ul>
+          <li class="mx-2 list-group-item" (click)="onPageClick(currentPage - 1)" disabled [ngClass]="{'disabled': currentPage === 1}">
+            <a role="button">&lt;</a>
+          </li>
+          <li class="mx-2 list-group-item" *ngFor="let page of pagesArray" [class.active]="page === currentPage" (click)="onPageClick(page)">
+            <a role="button">{{page}}</a>
+          </li>
+          <li class="mx-2 list-group-item" (click)="onPageClick(currentPage + 1)" [class.disabled]="currentPage === totalPages">
+            <a role="button">&gt;</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  

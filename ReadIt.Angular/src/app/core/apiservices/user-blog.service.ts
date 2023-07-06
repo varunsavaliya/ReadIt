@@ -1,6 +1,6 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ResponseDataModel, ResponseListModel, ResponseModel } from '../models/response.model';
 import { Blog } from '../models/blog';
@@ -10,7 +10,7 @@ import { Blog } from '../models/blog';
 })
 export class UserBlogService {
 
-  private ApiUrl : string = environment.baseApiUrl  + 'api/UserBlogs/';
+  private ApiUrl: string = environment.baseApiUrl + 'api/UserBlogs/';
 
   constructor(private http: HttpClient) { }
 
@@ -18,8 +18,10 @@ export class UserBlogService {
     return this.http.get<ResponseListModel<Blog>>(this.ApiUrl + 'all/' + id);
   }
 
-  create(blog: Blog): Observable<ResponseModel> {
-    return this.http.post<ResponseModel>(this.ApiUrl, blog);
+  create(formData: FormData): Observable<ResponseModel> {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    return this.http.post<ResponseModel>(this.ApiUrl, formData);
   }
 
   delete(id: number): Observable<ResponseModel> {
@@ -30,7 +32,21 @@ export class UserBlogService {
     return this.http.get<ResponseDataModel<Blog>>(this.ApiUrl + id);
   }
 
-  update(id: number, blog: Blog): Observable<ResponseModel> {
-    return this.http.put<ResponseModel>(this.ApiUrl  + id, blog);
+  // getBlogById(id: number): Observable<ResponseDataModel<Blog>> {
+  //   return this.http.get<ResponseDataModel<Blog>>(this.ApiUrl + id).pipe(
+  //     map((response: ResponseDataModel<Blog>) => {
+  //       if (response.success && response.data && response.data.blogImage) {
+  //         response.data.blogImageUrl = URL.createObjectURL(response.data.blogImage);
+  //       }
+  //       return response;
+  //     })
+  //   );
+  // }
+  
+
+  update(id: number, formData: FormData): Observable<ResponseModel> {
+    const headers = new HttpHeaders();
+    headers.append('Content-Type', 'multipart/form-data');
+    return this.http.put<ResponseModel>(this.ApiUrl + id, formData);
   }
 }

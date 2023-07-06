@@ -21,9 +21,24 @@ import {MatDialogModule} from '@angular/material/dialog';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatNativeDateModule} from '@angular/material/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+import { HeaderComponent } from './shared/header/header.component';
+import { ConfirmationModalComponent } from './shared/confirmation-modal/confirmation-modal.component';
+import { PaginationComponent } from './shared/pagination/pagination.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
+
 @NgModule({
-  declarations: [],
+  declarations: [
+    HeaderComponent,
+    FooterComponent,
+    ConfirmationModalComponent,
+    PaginationComponent,
+  ],
   imports: [
+    RouterModule,
+    CommonModule,
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
@@ -43,6 +58,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatGridListModule,
     FlexLayoutModule,
     MatSelectModule,
+    CKEditorModule,
+    
     // ToastrModule.forRoot({
     //   closeButton: true,
     //   timeOut: 1500, // 15 seconds
@@ -69,8 +86,14 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCardContent,
     MatGridListModule,
     FlexLayoutModule,
-    MatSelectModule
+    MatSelectModule,
+    CKEditorModule,
     // ToastrModule
+
+    HeaderComponent,
+    FooterComponent,
+    ConfirmationModalComponent,
+    PaginationComponent,
   ]
 })
 export class CoreModule { }

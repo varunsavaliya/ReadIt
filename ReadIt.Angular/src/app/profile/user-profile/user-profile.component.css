@@ -1,0 +1,8 @@
+
+  mat-form-field {
+    display: block;
+    margin: 10px 0;
+  }
+  .mdc-notched-outline:focus-visible, .mat-mdc-text-field-wrapper:focus-visible{
+    outline: none !important;
+  }

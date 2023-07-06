@@ -3,7 +3,9 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { UserModel } from '../models/user.model';
-import { AuthModel } from '../models/response.model';
+import { AuthModel, ResponseModel } from '../models/response.model';
+import { ChangePassModel } from '../models/change-pass.model';
+import { observableToBeFn } from 'rxjs/internal/testing/TestScheduler';
 
 @Injectable({
   providedIn: 'root'
@@ -20,5 +22,9 @@ export class AuthService {
   
   signup(user: UserModel):Observable<AuthModel>{
     return this.http.post<AuthModel>(this.ApiUrl + 'signup', user);
+  }
+
+  changePassword(data: ChangePassModel): Observable<ResponseModel>{
+    return this.http.post<ResponseModel>(this.ApiUrl + 'changePassword',data);
   }
 }

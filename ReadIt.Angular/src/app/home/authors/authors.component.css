@@ -9,3 +9,6 @@
   border-radius: 50%;
   background-color: #ccc;
 }
+app-author{
+  width: inherit;
+}

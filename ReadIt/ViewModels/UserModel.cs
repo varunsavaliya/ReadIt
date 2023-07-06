@@ -14,6 +14,7 @@ namespace ReadIt.ViewModels
         public string Bio { get; set; }
 
         public string Avatar { get; set; }
+        public IFormFile AvatarImage { get; set; }
         public long TotalBlogs { get; set; }
     }
 }

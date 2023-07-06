@@ -34,13 +34,13 @@ namespace ReadIt.Controllers
         }
 
         [HttpPost]
-        public ResponseModel Create([FromBody] BlogModel blog)
+        public ResponseModel Create([FromForm] BlogModel blog)
         {
             return _userBlogsService.Create(blog);
         }
 
         [HttpPut("{id}")]
-        public ResponseModel Update([FromBody] BlogModel blog, [FromRoute] long id)
+        public ResponseModel Update([FromForm] BlogModel blog, [FromRoute] long id)
         {
             return _userBlogsService.Update(blog, id);
         }

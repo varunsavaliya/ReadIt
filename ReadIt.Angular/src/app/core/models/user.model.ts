@@ -5,5 +5,6 @@ export interface UserModel {
     password: string | null;
     bio: string | null;
     avatar: string | null;
+    avatarImage?: File;
     totalBlogs?: number;
 }

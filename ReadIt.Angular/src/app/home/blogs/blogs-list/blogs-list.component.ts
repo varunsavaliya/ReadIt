@@ -10,23 +10,29 @@ import { ResponseListModel } from 'src/app/core/models/response.model';
   styleUrls: ['./blogs-list.component.css']
 })
 export class BlogsListComponent {
-  constructor(private blogService: BlogService) { }
-
-  apiResponse: ResponseListModel<Blog> = {
-    items: [],
-    success: false,
-    message: ''
-  };
+  totalBlogs: number = 0;
+  blogsPerPage: number = 3;
+  currentPage: number = 1;
 
   allBlogs: any[] = [];
+  constructor(private blogService: BlogService) { }
+
 
   ngOnInit() {
-    this.blogService.getAll().subscribe({
+    this.getBlogs()
+  }
+
+  getBlogs(){
+    this.blogService.getArticles(this.blogsPerPage, this.currentPage).subscribe({
       next: (response) => {
         this.allBlogs = response.items;
+        this.totalBlogs = response.totalItems;
       }
     })
   }
-
   
+  onPageChange(page: number) {
+    this.currentPage = page;
+    this.getBlogs();
+  }
 }

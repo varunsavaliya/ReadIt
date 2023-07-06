@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "YkxuqEcxoC25HuDsm6nTtjadw0iYt0vua6UAlSqOSkgmeTpp5rJy/u14BcVx8/AbHYEfvrQslQChahQUZl0lNw==",
+  "dgSpecHash": "TyTmvLeDG8TgvoHiJ/OVTthTMbnzztwd1U3olfBHjelSEGwPCD36OOA/zbm3Yxwh5ZaexfGo1bBWRT1Jg9fotw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\New folder\\ReadIt.Angular\\Read It Project\\ReadIt\\ReadIt\\ReadIt.csproj",
+  "projectFilePath": "D:\\Projects\\Read It Project\\ReadIt\\ReadIt\\ReadIt.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pct35\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\pct35\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

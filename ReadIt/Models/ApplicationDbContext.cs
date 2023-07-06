@@ -107,10 +107,23 @@ public partial class ApplicationDbContext : DbContext
             entity.Property(e => e.CreatedOn)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
+            entity.Property(e => e.Email)
+                .HasMaxLength(50)
+                .IsUnicode(false);
+            entity.Property(e => e.IsActive)
+                .IsRequired()
+                .HasDefaultValueSql("((1))");
+            entity.Property(e => e.Name)
+                .HasMaxLength(50)
+                .IsUnicode(false);
             entity.Property(e => e.Text)
                 .IsRequired()
                 .IsUnicode(false);
             entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
+            entity.Property(e => e.Website)
+                .HasMaxLength(50)
+                .IsUnicode(false)
+                .HasColumnName("website");
 
             entity.HasOne(d => d.Blog).WithMany(p => p.TbComments)
                 .HasForeignKey(d => d.BlogId)
@@ -119,7 +132,6 @@ public partial class ApplicationDbContext : DbContext
 
             entity.HasOne(d => d.CreatedByNavigation).WithMany(p => p.TbComments)
                 .HasForeignKey(d => d.CreatedBy)
-                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Comments_User_UserId");
         });
 

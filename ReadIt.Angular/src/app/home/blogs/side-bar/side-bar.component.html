@@ -1,38 +1,29 @@
+<div class="sidebar-box">
+    <form [formGroup]="serachCategoryForm" class="search-form" (ngSubmit)="onsubmit()">
+        <div class="form-group">
+            <span class="icon icon-search"></span>
+            <input type="text" class="form-control" formControlName="searchText" placeholder="Type a category and hit enter">
+        </div>
+    </form>
+</div>
 <div class="sidebar-box ftco-animate">
+    <div class="categories">
+        <h3>Categories</h3>
+        <li *ngFor="let category of categories"><a [routerLink]="['/articles', category.id]">{{category.name}} <span
+                    class="ion-ios-arrow-forward"></span></a></li>
+    </div>
+</div>
+<div class="sidebar-box ftco-animate" *ngIf="recentBlogs.length > 0">
     <h3>Recent Blog</h3>
-    <div class="block-21 mb-4 d-flex">
-        <a class="blog-img mr-4" style="background-image: url(./../../../../assets/images/image_1.jpg);"></a>
+    <div class="block-21 mb-4 d-flex" *ngFor="let blog of recentBlogs">
+        <a class="blog-img mr-4" routerLink="/blog/{{blog.id}}"
+            [style.backgroundImage]="'url(' + (blog.blogImageUrl ?'data:image/jpeg;base64,' + blog.blogImageUrl : './../../assets/images/default-blog-image.jpeg') + ')'"></a>
         <div class="text">
-            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
-                    blind texts</a></h3>
+            <h3 class="heading"><a routerLink="/blog/{{blog.id}}">{{blog.title| slice:0:30}}</a></h3>
             <div class="meta">
-                <div><a href="#"><span class="icon-calendar"></span> Nov. 14, 2019</a></div>
-                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-            </div>
-        </div>
-    </div>
-    <div class="block-21 mb-4 d-flex">
-        <a class="blog-img mr-4" style="background-image: url(./../../../../assets/images/image_2.jpg);"></a>
-        <div class="text">
-            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
-                    blind texts</a></h3>
-            <div class="meta">
-                <div><a href="#"><span class="icon-calendar"></span> Nov. 14, 2019</a></div>
-                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
-            </div>
-        </div>
-    </div>
-    <div class="block-21 mb-4 d-flex">
-        <a class="blog-img mr-4" style="background-image: url(./../../../../assets/images/image_3.jpg);"></a>
-        <div class="text">
-            <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about the
-                    blind texts</a></h3>
-            <div class="meta">
-                <div><a href="#"><span class="icon-calendar"></span> Nov. 14, 2019</a></div>
-                <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                <div><span class="icon-calendar"></span> {{blog.createdOn | date}}</div>
+                <div><span class="icon-person"></span> {{blog.user.name!.split(' ')[0]}}</div>
+                <div><span class="icon-chat"></span> {{blog.comments!.length}}</div>
             </div>
         </div>
     </div>

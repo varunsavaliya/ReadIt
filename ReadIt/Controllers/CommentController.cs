@@ -22,16 +22,16 @@ namespace ReadIt.Controllers
             return _commentService.Create(comment);
         }
 
-        [HttpGet("{id}")]
-        public ResponseDataModel<CommentModel> GetById([FromRoute] long id)
-        {
-            return _commentService.GetById(id);
-        }
+        //[HttpGet("{id}")]
+        //public ResponseDataModel<CommentModel> GetById([FromRoute] long id)
+        //{
+        //    return _commentService.GetById(id);
+        //}
 
-        [HttpGet]
-        public ResponseListModel<CommentModel> GetAll()
+        [HttpGet("{id}")]
+        public ResponseListModel<CommentModel> GetAllByBlogId([FromRoute] long id)
         {
-            return _commentService.GetAll();
+            return _commentService.GetAllByBlogId(id);
         }
     }
 }

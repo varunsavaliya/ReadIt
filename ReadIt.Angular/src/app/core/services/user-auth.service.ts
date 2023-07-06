@@ -21,4 +21,9 @@ export class UserAuthService {
     const user : UserModel = JSON.parse(localStorage.getItem('user')!);
     return user.id;
   }
+
+  getUser(){
+    const user : UserModel = JSON.parse(localStorage.getItem('user')!);
+    return user;
+  }
 }

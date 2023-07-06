@@ -7,5 +7,7 @@ namespace ReadIt.Repositories.Auth
     {
         public AuthModel CheckLogin(UserModel user);
         public AuthModel SignUpUser(UserModel user);
+        public ResponseModel ChangePassword(ChangePasswordModel model);
+
     }
 }

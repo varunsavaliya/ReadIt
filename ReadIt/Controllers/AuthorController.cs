@@ -17,9 +17,9 @@ namespace ReadIt.Controllers
         }
 
         [HttpGet]
-        public ResponseListModel<UserModel> GetAll()
+        public ResponseListModel<UserModel> GetAuthors([FromQuery] PaginationModel pagination)
         {
-            return _authorService.GetAll();
+            return _authorService.GetAuthors(pagination);
         }
     }
 }

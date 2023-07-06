@@ -1,37 +1,40 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using ReadIt.Extentions.ImageExtention;
 using ReadIt.Models;
 using ReadIt.ViewModels;
 
 namespace ReadIt.Repositories.UserBlogs
 {
-    public class UserBlogsRepository: IUserBlogsRepository
+    public class UserBlogsRepository : IUserBlogsRepository
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
-        public UserBlogsRepository(ApplicationDbContext context, IMapper mapper)
+        private readonly IImageExtension<TbBlog> _imageExtention;
+        public UserBlogsRepository(ApplicationDbContext context, IMapper mapper, Extentions.ImageExtention.IImageExtension<TbBlog> imageExtention)
         {
             _context = context;
             _mapper = mapper;
+            _imageExtention = imageExtention;
         }
         public ResponseModel Create(BlogModel blog)
         {
             ResponseModel response = new ResponseModel();
             try
             {
-                
+
                 TbBlog tbBlog = _mapper.Map<TbBlog>(blog);
                 tbBlog.CreatedOn = DateTime.Now;
                 tbBlog.Category = null;
                 _context.TbBlogs.Add(tbBlog);
 
-                if (blog.file != null)
+                _context.SaveChanges();
+                if (blog.BlogImage != null)
                 {
                     TbBlog newBlog = _context.TbBlogs.FirstOrDefault(dbblog => dbblog.Title == blog.Title);
-                    AddImages(blog.file, newBlog);
+                    _imageExtention.AddImages(blog.BlogImage, tbBlog);
                 }
 
-                _context.SaveChanges();
 
                 response.Message = "Your blog has been added successfully";
                 response.Success = true;
@@ -57,10 +60,10 @@ namespace ReadIt.Repositories.UserBlogs
 
                 _context.SaveChanges();
 
-                if (blog.file != null)
+                if (blog.BlogImage != null)
                 {
-                    DeleteImages(id);
-                    AddImages(blog.file, tbBlog);
+                    _imageExtention.DeleteImages(id);
+                    _imageExtention.AddImages(blog.BlogImage, tbBlog);
                 }
 
                 response.Message = "Your blog has been updated successfully";
@@ -105,15 +108,18 @@ namespace ReadIt.Repositories.UserBlogs
                 oldMediaPath = Path.Combine(Directory.GetCurrentDirectory(), "Media", "Blog Images", existingMedia.MediaPath);
             }
             // delete the previous images from the server's directory
-            foreach (var file in Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "Media", "Blog Images")))
+            if (oldMediaPath != null)
             {
-                if (oldMediaPath.Contains(file))
+                foreach (var file in Directory.GetFiles(Path.Combine(Directory.GetCurrentDirectory(), "Media", "Blog Images")))
                 {
-                    System.IO.File.Delete(file);
+                    if (oldMediaPath.Contains(file))
+                    {
+                        System.IO.File.Delete(file);
+                    }
                 }
+                _context.RemoveRange(existingMedia);
+                _context.SaveChanges();
             }
-            _context.RemoveRange(existingMedia);
-            _context.SaveChanges();
         }
 
         private void AddImages(IFormFile file, TbBlog newBlog)
@@ -141,7 +147,8 @@ namespace ReadIt.Repositories.UserBlogs
                 foreach (var blog in blogs)
                 {
                     BlogModel blogModel = _mapper.Map<BlogModel>(blog);
-                    blogModel.CreatedByName = blog.CreatedByNavigation.Name;
+                    blogModel.User = _mapper.Map<UserModel>(blog.CreatedByNavigation);
+                    blogModel.User.Password = null;
                     blogModel.CategoryName = blog.Category.Name;
                     allBlogs.Add(blogModel);
                 }

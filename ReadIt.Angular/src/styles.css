@@ -2321,7 +2321,9 @@ textarea.form-control {
       float: left; }
       .comment-list li .vcard img {
         width: 50px;
-        border-radius: 50%; }
+        border-radius: 50%;
+        height: 50px;
+        object-fit: cover; }
     .comment-list li .comment-body {
       float: right;
       width: calc(100% - 80px); }

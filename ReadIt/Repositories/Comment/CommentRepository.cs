@@ -1,4 +1,6 @@
 ﻿using AutoMapper;
+using Microsoft.EntityFrameworkCore;
+using ReadIt.Extentions.ImageExtention;
 using ReadIt.Models;
 using ReadIt.ViewModels;
 
@@ -8,11 +10,13 @@ namespace ReadIt.Repositories.Comment
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
+        private readonly IImageExtension<TbUser> _imageExtension;
 
-        public CommentRepository(ApplicationDbContext context, IMapper mapper)
+        public CommentRepository(ApplicationDbContext context, IMapper mapper, IImageExtension<TbUser> imageExtension)
         {
             _context = context;
             _mapper = mapper;
+            _imageExtension = imageExtension;
         }
         public ResponseDataModel<CommentModel> GetById(long id)
         {
@@ -31,17 +35,24 @@ namespace ReadIt.Repositories.Comment
             return response;
         }
 
-        public ResponseListModel<CommentModel> GetAll()
+        public ResponseListModel<CommentModel> GetAllByBlogId(long id)
         {
             ResponseListModel<CommentModel> response = new();
             try
             {
-                List<TbComment> tbComments = _context.TbComments.Where(comment => comment.IsActive == true).ToList();
+                List<TbComment> tbComments = _context.TbComments.Where(comment => comment.IsActive == true && comment.BlogId == id).Include(comment => comment.CreatedByNavigation).Take(5).ToList();
                 List<CommentModel> comments = new();
 
                 foreach (TbComment tbComment in tbComments)
                 {
-                    comments.Add(_mapper.Map<CommentModel>(tbComment));
+                    CommentModel comment = _mapper.Map<CommentModel>(tbComment);
+                    if (tbComment.CreatedBy != null)
+                    {
+                        comment.User = _mapper.Map<UserModel>(tbComment.CreatedByNavigation);
+                        comment.User.Password = null;
+                        comment.User.Avatar = _imageExtension.GetImage(tbComment.CreatedByNavigation);
+                    }
+                    comments.Add(comment);
                 }
 
                 response.Items = comments;

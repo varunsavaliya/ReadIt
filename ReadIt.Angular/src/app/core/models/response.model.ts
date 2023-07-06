@@ -11,6 +11,7 @@ export interface ResponseModel {
   
   export interface ResponseListModel<T> extends ResponseModel {
     items: T[];
+    totalItems: number;
   }
   
   export interface AuthModel extends ResponseDataModel<UserModel>{

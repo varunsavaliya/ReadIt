@@ -10,6 +10,8 @@ using ReadIt.Repositories.Blog;
 using ReadIt.Repositories.Comment;
 using ReadIt.Repositories.UserBlogs;
 using ReadIt.Repositories.Author;
+using ReadIt.Repositories.User;
+using ReadIt.Extentions.ImageExtention;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +24,8 @@ builder.Services.AddScoped<IBlogRepository, BlogRepository>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped<IUserBlogsRepository, UserBlogsRepository>();
 builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
+builder.Services.AddScoped<IUserRepository, UserRepository>();
+builder.Services.AddScoped(typeof(IImageExtension<>), typeof(ImageExtension<>));
 
 
 

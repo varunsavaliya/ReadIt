@@ -80,5 +80,34 @@ namespace ReadIt.Repositories.Auth
             }
             return response;
         }
+
+        public ResponseModel ChangePassword(ChangePasswordModel model)
+        {
+            ResponseModel response = new();
+            try
+            {
+                TbUser tbUser = _context.TbUsers.Find(model.UserId);
+                if(tbUser.Password == model.OldPassword)
+                {
+                    tbUser.Password = model.NewPassword;
+
+                    _context.SaveChanges();
+
+                    response.Success = true;
+                    response.Message = "Password changed successfully";
+                }
+                else
+                {
+                    response.Message = "Enter correct old password";
+                    response.Success = false;
+                }
+            }
+            catch (Exception ex)
+            {
+                response.Message = ex.Message;
+                response.Success = false;
+            }
+            return response;
+        }
     }
 }

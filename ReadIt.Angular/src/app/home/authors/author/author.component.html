@@ -1,5 +1,5 @@
 <div class="blog-entry justify-content-end">
-    <a class="block-20" style="background-image: url('./../../../../assets/images/image_1.jpg');">
+    <a class="block-20" [style.backgroundImage]="'url(' + (author.avatar ?'data:image/jpeg;base64,' + author.avatar : './../../assets/images/default-user-image.jpeg') + ')'">
     </a>
     <div class="text p-4 float-right d-block">
         <div class="topper d-flex align-items-center">
@@ -8,7 +8,6 @@
             </div>
         </div>
         <h3 class="heading mb-3">{{author.name}}</h3>
-        <p>A small river named Duden flows by their place and supplies it with the necessary
-            regelialia.</p>
+        <p>{{author.bio}}</p>
     </div>
 </div>

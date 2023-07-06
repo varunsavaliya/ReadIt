@@ -4,7 +4,7 @@ using ReadIt.ViewModels;
 
 namespace ReadIt.Repositories.Category
 {
-    public class CategoryRepository: ICategoryRepository
+    public class CategoryRepository : ICategoryRepository
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
@@ -15,13 +15,16 @@ namespace ReadIt.Repositories.Category
             _mapper = mapper;
         }
 
-        public ResponseListModel<CategoryModel> GetAll()
+        public ResponseListModel<CategoryModel> GetCategories(string searchText = null)
         {
             ResponseListModel<CategoryModel> response = new();
             try
             {
                 List<CategoryModel> categoryList = new();
-                List<TbCategory> categories = _context.TbCategories.Where(category => category.IsActive == true).ToList();
+                var query = _context.TbCategories.Where(category => category.IsActive == true);
+                if (searchText != null)
+                    query = query.Where(category => category.Name.ToLower().Contains(searchText.ToLower()));
+                List<TbCategory> categories = query.ToList();
                 foreach (TbCategory category in categories)
                 {
                     categoryList.Add(_mapper.Map<CategoryModel>(category));
@@ -47,10 +50,10 @@ namespace ReadIt.Repositories.Category
                 response.Success = true;
                 response.Message = "Category retrieved successfully";
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
-                response.Success=false;
-                response.Message=ex.Message;
+                response.Success = false;
+                response.Message = ex.Message;
             }
             return response;
         }

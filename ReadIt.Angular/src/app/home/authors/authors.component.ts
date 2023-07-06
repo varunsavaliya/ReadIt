@@ -8,16 +8,27 @@ import { UserModel } from 'src/app/core/models/user.model';
   styleUrls: ['./authors.component.css']
 })
 export class AuthorsComponent {
-authors: UserModel[] = [];
-constructor(private authorService: AuthorService){}
+  authors: UserModel[] = [];
+  totalAuthors: number = 0;
+  authorsPerPage: number = 3;
+  currentPage: number = 1;
+  constructor(private authorService: AuthorService) { }
 
-ngOnInit(){
-  this.authorService.getAll().subscribe({
-    next: (response) => {
-      if(response.success){
-        this.authors = response.items;
+  ngOnInit() {
+    this.getAuthors();
+  }
+  getAuthors() {
+    this.authorService.getAuthors(this.authorsPerPage, this.currentPage).subscribe({
+      next: (response) => {
+        if (response.success) {
+          this.totalAuthors = response.totalItems
+          this.authors = response.items;
+        }
       }
-    }
-  })
-}
+    })
+  }
+  onPageChange(page: number) {
+    this.currentPage = page;
+    this.getAuthors();
+  }
 }

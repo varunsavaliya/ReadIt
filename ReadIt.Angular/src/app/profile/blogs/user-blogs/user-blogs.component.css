@@ -1,3 +1,20 @@
-table span, mat-paginator{
-  font-family:"Poppins", Arial, sans-serif;
+table span,
+mat-paginator {
+  font-family: "Poppins", Arial, sans-serif;
+  font-size: 16px;
+}
+table th,
+table td {
+  white-space: nowrap;
+}
+.edit-blog-btn:hover {
+  color: #ffd369 !important;
+  background-color: #ffffff !important;
+}
+.view-blog-btn:hover {
+  color: #ffffff !important;
+}
+.delete-blog-btn:hover {
+  color: #ffffff !important;
+  background-color: #dc3445;
 }

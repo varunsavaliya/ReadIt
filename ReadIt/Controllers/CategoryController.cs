@@ -23,7 +23,13 @@ namespace ReadIt.Controllers
         [HttpGet]
         public ResponseListModel<CategoryModel> GetAll()
         {
-            return _categoryService.GetAll();
+            return _categoryService.GetCategories();
+        }
+        
+        [HttpGet("search/{searchText}")]
+        public ResponseListModel<CategoryModel> SearchCategory([FromRoute] string searchText)
+        {
+            return _categoryService.GetCategories(searchText);
         }
     }
 }

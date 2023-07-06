@@ -16,27 +16,15 @@
       <div class=" col-md">
         <div class="ftco-footer-widget mb-4">
           <h2 class="ftco-heading-2">latest News</h2>
-          <div class="block-21 mb-4 d-flex">
-            <a class="img mr-4 rounded" style="background-image: url(./../../../assets/images/image_1.jpg);"></a>
+          <div class="block-21 mb-4 d-flex" *ngFor="let blog of recentBlogs">
+            <a class="img mr-4 rounded" routerLink="/blog/{{blog.id}}"
+              [style.backgroundImage]="'url(' + (blog.blogImageUrl ?'data:image/jpeg;base64,' + blog.blogImageUrl : './../../assets/images/default-blog-image.jpeg') + ')'"></a>
             <div class="text">
-              <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a>
+              <h3 class="heading"><a routerLink="/blog/{{blog.id}}">{{blog.title| slice:0:30}}</a>
               </h3>
               <div class="meta">
-                <div><a href="#"> Oct. 16, 2019</a></div>
-                <div><a href="#"> Admin</a></div>
-                <div><a href="#"> 19</a></div>
-              </div>
-            </div>
-          </div>
-          <div class="block-21 mb-4 d-flex">
-            <a class="img mr-4 rounded" style="background-image: url(./../../../assets/images/image_2.jpg);"></a>
-            <div class="text">
-              <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a>
-              </h3>
-              <div class="meta">
-                <div><a href="#"> Oct. 16, 2019</a></div>
-                <div><a href="#"> Admin</a></div>
-                <div><a href="#"> 19</a></div>
+                <div><a> {{blog.createdOn | date}}</a></div>
+                <div><a> {{blog.user.name!.split(' ')[0]}}</a></div>
               </div>
             </div>
           </div>
@@ -54,22 +42,6 @@
           </ul>
         </div>
       </div>
-      <!-- <div class="col-md">
-        <div class="ftco-footer-widget mb-4">
-          <h2 class="ftco-heading-2">Have a Questions?</h2>
-          <div class="block-23 mb-3">
-            <ul>
-              <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain
-                  View, San Francisco, California, USA</span></li>
-              <li><span class="icon icon-phone"></span><span class="text">+2 392 3929
-                  210</span></li>
-              <li><span class="icon icon-envelope"></span><span class="text"><span class="__cf_email__"
-                    data-cfemail="deb7b0b8b19ea7b1abacbab1b3bfb7b0f0bdb1b3">support@readit.com</span></span>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div> -->
     </div>
     <div class="row">
       <div class="col-md-12 text-center">

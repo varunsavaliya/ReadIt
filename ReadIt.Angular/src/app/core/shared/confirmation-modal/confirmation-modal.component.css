@@ -1,0 +1,7 @@
+.cancel-btn:hover {
+    color: #ffffff !important;
+  }
+  .delete-blog-btn:hover {
+    color: #ffffff !important;
+    background-color: #dc3445;
+  }

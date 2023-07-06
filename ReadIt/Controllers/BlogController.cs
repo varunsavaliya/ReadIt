@@ -17,9 +17,14 @@ namespace ReadIt.Controllers
         }
 
         [HttpGet]
-        public ResponseListModel<BlogModel> GetAll()
+        public ResponseListModel<BlogModel> GetAll([FromQuery] PaginationModel pagination)
         {
-            return _blogService.GetAll();
+            return _blogService.GetBlogs(pagination);
+        }
+        [HttpGet("category/{id}")]
+        public ResponseListModel<BlogModel> GetByCategoryId([FromRoute] long id, [FromQuery] PaginationModel pagination)
+        {
+            return _blogService.GetBlogs(pagination,id);
         }
 
         [HttpGet("{id}")]
@@ -28,6 +33,15 @@ namespace ReadIt.Controllers
             return _blogService.GetById(id);
         }
 
-        
+        [HttpGet("recent/{count}/{blogId}/{categoryId}")]
+        public ResponseListModel<BlogModel> RecentByCountAndCategory([FromRoute] int count,[FromRoute] long blogId, [FromRoute] long categoryId)
+        {
+            return _blogService.RecentByCount(count, blogId, categoryId);
+        }
+        [HttpGet("recent/{count}")]
+        public ResponseListModel<BlogModel> RecentByCount([FromRoute] int count)
+        {
+            return _blogService.RecentByCount(count);
+        }
     }
 }

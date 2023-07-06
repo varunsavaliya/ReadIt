@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ReadIt.Repositories.Auth;
 using ReadIt.ViewModels;
 
@@ -24,6 +25,13 @@ namespace ReadIt.Controllers
         public AuthModel SignUp([FromBody] UserModel user)
         {
             return _auth.SignUpUser(user);
+        }
+
+        [HttpPost("changePassword")]
+        [Authorize]
+        public ResponseModel ChangePassword(ChangePasswordModel model)
+        {
+            return _auth.ChangePassword(model);
         }
     }
 }

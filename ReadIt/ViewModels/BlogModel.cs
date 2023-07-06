@@ -11,12 +11,12 @@
         public string Tags { get; set; }
 
         public long CreatedBy { get; set; }
-        public string CreatedByName { get; set; }
-
+        public UserModel User { get; set; }
+        public List<CommentModel> Comments { get; set; }
         public long CategoryId { get; set; }
         public string CategoryName { get; set; }
         public DateTime CreatedOn { get; set; }
-
-        public IFormFile file { get; set; }
+        public IFormFile? BlogImage { get; set; }
+        public string BlogImageUrl { get; set; }
     }
 }

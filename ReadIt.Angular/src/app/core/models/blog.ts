@@ -1,12 +1,17 @@
+import { CommentModel } from "./comment.model"
+import { UserModel } from "./user.model"
+
 export class Blog {
-  id?: number
+  id!: number
   title!: string
   description!: string
   tags!: string
   createdBy?: number
-  createdByName?: string
-  categoryId?: number
+  categoryId!: number
+  user!: UserModel
+  comments?: CommentModel[]
   categoryName?: string
   createdOn?: Date
-  file?: File
+  blogImage?: File | null
+  blogImageUrl?: string
 }

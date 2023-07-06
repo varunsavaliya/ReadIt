@@ -1,10 +1,8 @@
 <app-banner heading="Add New Blog"></app-banner>
 
-<div class="container">
-
+<div class="container my-4">
     <div class="add-form-container" fxLayout="column" fxLayoutAlign="center center">
-        <h4 class="form-title my-3">Add Blog</h4>
-        <form [formGroup]="blogForm" class="blogForm" novalidate (ngSubmit)="onSubmit()">
+        <form [formGroup]="blogForm" class="blogForm" enctype="multipart/form-data" novalidate (ngSubmit)="onSubmit()">
             <mat-form-field class="field-full-width" appearance="outline">
                 <mat-label>Title</mat-label>
                 <input matInput placeholder="Title" formControlName="title" />
@@ -15,16 +13,15 @@
                 </mat-error>
             </mat-form-field>
 
-            <mat-form-field class="field-full-width" appearance="outline">
-                <mat-label>Description</mat-label>
-                <textarea matInput placeholder="Description" formControlName="description"></textarea>
-                <mat-error>
-                    <span *ngIf="
-            !blogForm.get('description')?.valid &&
-            blogForm.get('description')?.touched
-            ">Description is required</span>
-                </mat-error>
-            </mat-form-field>
+            <div class="description-field mb-4">
+                <ckeditor [editor]="Editor" formControlName="description" [config]="editorConfig"></ckeditor>
+                <div *ngIf="blogForm.controls['description'].invalid && (blogForm.controls['description'].dirty || blogForm.controls['description'].touched)"
+                    class="text-danger">
+                    <div *ngIf="blogForm.controls['description']?.errors?.['required']">
+                        Description is required.
+                    </div>
+                </div>
+            </div>
 
             <mat-form-field class="field-full-width" appearance="outline">
                 <mat-label>Select Category</mat-label>
@@ -60,11 +57,41 @@
                 </span>
             </mat-error>
         </mat-form-field> -->
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Upload</span>
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="onFileChange($event)">
+                    <label class="custom-file-label" for="inputGroupFile01">Choose featured image</label>
+                </div>
+            </div>
+            <div class="featured-image-preview">
+                <!-- Scenario 1: Add blog -->
+                <div *ngIf="!blogImageUrl">
+                  <div *ngIf="blogImage">
+                    <img [src]="getBlogImagePreviewUrl()" alt="Selected Image" class="blog-image-preview">
+                  </div>
+                </div>
+              
+                <!-- Scenario 2: Edit blog with existing image -->
+                <div *ngIf="blogImageUrl && !blogImage">
+                  <img [src]="blogImageUrl" alt="Blog Image" class="blog-image-preview">
+                </div>
+              
+                <!-- Scenario 3: Edit blog with new image -->
+                <div *ngIf="blogImage && blogImageUrl">
+                  <img [src]="getBlogImagePreviewUrl()" alt="Selected Image" class="blog-image-preview">
+                </div>
+              </div>
+              
 
-            <div fxLayout="row" fxLayoutAlign="center center" class="my-3">
-                <button class="btn btn-primary  py-3 px-5 mx-2">Submit</button>
-                <a [routerLink]="['/profile','user-blogs']" type="button" class="btn border-warning py-3 px-5 mx-2">Cancel</a>
+            <div fxLayout="row" fxLayoutAlign="space-between center" class="my-3">
+                <button class="btn btn-primary  py-3 px-5">Submit</button>
+                <a [routerLink]="['/profile','user-blogs']" type="button"
+                    class="btn border-warning py-3 px-5">Cancel</a>
             </div>
         </form>
+
     </div>
 </div>

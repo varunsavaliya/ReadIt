@@ -10,10 +10,5 @@ at the coast of the Semantics, a large language ocean."></app-banner>
       </div>
     </div>
   </div>
+  <app-pagination *ngIf="allBlogs.length > 0" [totalRecords]="totalBlogs" [recordsPerPage]="blogsPerPage" [currentPage]="currentPage" (pageChange)="onPageChange($event)"></app-pagination>
 </section>
-
-  <!-- <mat-grid-list cols="1">
-    <mat-grid-tile *ngFor="let blog of allBlogs">
-      <app-blog-card [blog]="blog"></app-blog-card>
-    </mat-grid-tile>
-  </mat-grid-list> -->
