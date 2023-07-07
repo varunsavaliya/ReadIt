@@ -35,12 +35,16 @@ namespace ReadIt.Repositories.Comment
             return response;
         }
 
-        public ResponseListModel<CommentModel> GetAllByBlogId(long id)
+        public ResponseListModel<CommentModel> GetAllByBlogId(long id, bool showAllComments)
         {
             ResponseListModel<CommentModel> response = new();
             try
             {
-                List<TbComment> tbComments = _context.TbComments.Where(comment => comment.IsActive == true && comment.BlogId == id).Include(comment => comment.CreatedByNavigation).Take(5).ToList();
+                var commentQuery = _context.TbComments.Where(comment => comment.IsActive == true && comment.BlogId == id);
+                response.TotalItems = commentQuery.Count();
+                if (!showAllComments)
+                    commentQuery = commentQuery.Take(5);
+                List<TbComment> tbComments = commentQuery.Include(comment => comment.CreatedByNavigation).ToList();
                 List<CommentModel> comments = new();
 
                 foreach (TbComment tbComment in tbComments)

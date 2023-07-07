@@ -14,7 +14,6 @@ export class PaginationComponent {
   pagesArray: number[] = [];
   ngOnInit() {
     this.totalPages = Math.ceil(this.totalRecords / this.recordsPerPage);
-    console.log(this.totalPages);
     this.pagesArray = Array.from({ length: this.totalPages }, (_, index) => index + 1);
   }
   onPageClick(page: number) {

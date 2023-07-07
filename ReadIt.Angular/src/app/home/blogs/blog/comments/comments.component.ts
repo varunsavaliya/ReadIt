@@ -10,12 +10,25 @@ import { CommentModel } from 'src/app/core/models/comment.model';
 export class CommentsComponent {
   @Input() blogId!: number;
   comments: CommentModel[] = [];
+  totalComments: number = 0;
+  commentsToBeShown: number = 4;
+  showAllComments: boolean = false;
   constructor(private commentService: CommentService) { }
   ngOnInit() {
-    this.commentService.getCommentsByBlogId(this.blogId).subscribe({
+    this.getComments();
+  }
+
+  getComments() {
+    this.commentService.getCommentsByBlogId(this.blogId, this.showAllComments).subscribe({
       next: (response) => {
         this.comments = response.items;
+        this.totalComments = response.totalItems;
       }
     })
+  }
+
+  toggleShowAllComments() {
+    this.showAllComments = !this.showAllComments;
+    this.getComments();
   }
 }

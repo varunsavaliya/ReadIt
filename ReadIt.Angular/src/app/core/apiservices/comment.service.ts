@@ -16,8 +16,9 @@ export class CommentService {
   add(comment: CommentModel):Observable<ResponseModel>{
     return this.http.post<ResponseModel>(this.ApiUrl, comment);
   }
-
-  getCommentsByBlogId(id: number):Observable<ResponseListModel<CommentModel>>{
-    return this.http.get<ResponseListModel<CommentModel>>(this.ApiUrl + id);
+  
+  getCommentsByBlogId(blogId: number, showAllComments: boolean): Observable<ResponseListModel<CommentModel>> {
+    const params = { id: blogId.toString(), showAllComments: showAllComments };
+    return this.http.get<ResponseListModel<CommentModel>>(this.ApiUrl, {params});
   }
 }

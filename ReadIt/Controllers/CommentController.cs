@@ -28,10 +28,10 @@ namespace ReadIt.Controllers
         //    return _commentService.GetById(id);
         //}
 
-        [HttpGet("{id}")]
-        public ResponseListModel<CommentModel> GetAllByBlogId([FromRoute] long id)
+        [HttpGet]
+        public ResponseListModel<CommentModel> GetAllByBlogId([FromQuery] long id, bool showAllComments)
         {
-            return _commentService.GetAllByBlogId(id);
+            return _commentService.GetAllByBlogId(id, showAllComments);
         }
     }
 }

@@ -12,28 +12,31 @@ import { UserAuthService } from 'src/app/core/services/user-auth.service';
 export class HeaderComponent {
   dialogConfig = new MatDialogConfig();
   modalDialog: MatDialogRef<LoginComponent, any> | undefined;
-  isLoggedIn: boolean = this.userAuthService.isLoggedIn();
+  isLoggedIn: boolean = false;
   userName: string | null = null;
 
   ngOnInit() {
-    if (this.isLoggedIn) {
-      this.userName = this.userAuthService.getUserName();
-    }
+    this.userAuthService.isLoggedIn$.subscribe((isLoggedIn) => {
+      this.isLoggedIn = isLoggedIn;
+    });
+    this.userAuthService.userName$.subscribe((username) => {
+      this.userName = username;
+    });
   }
-  constructor( private userAuthService: UserAuthService, private matDialog: MatDialog, private router: Router) { }
+
+  constructor(private userAuthService: UserAuthService, private matDialog: MatDialog, private router: Router) { }
 
   openLoginModal() {
     this.matDialog.open(LoginComponent, this.dialogConfig).afterClosed().subscribe(() => {
-      this.userName = this.userAuthService.getUserName();
-      this.isLoggedIn = this.userAuthService.isLoggedIn();
+      // if (this.isLoggedIn) {
+      //   this.userName = this.userAuthService.getUserName();
+      // }
     });
+    // this.isLoggedIn = this.userAuthService.isLoggedIn();
   }
 
   logout() {
     this.router.navigate(['']);
-    localStorage.removeItem('token')
-    localStorage.removeItem('user')
-    localStorage.removeItem('userName')
-    this.isLoggedIn = false;
+    this.userAuthService.logout();
   }
 }

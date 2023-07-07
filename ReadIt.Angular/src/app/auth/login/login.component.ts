@@ -4,6 +4,7 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dial
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/apiservices/auth.service';
 import { UserModel } from 'src/app/core/models/user.model';
+import { UserAuthService } from 'src/app/core/services/user-auth.service';
 import { SignupComponent } from '../signup/signup.component';
 
 @Component({
@@ -14,7 +15,7 @@ import { SignupComponent } from '../signup/signup.component';
 export class LoginComponent {
   dialogConfig = new MatDialogConfig();
   modalDialog: MatDialogRef<SignupComponent, any> | undefined;
-  constructor(public dialogRef: MatDialogRef<LoginComponent>, private authService: AuthService, private router: Router, private matDialog: MatDialog) { }
+  constructor(public dialogRef: MatDialogRef<LoginComponent>,private userAuthService: UserAuthService, private authService: AuthService, private router: Router, private matDialog: MatDialog) { }
 
   loginForm = new FormGroup({
     password: new FormControl('', [Validators.required]),
@@ -45,9 +46,10 @@ export class LoginComponent {
       this.authService.login(user).subscribe({
         next: (response) => {
           if (response.success) {
+            this.userAuthService.login(response.token, response.data);
             this.closeLoginModal()
-            localStorage.setItem('token', response.token);
-            localStorage.setItem('user', JSON.stringify(response.data));
+            // localStorage.setItem('token', response.token);
+            // localStorage.setItem('user', JSON.stringify(response.data));
           } else {
             this.loginInvalid = true;
           }
