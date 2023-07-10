@@ -6,7 +6,7 @@ import { UserModel } from '../models/user.model';
   providedIn: 'root'
 })
 export class UserAuthService {
-  private isLoggedInSubject: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
+  private isLoggedInSubject: BehaviorSubject<boolean> = this.isLoggedIn();
   isLoggedIn$: Observable<boolean> = this.isLoggedInSubject.asObservable();
 
   private userNameSubject: BehaviorSubject<string> = new BehaviorSubject<string>(this.getUserName());
