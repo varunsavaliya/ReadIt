@@ -7,9 +7,9 @@
     </button>
     <div class="collapse navbar-collapse" id="ftco-nav">
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item active"><a [routerLink]="['']" class="nav-link">Blogs</a></li>
-        <li class="nav-item"><a [routerLink]="['articles']" class="nav-link">Articles</a></li>
-        <li class="nav-item"><a [routerLink]="['authors']" class="nav-link">Authors</a></li>
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"><a [routerLink]="['']" class="nav-link">Blogs</a></li>
+        <li class="nav-item" routerLinkActive="active"><a [routerLink]="['articles']" class="nav-link">Articles</a></li>
+        <li class="nav-item" routerLinkActive="active"><a [routerLink]="['authors']" class="nav-link">Authors</a></li>
         <li class="nav-item dropdown">
           <a class="nav-link" role="button" *ngIf="!isLoggedIn; else logOut" (click)="openLoginModal()">Login</a>
           <ng-template #logOut>

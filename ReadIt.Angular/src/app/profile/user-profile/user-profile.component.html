@@ -5,7 +5,13 @@
         <div class="row d-flex">
             <div class="col-md-6 d-flex">
                 <div class="img img-video d-flex align-self-stretch align-items-center justify-content-center justify-content-md-end"
-                [style.backgroundImage]="'url(' + (user.avatar ?'data:image/jpeg;base64,' + user.avatar : './../../assets/images/default-user-image.jpeg') + ')'">
+                    [style.backgroundImage]="'url(' +
+                    (!avatarPreview ?
+                        (user.avatar ? 'data:image/jpeg;base64,' + user.avatar : './../../assets/images/default-user-image.jpeg')
+                        : avatarPreview
+                    ) +
+                    ')'
+                ">
                     <span class="icon-video popup-vimeo d-flex justify-content-center align-items-center">
                         <span class="icon-play"></span>
                     </span>
@@ -20,13 +26,16 @@
                         <div class="tabulation-2 mt-4">
                             <ul class="nav nav-pills nav-fill d-md-flex d-block">
                                 <li class="nav-item  mb-md-0 mb-2">
-                                    <a role="button" class="nav-link active py-2" data-toggle="tab" href="#profile-details">Profile Details</a>
+                                    <a role="button" class="nav-link active py-2" data-toggle="tab"
+                                        href="#profile-details">Profile Details</a>
                                 </li>
                                 <li class="nav-item px-lg-2 mb-md-0 mb-2">
-                                    <a role="button" class="nav-link py-2" data-toggle="tab" href="#edit-profile">Edit Profile</a>
+                                    <a role="button" class="nav-link py-2" data-toggle="tab" href="#edit-profile">Edit
+                                        Profile</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a role="button" class="nav-link py-2 mb-md-0 mb-2" data-toggle="tab" href="#change-password">Change Password</a>
+                                    <a role="button" class="nav-link py-2 mb-md-0 mb-2" data-toggle="tab"
+                                        href="#change-password">Change Password</a>
                                 </li>
                             </ul>
                             <div class="tab-content bg-light rounded mt-2">
@@ -37,8 +46,8 @@
                                     <p>Total blogs: {{user.totalBlogs}}</p>
                                 </div>
                                 <div class="tab-pane container p-0 fade" id="edit-profile">
-                                    <form [formGroup]="userForm" enctype="multipart/form-data" class="userForm" novalidate
-                                        (ngSubmit)="onUserFormSubmit()">
+                                    <form [formGroup]="userForm" enctype="multipart/form-data" class="userForm"
+                                        novalidate (ngSubmit)="onUserFormSubmit()">
                                         <mat-form-field class="field-full-width" appearance="outline">
                                             <mat-label>Name</mat-label>
                                             <input matInput placeholder="Name" formControlName="name" />
@@ -70,23 +79,25 @@
                                                 <span class="input-group-text">Upload</span>
                                             </div>
                                             <div class="custom-file">
-                                                <input type="file" class="custom-file-input" id="inputGroupFile01" (change)="onFileChange($event)">
-                                                <label class="custom-file-label" for="inputGroupFile01">Choose profile image</label>
+                                                <input type="file" class="custom-file-input" id="inputGroupFile01"
+                                                    (change)="onFileChange($event)">
+                                                <label class="custom-file-label" for="inputGroupFile01">Choose profile
+                                                    image</label>
                                             </div>
                                         </div>
-                                       
 
-                                        <div fxLayout="row" fxLayoutAlign="center center" class="my-3">
-                                            <button class="btn btn-primary  py-3 px-5 mx-2">Submit</button>
-                                            <a data-toggle="tab" href="#profile-details" type="button"
-                                                class="btn border-warning py-3 px-5 mx-2">Cancel</a>
+
+                                        <div class="my-3 d-flex justify-content-between">
+                                            <button class="btn btn-primary  py-3 px-5">Submit</button>
+                                            <a (click)="onCancel()" type="button"
+                                                class="btn border-warning py-3 px-5">Cancel</a>
                                         </div>
                                     </form>
                                 </div>
                                 <div class="tab-pane container p-0 fade" id="change-password">
                                     <form [formGroup]="changePassForm" class="userForm" novalidate
                                         (ngSubmit)="onChangePassword()">
-                                        <mat-form-field class="field-full-width" appearance="outline">
+                                        <mat-form-field appearance="outline">
                                             <mat-label>Old Password</mat-label>
                                             <input type="password" matInput placeholder="Old Password"
                                                 formControlName="oldPassword" />
@@ -96,7 +107,7 @@
                                             ">Title is required</span>
                                             </mat-error>
                                         </mat-form-field>
-                                        <mat-form-field class="field-full-width" appearance="outline">
+                                        <mat-form-field appearance="outline">
                                             <mat-label>New Password</mat-label>
                                             <input type="password" matInput placeholder="New Password"
                                                 formControlName="newPassword" />
@@ -107,10 +118,10 @@
                                             </mat-error>
                                         </mat-form-field>
 
-                                        <div fxLayout="row" fxLayoutAlign="center center" class="my-3">
-                                            <button class="btn btn-primary  py-3 px-5 mx-2">Submit</button>
-                                            <a data-toggle="tab" href="#profile-details" type="button"
-                                                class="btn border-warning py-3 px-5 mx-2">Cancel</a>
+                                        <div class="my-3 d-flex justify-content-between">
+                                            <button class="btn btn-primary py-3 px-5">Submit</button>
+                                            <a (click)="onCancel()" type="button"
+                                                class="btn border-warning py-3 px-5">Cancel</a>
                                         </div>
                                     </form>
                                 </div>

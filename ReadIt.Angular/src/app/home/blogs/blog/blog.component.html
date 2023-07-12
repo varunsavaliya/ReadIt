@@ -28,15 +28,15 @@
                         <p>{{blog.user.bio}}</p>
                     </div>
                 </div>
-                <div class="pt-5 mt-5" *ngIf="blog.comments">
-                    <app-comments [blogId]="blog.id"></app-comments>
+                <div class="pt-5 mt-5">
+                    <app-comments *ngIf="blog.id"  [blogId]="blogId"></app-comments>
                     <div class="comment-form-wrap pt-5">
                         <app-comment-form [blogId]="blog.id"></app-comment-form>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-4 sidebar pl-lg-5 ftco-animate" *ngIf="blog.categoryId">
-                <app-side-bar [categoryId]="blog.categoryId" [blogId]="blog.id"></app-side-bar>
+            <div class="col-lg-4 sidebar pl-lg-5 ftco-animate">
+                <app-side-bar *ngIf="blog.categoryId" [categoryId]="blog.categoryId" [blogId]="blogId"></app-side-bar>
             </div>
         </div>
     </div>

@@ -3,7 +3,7 @@
 <div class="container my-4">
     <div class="add-form-container" fxLayout="column" fxLayoutAlign="center center">
         <form [formGroup]="blogForm" class="blogForm" enctype="multipart/form-data" novalidate (ngSubmit)="onSubmit()">
-            <mat-form-field class="field-full-width" appearance="outline">
+            <mat-form-field appearance="outline">
                 <mat-label>Title</mat-label>
                 <input matInput placeholder="Title" formControlName="title" />
                 <mat-error>
@@ -23,7 +23,7 @@
                 </div>
             </div>
 
-            <mat-form-field class="field-full-width" appearance="outline">
+            <mat-form-field appearance="outline">
                 <mat-label>Select Category</mat-label>
                 <mat-select formControlName="category">
                     <mat-option value="">Select Category</mat-option>
@@ -37,7 +37,7 @@
                 </mat-error>
             </mat-form-field>
 
-            <mat-form-field class="field-full-width" appearance="outline">
+            <mat-form-field appearance="outline">
                 <mat-label>Tags</mat-label>
                 <textarea matInput placeholder="Enter tags by comma" formControlName="tags"></textarea>
                 <mat-error>
@@ -48,15 +48,6 @@
                 </mat-error>
             </mat-form-field>
 
-            <!-- <mat-form-field class="field-full-width" appearance="outline">
-        <mat-label>Blog Image</mat-label>
-        <input type="file" formControlName="blogImage" />
-        <mat-error>
-            <span *ngIf="!blogForm.get('blogImage')?.valid && blogForm.get('blogImage')?.touched">
-                Blog image is required
-                </span>
-            </mat-error>
-        </mat-form-field> -->
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
                     <span class="input-group-text">Upload</span>

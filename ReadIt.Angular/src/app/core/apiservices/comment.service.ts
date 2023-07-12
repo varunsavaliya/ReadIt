@@ -18,7 +18,8 @@ export class CommentService {
   }
   
   getCommentsByBlogId(blogId: number, showAllComments: boolean): Observable<ResponseListModel<CommentModel>> {
-    const params = { id: blogId.toString(), showAllComments: showAllComments };
+    
+    const params = { id: blogId ? blogId.toString(): 0  , showAllComments: showAllComments };
     return this.http.get<ResponseListModel<CommentModel>>(this.ApiUrl, {params});
   }
 }

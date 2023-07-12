@@ -6,6 +6,7 @@ import { CategoryService } from 'src/app/core/apiservices/category.service';
 import { UserBlogService } from 'src/app/core/apiservices/user-blog.service';
 import { Blog } from 'src/app/core/models/blog';
 import { CategoryModel } from 'src/app/core/models/category.model';
+import { SnackbarService } from 'src/app/core/services/snackbar.service';
 import { UserAuthService } from 'src/app/core/services/user-auth.service';
 
 @Component({
@@ -18,10 +19,11 @@ export class AddBlogComponent {
   public editorConfig = {
     placeholder: 'Description',
     toolbar: [
-      'heading', 'bold', 'italic',
-      'link', 'bulletedList', 'numberedList', 'indent', 'outdent',
-      'blockQuote', 'insertTable',
-      'undo', 'redo'
+      'undo', 'redo', '|',
+      'heading', 'bold', 'italic', '|',
+      'link', 'bulletedList', 'numberedList', 'indent', 'outdent','|',
+      'uploadImage', 'embeddedVideo' , '|' ,
+      'blockQuote', 'insertTable','|',
     ],
     height: '4000px'
   };
@@ -51,11 +53,10 @@ export class AddBlogComponent {
     return this.blogForm.get('tags');
   }
 
-  constructor(private activeRoute: ActivatedRoute, private router: Router, private userAuthService: UserAuthService, private categoryService: CategoryService, private userBlogService: UserBlogService) { }
+  constructor(private snackbarService: SnackbarService,private activeRoute: ActivatedRoute, private router: Router, private userAuthService: UserAuthService, private categoryService: CategoryService, private userBlogService: UserBlogService) { }
 
 
   ngOnInit() {
-
     this.categoryService.getAll().subscribe({
       next: (response) => {
         this.allCategories = response.items;
@@ -96,10 +97,6 @@ export class AddBlogComponent {
   }
   onFileChange(event: any) {
     this.blogImage = event.target.files[0];
-    if (this.blogImage) {
-      // Do something with the file, such as storing it in a variable or uploading it
-      console.log('Selected file:', this.blogImage);
-    }
   }
 
   getBlogImagePreviewUrl() {
@@ -110,7 +107,6 @@ export class AddBlogComponent {
   }
 
   onSubmit() {
-    console.log(this.blogImage);
     if (this.blogForm.valid) {
       const formData = new FormData();
       formData.append('title', this.blogForm.value.title);
@@ -124,17 +120,11 @@ export class AddBlogComponent {
         formData.append('blogImage', blob, 'blogImage.jpg');
       }
 
-
-      // this.blog.title = this.blogForm.value.title;
-      // this.blog.description = this.blogForm.value.description;
-      // this.blog.tags = this.blogForm.value.tags;
-      // this.blog.categoryId = this.blogForm.value.category;
-      // this.blog.createdBy = this.userId;
-      // this.blog.blogImage = this.blogImage;
       if (this.getBlogId() != 0) {
         this.userBlogService.update(this.getBlogId(), formData).subscribe({
           next: (response) => {
             this.router.navigate(['profile', 'user-blogs'])
+            this.snackbarService.openSnackBar(response.message)
           }
         })
       }
@@ -142,7 +132,7 @@ export class AddBlogComponent {
         this.userBlogService.create(formData).subscribe({
           next: (response) => {
             this.router.navigate(['profile', 'user-blogs'])
-            console.log(response);
+            this.snackbarService.openSnackBar(response.message)
           }
         })
       }

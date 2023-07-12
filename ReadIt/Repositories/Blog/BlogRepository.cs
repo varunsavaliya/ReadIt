@@ -84,7 +84,7 @@ namespace ReadIt.Repositories.Blog
             ResponseListModel<BlogModel> response = new();
             try
             {
-                var query = _context.TbBlogs.Where(blog => blog.IsActive == true);
+                var query = _context.TbBlogs.Where(blog => blog.IsActive == true && blog.CreatedByNavigation.IsActive == true);
                 if (categoryId != 0)
                     query = query.Where(blog => blog.CategoryId == categoryId);
 

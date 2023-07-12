@@ -28,6 +28,7 @@ import { PaginationComponent } from './shared/pagination/pagination.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { CommonModule } from '@angular/common';
     MatNativeDateModule,
     MatCardModule,
     MatGridListModule,
+    MatSnackBarModule,
     FlexLayoutModule,
     MatSelectModule,
     CKEditorModule,
@@ -75,9 +77,9 @@ import { CommonModule } from '@angular/common';
     MatButtonModule,
     MatMenuModule,
     MatTableModule,
+    MatPaginatorModule,
     MatFormFieldModule,
     MatInputModule,
-    MatPaginatorModule,
     MatDialogModule,
     MatSelectModule,
     MatDatepickerModule,
@@ -85,6 +87,7 @@ import { CommonModule } from '@angular/common';
     MatCardModule,
     MatCardContent,
     MatGridListModule,
+    MatSnackBarModule,
     FlexLayoutModule,
     MatSelectModule,
     CKEditorModule,

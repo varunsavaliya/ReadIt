@@ -1,3 +1,13 @@
 app-article{
     width: inherit;
 }
+
+.no-articles{
+    font-size: 25px;
+    padding: 100px 0;
+}
+
+.success-snackbar {
+    background-color: #4caf50; /* Custom background color */
+    color: #ffffff; /* Custom text color */
+  }

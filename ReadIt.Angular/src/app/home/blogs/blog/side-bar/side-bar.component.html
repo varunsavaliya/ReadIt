@@ -16,10 +16,10 @@
 <div class="sidebar-box ftco-animate" *ngIf="recentBlogs.length > 0">
     <h3>Recent Blog</h3>
     <div class="block-21 mb-4 d-flex" *ngFor="let blog of recentBlogs">
-        <a class="blog-img mr-4" routerLink="/blog/{{blog.id}}"
+        <a role="button" class="blog-img mr-4" [routerLink]="['/blog', blog.id]"
             [style.backgroundImage]="'url(' + (blog.blogImageUrl ?'data:image/jpeg;base64,' + blog.blogImageUrl : './../../assets/images/default-blog-image.jpeg') + ')'"></a>
         <div class="text">
-            <h3 class="heading"><a routerLink="/blog/{{blog.id}}">{{blog.title| slice:0:30}}</a></h3>
+            <h3 class="heading"><a role="button" [routerLink]="['/blog', blog.id]">{{blog.title| slice:0:30}}</a></h3>
             <div class="meta">
                 <div><span class="icon-calendar"></span> {{blog.createdOn | date}}</div>
                 <div><span class="icon-person"></span> {{blog.user.name!.split(' ')[0]}}</div>

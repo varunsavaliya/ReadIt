@@ -3,7 +3,6 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dial
 import { Router } from '@angular/router';
 import { LoginComponent } from 'src/app/auth/login/login.component';
 import { UserAuthService } from 'src/app/core/services/user-auth.service';
-
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',

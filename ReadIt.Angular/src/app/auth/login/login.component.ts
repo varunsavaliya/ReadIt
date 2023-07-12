@@ -4,6 +4,7 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dial
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/apiservices/auth.service';
 import { UserModel } from 'src/app/core/models/user.model';
+import { SnackbarService } from 'src/app/core/services/snackbar.service';
 import { UserAuthService } from 'src/app/core/services/user-auth.service';
 import { SignupComponent } from '../signup/signup.component';
 
@@ -15,7 +16,7 @@ import { SignupComponent } from '../signup/signup.component';
 export class LoginComponent {
   dialogConfig = new MatDialogConfig();
   modalDialog: MatDialogRef<SignupComponent, any> | undefined;
-  constructor(public dialogRef: MatDialogRef<LoginComponent>,private userAuthService: UserAuthService, private authService: AuthService, private router: Router, private matDialog: MatDialog) { }
+  constructor(private snackbarService: SnackbarService, public dialogRef: MatDialogRef<LoginComponent>, private userAuthService: UserAuthService, private authService: AuthService, private router: Router, private matDialog: MatDialog) { }
 
   loginForm = new FormGroup({
     password: new FormControl('', [Validators.required]),
@@ -48,8 +49,7 @@ export class LoginComponent {
           if (response.success) {
             this.userAuthService.login(response.token, response.data);
             this.closeLoginModal()
-            // localStorage.setItem('token', response.token);
-            // localStorage.setItem('user', JSON.stringify(response.data));
+            this.snackbarService.openSnackBar(response.message)
           } else {
             this.loginInvalid = true;
           }
@@ -62,7 +62,7 @@ export class LoginComponent {
     this.dialogRef.close();
   }
 
-  openSignUpModal(){
+  openSignUpModal() {
     this.dialogRef.close();
     this.matDialog.open(SignupComponent, this.dialogConfig);
   }

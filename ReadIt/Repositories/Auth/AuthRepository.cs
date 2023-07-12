@@ -59,18 +59,27 @@ namespace ReadIt.Repositories.Auth
 
             try
             {
-                TbUser signupUser = _mapper.Map<TbUser>(user);
+                if (_context.TbUsers.Any(user1 => user1.Email == user.Email && user1.IsActive == true))
+                {
+                    response.Success = false;
+                    response.Message = "User already exists, please login";
+                }
+                else
+                {
 
-                _context.TbUsers.Add(signupUser);
-                _context.SaveChanges();
+                    TbUser signupUser = _mapper.Map<TbUser>(user);
 
-                TbUser validUser = _context.TbUsers.FirstOrDefault(validUser => validUser.Email.Equals(user.Email));
+                    _context.TbUsers.Add(signupUser);
+                    _context.SaveChanges();
 
-                validUser.Password = null;
-                response.Data = _mapper.Map<UserModel>(validUser);
-                response.Token = JWTExtention.GetJwtToken(validUser, _configuration);
-                response.Success = true;
-                response.Message = "Sign up successfull!";
+                    TbUser validUser = _context.TbUsers.FirstOrDefault(validUser => validUser.Email.Equals(user.Email));
+
+                    validUser.Password = null;
+                    response.Data = _mapper.Map<UserModel>(validUser);
+                    response.Token = JWTExtention.GetJwtToken(validUser, _configuration);
+                    response.Success = true;
+                    response.Message = "Sign up successfull!";
+                }
 
             }
             catch (Exception ex)
@@ -87,7 +96,7 @@ namespace ReadIt.Repositories.Auth
             try
             {
                 TbUser tbUser = _context.TbUsers.Find(model.UserId);
-                if(tbUser.Password == model.OldPassword)
+                if (tbUser.Password == model.OldPassword)
                 {
                     tbUser.Password = model.NewPassword;
 

@@ -27,14 +27,8 @@ export class UserAuthService {
   logout() {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
-    this.isLoggedIn$.subscribe((isLoggedIn) => {
-      console.log(isLoggedIn);
-    });
     this.isLoggedInSubject.next(false);
     this.userNameSubject.next('');
-    this.isLoggedIn$.subscribe((isLoggedIn) => {
-      console.log(isLoggedIn);
-    });
   }
   isLoggedIn(): BehaviorSubject<boolean> {
     const token = localStorage.getItem('token');

@@ -2,8 +2,6 @@ import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogService } from 'src/app/core/apiservices/blog.service';
 import { CategoryService } from 'src/app/core/apiservices/category.service';
-import { Blog } from 'src/app/core/models/blog';
-import { ResponseListModel } from 'src/app/core/models/response.model';
 
 @Component({
   selector: 'app-articles',

@@ -4,6 +4,7 @@ import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material/dial
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/apiservices/auth.service';
 import { UserModel } from 'src/app/core/models/user.model';
+import { SnackbarService } from 'src/app/core/services/snackbar.service';
 import { UserAuthService } from 'src/app/core/services/user-auth.service';
 import { LoginComponent } from '../login/login.component';
 
@@ -15,7 +16,7 @@ import { LoginComponent } from '../login/login.component';
 export class SignupComponent {
   dialogConfig = new MatDialogConfig();
   modalDialog: MatDialogRef<LoginComponent, any> | undefined;
-  constructor(public dialogRef: MatDialogRef<SignupComponent>,private userAuthService: UserAuthService, private authService: AuthService, private router: Router, private matDialog: MatDialog) { }
+  constructor(private snackbarService: SnackbarService,public dialogRef: MatDialogRef<SignupComponent>,private userAuthService: UserAuthService, private authService: AuthService, private router: Router, private matDialog: MatDialog) { }
 
   signUpForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
@@ -55,10 +56,9 @@ export class SignupComponent {
           if (response.success) {
             this.userAuthService.signup(response.token, response.data);
             this.closeSignUpModal();
-            // localStorage.setItem('token', response.token);
-            // localStorage.setItem('user', JSON.stringify(response.data));
+            this.snackbarService.openSnackBar(response.message)
           } else {
-            console.log(response.message);
+            this.snackbarService.openSnackBar(response.message)
           }
         }
       })

@@ -45,7 +45,7 @@ export class CommentFormComponent {
   }
   constructor(private userAuthService: UserAuthService, private commentService: CommentService, private router: Router) { }
   ngOnInit() {
-this.comment.blogId = this.blogId
+    this.comment.blogId = this.blogId
     if (this.userAuthService.getUser()) {
       this.comment.createdBy = this.userAuthService.getUserId()
 
@@ -62,7 +62,6 @@ this.comment.blogId = this.blogId
 
   onsubmit() {
     if (this.commentForm.valid) {
-      console.log(this.comment);
       if (!this.comment.createdBy) {
         this.comment.name = this.commentForm.value.name
         this.comment.email = this.commentForm.value.email
@@ -71,9 +70,16 @@ this.comment.blogId = this.blogId
       this.comment.text = this.commentForm.value.message
       this.commentService.add(this.comment).subscribe({
         next: (response) => {
-          if (response.success)
-            this.commentForm.reset()
-            this.router.navigate(['/blog', this.blogId])
+          if (response.success) {
+            this.commentForm.reset();
+            if (this.userAuthService.getUser()) {
+              this.commentForm.patchValue({
+                name: this.user.name,
+                email: this.user.email
+              })
+            }
+          }
+          this.router.navigate(['/blog', this.blogId])
         }
       })
     }

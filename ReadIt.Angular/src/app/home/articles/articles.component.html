@@ -2,11 +2,12 @@
 Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right
 at the coast of the Semantics, a large language ocean."></app-banner>
 
-<div class="container no-articles" *ngIf="articles.length == 0">
-  <span>No articles found</span>
+<div class="container no-articles text-center" *ngIf="articles.length == 0">
+  <span class="text-danger">No Articles Found!!!</span>
 </div>
 
-<section class="ftco-section bg-light">
+
+<section class="ftco-section bg-light" *ngIf="articles.length > 0">
   <div class="container">
     <div class="row d-flex">
       <div class="col-md-4 d-flex" *ngFor="let article of articles">

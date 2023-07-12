@@ -1,3 +1,4 @@
+import { NonNullAssert } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -5,6 +6,7 @@ import { AuthService } from 'src/app/core/apiservices/auth.service';
 import { UserService } from 'src/app/core/apiservices/user.service';
 import { ChangePassModel } from 'src/app/core/models/change-pass.model';
 import { UserModel } from 'src/app/core/models/user.model';
+import { SnackbarService } from 'src/app/core/services/snackbar.service';
 import { UserAuthService } from 'src/app/core/services/user-auth.service';
 
 @Component({
@@ -14,7 +16,7 @@ import { UserAuthService } from 'src/app/core/services/user-auth.service';
 })
 export class UserProfileComponent implements OnInit {
   avatarImage: File | null = null;
-
+  avatarPreview: string | null = null;
   user: UserModel = {} as UserModel;
   changePassData: ChangePassModel = {} as ChangePassModel;
   userForm: FormGroup = new FormGroup({
@@ -42,7 +44,7 @@ export class UserProfileComponent implements OnInit {
   get newPassword() {
     return this.changePassForm.get('newPassword');
   }
-  constructor(private authService: AuthService, private userService: UserService, private userAuthService: UserAuthService, private router: Router) { }
+  constructor(private snackbarService: SnackbarService,private authService: AuthService, private userService: UserService, private userAuthService: UserAuthService, private router: Router) { }
 
   ngOnInit() {
     this.userService.getUserById(this.userAuthService.getUserId()).subscribe({
@@ -58,6 +60,15 @@ export class UserProfileComponent implements OnInit {
   }
   onFileChange(event: any) {
     this.avatarImage = event.target.files[0];
+    const file = event.target.files[0];
+    const reader = new FileReader();
+
+    reader.onload = () => {
+      const base64String = reader.result as string;
+      this.avatarPreview = base64String;
+    };
+
+    reader.readAsDataURL(file);
   }
   onUserFormSubmit() {
     const formData = new FormData();
@@ -72,7 +83,7 @@ export class UserProfileComponent implements OnInit {
     if (this.userForm.valid) {
       this.userService.editUser(this.userAuthService.getUserId(), formData).subscribe({
         next: (response) => {
-          console.log(response);
+          this.snackbarService.openSnackBar(response.message)
           this.router.navigate(['/profile']);
         }
       })
@@ -86,9 +97,14 @@ export class UserProfileComponent implements OnInit {
     if (this.changePassForm.valid) {
       this.authService.changePassword(this.changePassData).subscribe({
         next: (response) => {
-          console.log(response);
+          this.snackbarService.openSnackBar(response.message)
+          this.router.navigate(['/profile']);
         }
       })
     }
+  }
+
+  onCancel(){
+    this.router.navigate(['/profile'])
   }
 }

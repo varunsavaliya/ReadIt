@@ -1,9 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { UserBlogService } from 'src/app/core/apiservices/user-blog.service';
 import { Blog } from 'src/app/core/models/blog';
+import { SnackbarService } from 'src/app/core/services/snackbar.service';
 import { UserAuthService } from 'src/app/core/services/user-auth.service';
 import { ConfirmationModalComponent } from 'src/app/core/shared/confirmation-modal/confirmation-modal.component';
 
@@ -12,7 +13,7 @@ import { ConfirmationModalComponent } from 'src/app/core/shared/confirmation-mod
   templateUrl: './user-blogs.component.html',
   styleUrls: ['./user-blogs.component.css']
 })
-export class UserBlogsComponent {
+export class UserBlogsComponent implements AfterViewInit, OnInit {
   userId: number = this.userAuthService.getUserId();
   allBlogs: Blog[] = [];
 
@@ -21,16 +22,15 @@ export class UserBlogsComponent {
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 
+  constructor(private snackbarService: SnackbarService, private userBlogService: UserBlogService, private userAuthService: UserAuthService, private dialog: MatDialog) { }
   ngAfterViewInit() {
     this.dataSource.paginator = this.paginator;
   }
-
-  constructor(private userBlogService: UserBlogService, private userAuthService: UserAuthService, private dialog: MatDialog) { }
   ngOnInit() {
     this.userBlogService.getAllByUserId(this.userId).subscribe({
       next: (response) => {
         this.allBlogs = response.items;
-        this.dataSource.data = response.items;
+        this.dataSource.data = this.allBlogs;
       }
     })
   }
@@ -46,9 +46,11 @@ export class UserBlogsComponent {
       if (result) {
         this.userBlogService.delete(id).subscribe({
           next: (response) => {
+            this.snackbarService.openSnackBar(response.message)
             this.userBlogService.getAllByUserId(this.userId).subscribe({
               next: (response) => {
                 this.dataSource.data = response.items;
+                this.allBlogs = response.items;
               }
             })
           }

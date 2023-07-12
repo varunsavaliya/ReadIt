@@ -85,6 +85,13 @@ namespace ReadIt.Repositories.UserBlogs
                 TbBlog tbBlog = _context.TbBlogs.Find(id);
                 tbBlog.IsActive = false;
 
+                var blogImage = _context.TbBlogMedia.Where(image => image.BlogId == id).FirstOrDefault();
+                if (blogImage != null)
+                {
+                    _context.TbBlogMedia.Remove(blogImage);
+                    _imageExtention.DeleteImages(id);
+                }
+
                 _context.SaveChanges();
 
                 response.Success = true;

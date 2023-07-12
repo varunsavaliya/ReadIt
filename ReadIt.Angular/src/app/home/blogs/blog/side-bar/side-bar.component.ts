@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { BlogService } from 'src/app/core/apiservices/blog.service';
 import { CategoryService } from 'src/app/core/apiservices/category.service';
 import { Blog } from 'src/app/core/models/blog';
@@ -22,21 +23,22 @@ export class SideBarComponent {
   get searchText() {
     return this.serachCategoryForm.get('searchText');
   }
-  constructor(private categoryService: CategoryService, private blogService: BlogService) { }
+  constructor(private router: Router, private categoryService: CategoryService, private blogService: BlogService) { }
   ngOnInit() {
     this.categoryService.getAll().subscribe({
       next: (response) => {
         this.categories = response.items;
       }
     })
-
     this.blogService.recentByCountAndCategory(3, this.categoryId, this.blogId).subscribe({
       next: (response) => {
         this.recentBlogs = response.items;
       }
     })
   }
-
+  onClick(id: number){
+    this.router.navigateByUrl(`/blog/${id}`)
+  }
   onsubmit(){
     if(this.serachCategoryForm.value.searchText == ''){
       this.categoryService.getAll().subscribe({

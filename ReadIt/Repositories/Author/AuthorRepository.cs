@@ -20,7 +20,7 @@ namespace ReadIt.Repositories.Author
             ResponseListModel<UserModel> response = new();
             try
             {
-                var usersQuery = _context.TbUsers.Where(user => user.TbBlogs.Any()).Include(user => user.TbBlogs);
+                var usersQuery = _context.TbUsers.Where(user => user.TbBlogs.Any(blog => blog.IsActive == true) && user.IsActive == true).Include(user => user.TbBlogs);
                 var totalUsers = usersQuery.Count();
                 var users = usersQuery.Skip(pagination.PageSize * (pagination.CurrentPage - 1)).Take(pagination.PageSize).ToList();
                 List<UserModel> items = new();

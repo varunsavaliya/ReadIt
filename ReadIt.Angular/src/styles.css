@@ -2479,3 +2479,12 @@ textarea.form-control {
     .js-fullheight{
       height: 100vh;
     }
+
+    .success-snackbar .mdc-snackbar__surface{
+      background-color:#175a17 !important;
+      color:white !important;
+    }
+
+    .ck.ck-editor__main .ck-content{
+      height: 400px !important;
+    }

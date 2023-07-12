@@ -1,23 +1,22 @@
-<h3 class="mb-5">{{totalComments}} Comments</h3>
-<ul class="comment-list">
-    <li class="comment" *ngFor="let comment of comments">
+<div *ngIf="blogId != undefined">
+    <h3 class="mb-5">{{totalComments}} Comments</h3>
+    <ul class="comment-list">
+        <li class="comment" *ngFor="let comment of comments">
         <div class="vcard bio">
             <img [src]="comment.user ? 'data:image/jpeg;base64,' + comment.user!.avatar : './../../assets/images/default-user-image.jpeg'"
-                alt="Image placeholder">
-        </div>
+                alt="Avatar">
+            </div>
         <div class="comment-body">
             <h3>{{comment.user ?comment.user.name : comment.name }}</h3>
             <div class="meta mb-3">{{comment.createdOn | date}} at {{comment.createdOn |
                 date:'shortTime'}}</div>
-            <p>{{comment.text}}</p>
-        </div>
-    </li>
-    <!-- <div class="comment-read-more" *ngIf="totalComments > commentsToBeShown">
-        <a (click)=""></a>
-    </div> -->
-</ul>
-<div class="comment-read-more" *ngIf="totalComments > commentsToBeShown">
-    <a role="button" (click)="toggleShowAllComments()">
-        {{ showAllComments ? 'Show Less' : 'Read More' }}
-    </a>
+                <p>{{comment.text}}</p>
+            </div>
+        </li>
+    </ul>
+    <div class="comment-read-more" *ngIf="totalComments > commentsToBeShown">
+        <a role="button" (click)="toggleShowAllComments()">
+            {{ showAllComments ? 'Show Less' : 'Read More' }}
+        </a>
+    </div>
 </div>
