@@ -8,4 +8,11 @@ import { UserModel } from 'src/app/core/models/user.model';
 })
 export class AuthorComponent {
   @Input() author: UserModel = {} as UserModel;
+  getBio(): string {
+    if ( this.author.bio && this.author.bio!.length > 70) {
+      return this.author.bio!.slice(0, 70) + '...';
+    } else {
+      return this.author.bio!;
+    }
+  }
 }

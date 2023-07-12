@@ -3,7 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { UserBlogService } from 'src/app/core/apiservices/user-blog.service';
-import { Blog } from 'src/app/core/models/blog';
+import { Blog } from 'src/app/core/models/blog.model';
 import { SnackbarService } from 'src/app/core/services/snackbar.service';
 import { UserAuthService } from 'src/app/core/services/user-auth.service';
 import { ConfirmationModalComponent } from 'src/app/core/shared/confirmation-modal/confirmation-modal.component';
@@ -20,7 +20,7 @@ export class UserBlogsComponent implements AfterViewInit, OnInit {
   displayedColumns: string[] = ['position', 'Title', 'Category', 'Action'];
   dataSource = new MatTableDataSource<Blog>(this.allBlogs);
 
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private snackbarService: SnackbarService, private userBlogService: UserBlogService, private userAuthService: UserAuthService, private dialog: MatDialog) { }
   ngAfterViewInit() {
@@ -51,6 +51,7 @@ export class UserBlogsComponent implements AfterViewInit, OnInit {
               next: (response) => {
                 this.dataSource.data = response.items;
                 this.allBlogs = response.items;
+                this.dataSource.paginator = this.paginator;
               }
             })
           }

@@ -4,7 +4,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { CategoryService } from 'src/app/core/apiservices/category.service';
 import { UserBlogService } from 'src/app/core/apiservices/user-blog.service';
-import { Blog } from 'src/app/core/models/blog';
+import { Blog } from 'src/app/core/models/blog.model';
 import { CategoryModel } from 'src/app/core/models/category.model';
 import { SnackbarService } from 'src/app/core/services/snackbar.service';
 import { UserAuthService } from 'src/app/core/services/user-auth.service';
@@ -30,8 +30,6 @@ export class AddBlogComponent {
   blog: Blog = new Blog;
   userId: number = this.userAuthService.getUserId();
   allCategories: CategoryModel[] = [];
-
-
   blogImageUrl: string | undefined;
   blogImage: File | null = null;
   blogForm: FormGroup = new FormGroup({
@@ -54,8 +52,6 @@ export class AddBlogComponent {
   }
 
   constructor(private snackbarService: SnackbarService,private activeRoute: ActivatedRoute, private router: Router, private userAuthService: UserAuthService, private categoryService: CategoryService, private userBlogService: UserBlogService) { }
-
-
   ngOnInit() {
     this.categoryService.getAll().subscribe({
       next: (response) => {

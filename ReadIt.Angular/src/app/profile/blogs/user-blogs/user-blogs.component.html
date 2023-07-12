@@ -40,9 +40,8 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
-    <mat-paginator *ngIf="allBlogs.length > 0" [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons
-      aria-label="Select page of Blogs">
-    </mat-paginator>
+
   </div>
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons hidePageSize></mat-paginator>
   <div *ngIf="allBlogs.length == 0" class="pt-5 text-center h2 text-secondary">Add Your First Blog</div>
 </div>

@@ -1,9 +1,9 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, SimpleChanges } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BlogService } from 'src/app/core/apiservices/blog.service';
 import { CategoryService } from 'src/app/core/apiservices/category.service';
-import { Blog } from 'src/app/core/models/blog';
+import { Blog } from 'src/app/core/models/blog.model';
 import { CategoryModel } from 'src/app/core/models/category.model';
 
 @Component({
@@ -14,8 +14,8 @@ import { CategoryModel } from 'src/app/core/models/category.model';
 export class SideBarComponent {
   categories: CategoryModel[] = [];
   recentBlogs: Blog[] = [];
-  @Input() categoryId: number  = {} as number;
-  @Input() blogId: number  = {} as number;
+  @Input() author: number = {} as number;
+  @Input() blogId: number = {} as number;
 
   serachCategoryForm: FormGroup = new FormGroup({
     searchText: new FormControl('', [Validators.required]),
@@ -30,24 +30,32 @@ export class SideBarComponent {
         this.categories = response.items;
       }
     })
-    this.blogService.recentByCountAndCategory(3, this.categoryId, this.blogId).subscribe({
+    this.getRecentBlogs()
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+    this.getRecentBlogs()
+  }
+  getRecentBlogs() {
+    this.blogService.recentByCountAndCategory(3, this.author, this.blogId).subscribe({
       next: (response) => {
         this.recentBlogs = response.items;
       }
     })
   }
-  onClick(id: number){
-    this.router.navigateByUrl(`/blog/${id}`)
+
+  onClick(id: number) {
+    this.router.navigate(['/blog', id])
   }
-  onsubmit(){
-    if(this.serachCategoryForm.value.searchText == ''){
+  onsubmit() {
+    if (this.serachCategoryForm.value.searchText == '') {
       this.categoryService.getAll().subscribe({
         next: (response) => {
           this.categories = response.items;
         }
       })
     }
-    else{
+    else {
       this.categoryService.searchCategory(this.serachCategoryForm.value.searchText).subscribe({
         next: (response) => {
           this.categories = response.items

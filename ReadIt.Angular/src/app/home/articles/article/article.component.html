@@ -17,7 +17,7 @@
             </div>
         </div>
         <h3 class="heading mb-3"><a routerLink="/blog/{{article.id}}">{{article.title}}</a></h3>
-        <div [innerHTML]="article.description | slice:0:100"></div>
+        <div [innerHTML]="getDescription()"></div>
         <p><a routerLink="/blog/{{article.id}}" class="btn-custom"><span class="ion-ios-arrow-round-forward mr-3"></span>Read
                 more</a></p>
     </div>

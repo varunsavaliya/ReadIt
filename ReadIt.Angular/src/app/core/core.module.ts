@@ -8,7 +8,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatTableDataSource, MatTableModule } from '@angular/material/table';
+import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardContent, MatCardModule } from '@angular/material/card';
@@ -29,6 +29,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { BannerComponent } from './shared/banner/banner.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FooterComponent,
     ConfirmationModalComponent,
     PaginationComponent,
+    BannerComponent
   ],
   imports: [
     RouterModule,
@@ -97,6 +99,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     FooterComponent,
     ConfirmationModalComponent,
     PaginationComponent,
+    BannerComponent
   ]
 })
 export class CoreModule { }

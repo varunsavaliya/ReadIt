@@ -121,16 +121,16 @@ namespace ReadIt.Repositories.Blog
             }
             return response;
         }
-        public ResponseListModel<BlogModel> RecentByCount(int count, long blogId = 0, long categoryId = 0)
+        public ResponseListModel<BlogModel> RecentByCount(int count, long blogId = 0, long userId = 0)
         {
             ResponseListModel<BlogModel> response = new();
             try
             {
                 List<TbBlog> blogs = new();
                 var blogsquery = _context.TbBlogs.Where(blog => blog.IsActive == true);
-                if (categoryId != 0)
+                if (userId != 0)
                 {
-                    blogsquery = blogsquery.Where(blog => blog.Id != blogId && blog.CategoryId == categoryId);
+                    blogsquery = blogsquery.Where(blog => blog.Id != blogId && blog.CreatedBy == userId);
                 }
 
                 blogs = blogsquery.Include(blog => blog.Category).Include(blog => blog.CreatedByNavigation).OrderByDescending(blog => blog.CreatedOn).Take(count).ToList();

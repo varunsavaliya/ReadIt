@@ -1,5 +1,5 @@
 import { CommaExpr } from '@angular/compiler';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CommentService } from 'src/app/core/apiservices/comment.service';
@@ -14,6 +14,7 @@ import { UserAuthService } from 'src/app/core/services/user-auth.service';
 })
 export class CommentFormComponent {
   @Input() blogId!: number;
+  @Output() commentAdded: EventEmitter<void> = new EventEmitter<void>();
   user!: UserModel;
   comment: CommentModel = {
     id: 0,
@@ -45,6 +46,13 @@ export class CommentFormComponent {
   }
   constructor(private userAuthService: UserAuthService, private commentService: CommentService, private router: Router) { }
   ngOnInit() {
+    this.setForm()
+  }
+
+  ngOnChanges() {
+    this.setForm()
+  }
+  setForm() {
     this.comment.blogId = this.blogId
     if (this.userAuthService.getUser()) {
       this.comment.createdBy = this.userAuthService.getUserId()
@@ -57,10 +65,10 @@ export class CommentFormComponent {
       this.name?.disable();
       this.email?.disable();
     }
-
   }
 
-  onsubmit() {
+  onSubmit(event : Event) {
+    event.preventDefault();
     if (this.commentForm.valid) {
       if (!this.comment.createdBy) {
         this.comment.name = this.commentForm.value.name
@@ -78,10 +86,16 @@ export class CommentFormComponent {
                 email: this.user.email
               })
             }
+            this.commentAdded.emit();
           }
           this.router.navigate(['/blog', this.blogId])
         }
       })
+    }
+    else {
+      Object.values(this.commentForm.controls).forEach(control => {
+        control.markAsTouched();
+      });
     }
   }
 }

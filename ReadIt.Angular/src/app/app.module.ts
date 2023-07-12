@@ -10,7 +10,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './auth/login/login.component';
-import { BannerComponent } from './home/banner/banner.component';
+import { BannerComponent } from './core/shared/banner/banner.component';
 import { HomeModule } from './home/home.module';
 
 @NgModule({

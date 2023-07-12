@@ -33,10 +33,10 @@ namespace ReadIt.Controllers
             return _blogService.GetById(id);
         }
 
-        [HttpGet("recent/{count}/{blogId}/{categoryId}")]
-        public ResponseListModel<BlogModel> RecentByCountAndCategory([FromRoute] int count,[FromRoute] long blogId, [FromRoute] long categoryId)
+        [HttpGet("recent/{count}/{blogId}/{userId}")]
+        public ResponseListModel<BlogModel> RecentByCountAndCategory([FromRoute] int count,[FromRoute] long blogId, [FromRoute] long userId)
         {
-            return _blogService.RecentByCount(count, blogId, categoryId);
+            return _blogService.RecentByCount(count, blogId, userId);
         }
         [HttpGet("recent/{count}")]
         public ResponseListModel<BlogModel> RecentByCount([FromRoute] int count)

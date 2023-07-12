@@ -17,7 +17,7 @@
           <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a>
           </li>
         </ul>
-        <div [innerHTML]="blog.description | slice:0:80"></div>
+        <div [innerHTML]="getDescription()"></div>
         <div class="meta">
           <p class="mb-0"><a>{{blog.createdOn | date}}</a> | <a>{{readTime}} min read</a></p>
         </div>

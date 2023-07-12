@@ -58,6 +58,8 @@ export class UserProfileComponent implements OnInit {
       }
     })
   }
+
+ 
   onFileChange(event: any) {
     this.avatarImage = event.target.files[0];
     const file = event.target.files[0];

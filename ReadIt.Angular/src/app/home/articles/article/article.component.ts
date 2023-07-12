@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Blog } from 'src/app/core/models/blog';
+import { Blog } from 'src/app/core/models/blog.model';
 
 @Component({
   selector: 'app-article',
@@ -8,4 +8,11 @@ import { Blog } from 'src/app/core/models/blog';
 })
 export class ArticleComponent {
   @Input() article: Blog = {} as Blog;
+  getDescription(): string {
+    if (this.article.description.length > 100) {
+      return this.article.description.slice(0, 100) + '...';
+    } else {
+      return this.article.description;
+    }
+  }
 }

@@ -6,7 +6,7 @@ export class Blog {
   title!: string
   description!: string
   tags!: string
-  createdBy?: number
+  createdBy!: number
   categoryId!: number
   user!: UserModel
   comments?: CommentModel[]

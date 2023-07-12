@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { ResponseDataModel, ResponseListModel } from '../models/response.model';
-import { Blog } from '../models/blog';
+import { Blog } from '../models/blog.model';
 
 @Injectable({
   providedIn: 'root'
@@ -36,7 +36,7 @@ export class BlogService {
   recentByCount(count: number): Observable<ResponseListModel<Blog>> {
     return this.http.get<ResponseListModel<Blog>>(this.ApiUrl + 'recent/' + count);
   }
-  recentByCountAndCategory(count: number, categoryId: number, blogId: number): Observable<ResponseListModel<Blog>> {
-    return this.http.get<ResponseListModel<Blog>>(this.ApiUrl + 'recent/' + count + '/' + blogId + '/' + categoryId);
+  recentByCountAndCategory(count: number, userId: number, blogId: number): Observable<ResponseListModel<Blog>> {
+    return this.http.get<ResponseListModel<Blog>>(this.ApiUrl + 'recent/' + count + '/' + blogId + '/' + userId);
   }
 }

@@ -16,8 +16,8 @@ import { LoginComponent } from '../login/login.component';
 export class SignupComponent {
   dialogConfig = new MatDialogConfig();
   modalDialog: MatDialogRef<LoginComponent, any> | undefined;
-  constructor(private snackbarService: SnackbarService,public dialogRef: MatDialogRef<SignupComponent>,private userAuthService: UserAuthService, private authService: AuthService, private router: Router, private matDialog: MatDialog) { }
-
+  public signupInvalid!: boolean;
+  
   signUpForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
     password: new FormControl('', [Validators.required]),
@@ -35,10 +35,8 @@ export class SignupComponent {
   get email() {
     return this.signUpForm.get('email');
   }
-  public signupInvalid!: boolean;
-  private formSubmitAttempt!: boolean;
-  private returnUrl!: string;
-
+  
+  constructor(private snackbarService: SnackbarService,public dialogRef: MatDialogRef<SignupComponent>,private userAuthService: UserAuthService, private authService: AuthService, private router: Router, private matDialog: MatDialog) { }
   onSignUp() {
     if (this.signUpForm.valid) {
       const user: UserModel = {

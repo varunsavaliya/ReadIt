@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BlogService } from 'src/app/core/apiservices/blog.service';
-import { Blog } from 'src/app/core/models/blog';
+import { Blog } from 'src/app/core/models/blog.model';
 
 @Component({
   selector: 'app-footer',

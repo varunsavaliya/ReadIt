@@ -15,7 +15,10 @@ export class CommentsComponent {
   showAllComments: boolean = false;
   constructor(private commentService: CommentService) { }
   ngOnInit() {
-    debugger
+    this.getCommentsByBlogId()
+  }
+
+  ngOnChanges(){
     this.getCommentsByBlogId()
   }
 
