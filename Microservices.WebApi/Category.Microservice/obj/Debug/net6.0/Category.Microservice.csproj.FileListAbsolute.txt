@@ -1,0 +1,156 @@
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\appsettings.Development.json
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\appsettings.json
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Category.Microservice.exe
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Category.Microservice.deps.json
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Category.Microservice.runtimeconfig.json
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Category.Microservice.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\ref\Category.Microservice.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Category.Microservice.pdb
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\AutoMapper.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Azure.Core.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Azure.Identity.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.Memory.Data.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\ReadIt.Core.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\ReadIt.Core.pdb
+D:\Projects\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.csproj.AssemblyReference.cache
+D:\Projects\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.AssemblyInfoInputs.cache
+D:\Projects\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.AssemblyInfo.cs
+D:\Projects\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.csproj.CoreCompileInputs.cache
+D:\Projects\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.MvcApplicationPartsAssemblyInfo.cs
+D:\Projects\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\staticwebassets.build.json
+D:\Projects\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\staticwebassets.development.json
+D:\Projects\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\scopedcss\bundle\Category.Microservice.styles.css
+D:\Projects\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.csproj.CopyComplete
+D:\Projects\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\ref\Category.Microservice.dll
+D:\Projects\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.pdb
+D:\Projects\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.genruntimeconfig.cache
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\appsettings.Development.json
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\appsettings.json
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Category.Microservice.exe
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Category.Microservice.deps.json
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Category.Microservice.runtimeconfig.json
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Category.Microservice.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\ref\Category.Microservice.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Category.Microservice.pdb
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\AutoMapper.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Azure.Core.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Azure.Identity.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.SqlServer.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.Logging.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Extensions.Primitives.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Identity.Client.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Identity.Client.Extensions.Msal.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.IdentityModel.JsonWebTokens.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.IdentityModel.Logging.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.IdentityModel.Tokens.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.OpenApi.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.SqlServer.Server.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.Configuration.ConfigurationManager.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.Drawing.Common.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.IdentityModel.Tokens.Jwt.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.Memory.Data.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.Runtime.Caching.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.Security.Permissions.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\System.Windows.Extensions.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\unix\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Data.SqlClient.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win-arm\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\ReadIt.Core.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\bin\Debug\net6.0\ReadIt.Core.pdb
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.csproj.AssemblyReference.cache
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.AssemblyInfoInputs.cache
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.AssemblyInfo.cs
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.csproj.CoreCompileInputs.cache
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.MvcApplicationPartsAssemblyInfo.cs
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\staticwebassets.build.json
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\staticwebassets.development.json
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\scopedcss\bundle\Category.Microservice.styles.css
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.csproj.CopyComplete
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\ref\Category.Microservice.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.pdb
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Category.Microservice\obj\Debug\net6.0\Category.Microservice.genruntimeconfig.cache

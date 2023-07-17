@@ -10,7 +10,7 @@
                 <div class="d-flex mb-3" *ngIf="blog.user">
                     <div class="mr-3"><span class="icon-calendar"></span> {{blog.createdOn | date}}</div>
                     <div class="mr-3"><span class="icon-person"></span> {{blog.user.name!.split(' ')[0]}}</div>
-                    <div class="mr-3"><span class="icon-chat"></span> {{blog.comments!.length}}</div>
+                    <div class="mr-3"><span class="icon-chat"></span> {{blog.totalComments}}</div>
                 </div>
                 <div [innerHTML]="blog.description"></div>
                 <div class="tag-widget post-tag-container mb-5 mt-5">

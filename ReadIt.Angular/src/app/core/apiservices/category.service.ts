@@ -11,7 +11,7 @@ import { ResponseDataModel, ResponseListModel } from '../models/response.model';
 
 export class CategoryService {
 
-  private ApiUrl : string = environment.baseApiUrl  + 'api/Category/';
+  private ApiUrl : string = environment.baseApiUrl  + 'gateway/category';
   constructor(private http: HttpClient) { }
 
   getAll():Observable<ResponseListModel<CategoryModel>>{
@@ -19,10 +19,10 @@ export class CategoryService {
   }
 
   searchCategory(searchText: string): Observable<ResponseListModel<CategoryModel>>{
-    return this.http.get<ResponseListModel<CategoryModel>>(this.ApiUrl + 'search/' + searchText);
+    return this.http.get<ResponseListModel<CategoryModel>>(this.ApiUrl+'/' + 'search/' + searchText);
   }
 
   getById(id: number): Observable<ResponseDataModel<CategoryModel>>{
-    return this.http.get<ResponseDataModel<CategoryModel>>(this.ApiUrl + id);
+    return this.http.get<ResponseDataModel<CategoryModel>>(this.ApiUrl+'/'  + id);
   }
 }

@@ -9,7 +9,7 @@ import { UserModel } from '../models/user.model';
   providedIn: 'root'
 })
 export class AuthorService {
-  private ApiUrl : string = environment.baseApiUrl  + 'api/Author/';
+  private ApiUrl : string = environment.baseApiUrl  + 'gateway/author';
 
   constructor(private http: HttpClient) { }
 
@@ -18,7 +18,7 @@ export class AuthorService {
       .set('pageSize', pageSize.toString())
       .set('currentPage', currentPage.toString());
   
-    return this.http.get<ResponseListModel<UserModel>>(this.ApiUrl, { params });
+    return this.http.get<ResponseListModel<UserModel>>(this.ApiUrl , { params });
   }
   
 }

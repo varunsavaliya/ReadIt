@@ -15,6 +15,8 @@ import { SignupComponent } from '../signup/signup.component';
 })
 export class LoginComponent {
   dialogConfig = new MatDialogConfig();
+  userEmail: string;
+  userPassword: string;
   modalDialog: MatDialogRef<SignupComponent, any> | undefined;
   public loginInvalid!: boolean;
   loginForm = new FormGroup({
@@ -27,21 +29,17 @@ export class LoginComponent {
   get password() {
     return this.loginForm.get('password');
   }
-  
+
   constructor(private snackbarService: SnackbarService, public dialogRef: MatDialogRef<LoginComponent>, private userAuthService: UserAuthService, private authService: AuthService, private router: Router, private matDialog: MatDialog) { }
   onLogin() {
     if (this.loginForm.valid) {
-      const user: UserModel = {
-        id: 0,
-        email: this.loginForm.controls.email.value,
-        password: this.loginForm.controls.password.value,
-        name: null,
-        bio: null,
-        avatar: null
-      };
+      if (this.loginForm.controls.email.value && this.loginForm.controls.password.value) {
+        this.userEmail = this.loginForm.controls.email.value;
+        this.userPassword = this.loginForm.controls.password.value;
+      }
       if (this.loginForm != null) {
       }
-      this.authService.login(user).subscribe({
+      this.authService.login(this.userEmail, this.userPassword).subscribe({
         next: (response) => {
           if (response.success) {
             this.userAuthService.login(response.token, response.data);

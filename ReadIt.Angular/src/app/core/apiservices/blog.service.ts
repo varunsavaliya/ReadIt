@@ -11,7 +11,7 @@ import { Blog } from '../models/blog.model';
 export class BlogService {
 
 
-  private ApiUrl: string = environment.baseApiUrl + 'api/Blog/';
+  private ApiUrl: string = environment.baseApiUrl + 'gateway/blog';
 
   constructor(private http: HttpClient) { }
 
@@ -23,20 +23,20 @@ export class BlogService {
   }
 
   getById(id: number): Observable<ResponseDataModel<Blog>> {
-    return this.http.get<ResponseDataModel<Blog>>(this.ApiUrl + id);
+    return this.http.get<ResponseDataModel<Blog>>(this.ApiUrl + '/' + id);
   }
 
   getByCategoryId(pageSize: number, currentPage: number, id: number): Observable<ResponseListModel<Blog>> {
     const params = new HttpParams()
       .set('pageSize', pageSize.toString())
       .set('currentPage', currentPage.toString());
-    return this.http.get<ResponseListModel<Blog>>(this.ApiUrl + 'category/' + id, {params});
+    return this.http.get<ResponseListModel<Blog>>(this.ApiUrl + '/'+ 'category/' + id, {params});
   }
 
   recentByCount(count: number): Observable<ResponseListModel<Blog>> {
-    return this.http.get<ResponseListModel<Blog>>(this.ApiUrl + 'recent/' + count);
+    return this.http.get<ResponseListModel<Blog>>(this.ApiUrl + '/'+ 'recent/' + count);
   }
   recentByCountAndCategory(count: number, userId: number, blogId: number): Observable<ResponseListModel<Blog>> {
-    return this.http.get<ResponseListModel<Blog>>(this.ApiUrl + 'recent/' + count + '/' + blogId + '/' + userId);
+    return this.http.get<ResponseListModel<Blog>>(this.ApiUrl +'/'+ 'recent/' + count + '/' + blogId + '/' + userId);
   }
 }

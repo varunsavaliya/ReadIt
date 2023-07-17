@@ -10,7 +10,7 @@ import { Blog } from '../models/blog.model';
 })
 export class UserBlogService {
 
-  private ApiUrl: string = environment.baseApiUrl + 'api/UserBlogs/';
+  private ApiUrl: string = environment.baseApiUrl + 'gateway/userblog/';
 
   constructor(private http: HttpClient) { }
 

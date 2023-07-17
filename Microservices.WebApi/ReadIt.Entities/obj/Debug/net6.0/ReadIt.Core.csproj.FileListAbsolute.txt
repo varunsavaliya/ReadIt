@@ -1,0 +1,30 @@
+D:\Projects\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.AssemblyInfoInputs.cache
+D:\Projects\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.AssemblyInfo.cs
+D:\Projects\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.csproj.CoreCompileInputs.cache
+D:\Projects\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\ReadIt.Core.deps.json
+D:\Projects\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\ReadIt.Core.runtimeconfig.json
+D:\Projects\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\ReadIt.Core.dll
+D:\Projects\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\ref\ReadIt.Core.dll
+D:\Projects\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\ReadIt.Core.pdb
+D:\Projects\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.dll
+D:\Projects\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ref\ReadIt.Core.dll
+D:\Projects\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.pdb
+D:\Projects\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.genruntimeconfig.cache
+D:\Projects\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.csproj.AssemblyReference.cache
+D:\Projects\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\appsettings.json
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\appsettings.json
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\ReadIt.Core.deps.json
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\ReadIt.Core.runtimeconfig.json
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\ReadIt.Core.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\ref\ReadIt.Core.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\ReadIt.Core.pdb
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.csproj.AssemblyReference.cache
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.AssemblyInfoInputs.cache
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.AssemblyInfo.cs
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.csproj.CoreCompileInputs.cache
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ref\ReadIt.Core.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.pdb
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.genruntimeconfig.cache

@@ -9,12 +9,12 @@ import { ResponseListModel, ResponseModel } from '../models/response.model';
   providedIn: 'root'
 })
 export class CommentService {
-  private ApiUrl : string = environment.baseApiUrl  + 'api/Comment/';
+  private ApiUrl : string = environment.baseApiUrl  + 'gateway/comment';
 
   constructor(private http: HttpClient) { }
 
   add(comment: CommentModel):Observable<ResponseModel>{
-    return this.http.post<ResponseModel>(this.ApiUrl, comment);
+    return this.http.post<ResponseModel>(this.ApiUrl + '/', comment);
   }
   
   getCommentsByBlogId(blogId: number, showAllComments: boolean): Observable<ResponseListModel<CommentModel>> {

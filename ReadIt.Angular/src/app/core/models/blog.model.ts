@@ -9,7 +9,7 @@ export class Blog {
   createdBy!: number
   categoryId!: number
   user!: UserModel
-  comments?: CommentModel[]
+  totalComments?: number
   categoryName?: string
   createdOn?: Date
   blogImage?: File | null
