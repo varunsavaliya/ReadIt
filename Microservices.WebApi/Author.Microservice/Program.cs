@@ -11,7 +11,7 @@ builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 
 builder.Services.AddScoped<IAuthorRepository, AuthorRepository>();
-builder.Services.AddScoped(typeof(IImageExtension<>), typeof(ImageExtension<>));
+builder.Services.AddScoped(typeof(IImageHandler<>), typeof(ImageHandler<>));
 
 
 builder.Services.AddControllers();

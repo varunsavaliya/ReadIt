@@ -12,9 +12,9 @@ namespace Blog.Microservice.Repository
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
-        private readonly IImageExtension<TbBlog> _imageExtention;
+        private readonly IImageHandler<TbBlog> _imageExtention;
 
-        public BlogRepository(ApplicationDbContext context, IMapper mapper, IImageExtension<TbBlog> imageExtention)
+        public BlogRepository(ApplicationDbContext context, IMapper mapper, IImageHandler<TbBlog> imageExtention)
         {
             _context = context;
             _mapper = mapper;
@@ -41,26 +41,7 @@ namespace Blog.Microservice.Repository
                         string base64String = Convert.ToBase64String(fileBytes);
                         data.User.Avatar = base64String;
                     }
-                    //List<TbComment> tbBlogComments = tbBlog.TbComments.ToList();
-                    //List<CommentModel> blogComments = new();
-                    //foreach (var blogComment in tbBlogComments)
-                    //{
-                    //    var comment = _mapper.Map<CommentModel>(blogComment);
-                    //    if (blogComment.CreatedBy != null)
-                    //    {
-                    //        comment.User = _mapper.Map<UserModel>(blogComment.CreatedByNavigation);
-                    //        comment.User.Password = null;
-                    //    }
 
-                    //    //if (comment.User.Avatar != null)
-                    //    //{
-                    //    //    var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Media", "Profile Images", data.User.Avatar);
-                    //    //    byte[] fileBytes = File.ReadAllBytes(filePath);
-                    //    //    string base64String = Convert.ToBase64String(fileBytes);
-                    //    //    comment.User.Avatar = base64String;
-                    //    //}
-                    //    blogComments.Add(comment);
-                    //}
                     data.TotalComments = tbBlog.TbComments.Select(comment => comment.IsActive == true).Count();
                     data.BlogImageUrl = _imageExtention.GetImage(tbBlog);
 
@@ -68,18 +49,18 @@ namespace Blog.Microservice.Repository
                     {
                         response.Data = data;
                         response.Success = true;
-                        response.Message = "Blog retrived successfully";
+                        response.Message = String.Format(Messages.SuccessMessage ,"Blog retrived");
                     }
                     else
                     {
                         response.Success = false;
-                        response.Message = "Error occured while retriving blog";
+                        response.Message = String.Format(Messages.ErrorMessage, "blog");
                     }
                 }
                 else
                 {
                     response.Success = false;
-                    response.Message = "No blog found with this id";
+                    response.Message = Messages.NoItemMessage;
                 }
             }
             catch (Exception ex)
@@ -110,11 +91,7 @@ namespace Blog.Microservice.Repository
 
                     blogModel.User = _mapper.Map<UserModel>(blog.CreatedByNavigation);
                     blogModel.User.Password = null;
-                    //var blogTbComments = blog.TbComments.Select(comment => comment.IsActive == true).ToList();
-                    //foreach (var blogComment in blogTbComments)
-                    //{
-                    //    blogComments.Add(_mapper.Map<CommentModel>(blogComment));
-                    //}
+
                     blogModel.TotalComments = blog.TbComments.Select(comment => comment.IsActive == true).Count();
                     blogModel.BlogImageUrl = _imageExtention.GetImage(blog);
 
@@ -123,7 +100,7 @@ namespace Blog.Microservice.Repository
                 }
                 response.Items = allBlogs;
                 response.Success = true;
-                response.Message = "Blogs retrived successfully";
+                response.Message = String.Format(Messages.SuccessMessage, "Blogs retrived");
             }
             catch (Exception ex)
             {
@@ -153,11 +130,7 @@ namespace Blog.Microservice.Repository
 
                     blogModel.User = _mapper.Map<UserModel>(blog.CreatedByNavigation);
                     blogModel.User.Password = null;
-                    //var blogTbComments = blog.TbComments.Select(comment => comment.IsActive == true).ToList();
-                    //foreach (var blogComment in blogTbComments)
-                    //{
-                    //    blogComments.Add(_mapper.Map<CommentModel>(blogComment));
-                    //}
+
                     blogModel.TotalComments = blog.TbComments.Select(comment => comment.IsActive == true).Count();
                     blogModel.BlogImageUrl = _imageExtention.GetImage(blog);
 
@@ -166,7 +139,7 @@ namespace Blog.Microservice.Repository
                 }
                 response.Items = allBlogs;
                 response.Success = true;
-                response.Message = count + " blogs retrived successfully";
+                response.Message = count + String.Format(Messages.SuccessMessage, "Blogs retrived");
             }
             catch (Exception ex)
             {

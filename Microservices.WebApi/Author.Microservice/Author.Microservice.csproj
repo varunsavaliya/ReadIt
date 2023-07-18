@@ -27,8 +27,4 @@
     <ProjectReference Include="..\ReadIt.Entities\ReadIt.Core.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Model\" />
-  </ItemGroup>
-
 </Project>

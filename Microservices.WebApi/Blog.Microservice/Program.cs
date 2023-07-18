@@ -10,7 +10,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 builder.Services.AddScoped<IBlogRepository, BlogRepository>();
-builder.Services.AddScoped(typeof(IImageExtension<>), typeof(ImageExtension<>));
+builder.Services.AddScoped(typeof(IImageHandler<>), typeof(ImageHandler<>));
 
 
 builder.Services.AddControllers();

@@ -12,7 +12,7 @@ builder.Services.AddAutoMapper(typeof(MapperConfig));
 
 builder.Services.AddScoped<IUserBlogsRepository, UserBlogsRepository>();
 builder.Services.AddScoped<IBlogRepository, BlogRepository>();
-builder.Services.AddScoped(typeof(IImageExtension<>), typeof(ImageExtension<>));
+builder.Services.AddScoped(typeof(IImageHandler<>), typeof(ImageHandler<>));
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("ReadIt")

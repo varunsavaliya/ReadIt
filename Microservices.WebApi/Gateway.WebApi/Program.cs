@@ -3,7 +3,7 @@ using Ocelot.Middleware;
 using ReadIt.Extentions.ImageExtention;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Services.AddScoped(typeof(IImageExtension<>), typeof(ImageExtension<>));
+builder.Services.AddScoped(typeof(IImageHandler<>), typeof(ImageHandler<>));
 
 builder.Services.AddCors(options =>
 {

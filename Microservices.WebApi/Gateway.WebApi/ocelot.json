@@ -1,6 +1,9 @@
 {
 
   "Routes": [
+
+    // Author API
+
     {
       "DownstreamPathTemplate": "/api/Author",
       "DownstreamScheme": "https",
@@ -12,10 +15,14 @@
       ],
       "UpstreamPathTemplate": "/gateway/author",
       "UpstreamHttpMethod": [ "GET" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "GatewayAuthenticationKey",
+      //  "AllowedScopes": []
+      //}
     },
 
 
-
+    // Blog API
 
     {
       "DownstreamPathTemplate": "/api/Blog",
@@ -79,7 +86,7 @@
     },
 
 
-
+    // Auth API
 
     {
       "DownstreamPathTemplate": "/api/Auth/login",
@@ -119,7 +126,7 @@
     },
 
 
-
+    // Category API
 
     {
       "DownstreamPathTemplate": "/api/Category/{id}",
@@ -159,6 +166,7 @@
     },
 
 
+    // Comment API
 
     {
       "DownstreamPathTemplate": "/api/Comment",
@@ -174,6 +182,7 @@
     },
 
 
+    // UserBlogs API
 
     {
       "DownstreamPathTemplate": "/api/UserBlogs/{id}",
@@ -213,7 +222,7 @@
     },
 
 
-
+    // User API
 
     {
       "DownstreamPathTemplate": "/api/User/{id}",
@@ -239,42 +248,5 @@
       "UpstreamHttpMethod": [ "POST" ],
       "UpstreamPathTemplate": "/gateway/user/edit/{id}"
     }
-    //{
-    //  "DownstreamPathTemplate": "/api/product/{id}",
-    //  "DownstreamScheme": "https",
-    //  "DownstreamHostAndPorts": [
-    //    {
-    //      "Host": "localhost",
-    //      "Port": 44337
-    //    }
-    //  ],
-    //  "UpstreamPathTemplate": "/gateway/product/{id}",
-    //  "UpstreamHttpMethod": [ "GET", "DELETE" ]
-    //},
-    //{
-    //  "DownstreamPathTemplate": "/api/customer",
-    //  "DownstreamScheme": "https",
-    //  "DownstreamHostAndPorts": [
-    //    {
-    //      "Host": "localhost",
-    //      "Port": 44373
-    //    }
-    //  ],
-    //  "UpstreamPathTemplate": "/gateway/customer",
-    //  "UpstreamHttpMethod": [ "POST", "PUT", "GET" ]
-    //},
-    //{
-    //  "DownstreamPathTemplate": "/api/customer/{id}",
-    //  "DownstreamScheme": "https",
-    //  "DownstreamHostAndPorts": [
-    //    {
-    //      "Host": "localhost",
-    //      "Port": 44373
-    //    }
-    //  ],
-    //  "UpstreamPathTemplate": "/gateway/customer/{id}",
-    //  "UpstreamHttpMethod": [ "GET", "DELETE" ]
-    //}
   ]
-
 }

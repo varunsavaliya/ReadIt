@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using ReadIt.Core.Constants;
 using ReadIt.Entities.Models;
 using ReadIt.Entities.ViewModels;
 using ReadIt.Entities.ViewModels.Common;
@@ -11,8 +12,8 @@ namespace UserBlogs.Microservice.Repository
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
-        private readonly IImageExtension<TbBlog> _imageExtention;
-        public UserBlogsRepository(ApplicationDbContext context, IMapper mapper, IImageExtension<TbBlog> imageExtention)
+        private readonly IImageHandler<TbBlog> _imageExtention;
+        public UserBlogsRepository(ApplicationDbContext context, IMapper mapper, IImageHandler<TbBlog> imageExtention)
         {
             _context = context;
             _mapper = mapper;
@@ -37,7 +38,7 @@ namespace UserBlogs.Microservice.Repository
                 }
 
 
-                response.Message = "Your blog has been added successfully";
+                response.Message = string.Format(Messages.NewItemMessage, "blog");
                 response.Success = true;
             }
             catch (Exception ex)
@@ -67,7 +68,7 @@ namespace UserBlogs.Microservice.Repository
                     _imageExtention.AddImages(blog.BlogImage, tbBlog);
                 }
 
-                response.Message = "Your blog has been updated successfully";
+                response.Message = string.Format(Messages.UpdateMessage, "blog");
                 response.Success = true;
             }
             catch (Exception ex)
@@ -96,7 +97,7 @@ namespace UserBlogs.Microservice.Repository
                 _context.SaveChanges();
 
                 response.Success = true;
-                response.Message = "Your Blog has been deleted successfully";
+                response.Message = string.Format(Messages.DeleteMessage, "blog");
             }
             catch (Exception ex)
             {
@@ -162,7 +163,7 @@ namespace UserBlogs.Microservice.Repository
                 }
                 response.Items = allBlogs;
                 response.Success = true;
-                response.Message = "Blogs retrived successfully";
+                response.Message = string.Format(Messages.SuccessMessage, "Blogs");
             }
             catch (Exception ex)
             {

@@ -13,7 +13,6 @@ D:\Projects\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.pd
 D:\Projects\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.genruntimeconfig.cache
 D:\Projects\Microservices.WebApi\ReadIt.Entities\obj\Debug\net6.0\ReadIt.Core.csproj.AssemblyReference.cache
 D:\Projects\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\appsettings.json
-D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\appsettings.json
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\ReadIt.Core.deps.json
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\ReadIt.Core.runtimeconfig.json
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\ReadIt.Entities\bin\Debug\net6.0\ReadIt.Core.dll

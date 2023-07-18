@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using ReadIt.Core.Constants;
 using ReadIt.Entities.Models;
 using ReadIt.Entities.ViewModels;
 using ReadIt.Entities.ViewModels.Common;
@@ -11,9 +12,9 @@ namespace Author.microservice.Repository
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
-        private readonly IImageExtension<TbUser> _imageExtension;
+        private readonly IImageHandler<TbUser> _imageExtension;
 
-        public AuthorRepository(ApplicationDbContext context, IMapper mapper, IImageExtension<TbUser> imageExtension)
+        public AuthorRepository(ApplicationDbContext context, IMapper mapper, IImageHandler<TbUser> imageExtension)
         {
             _context = context;
             _mapper = mapper;
@@ -36,9 +37,6 @@ namespace Author.microservice.Repository
 
                     if (user.Avatar != null)
                     {
-                        //var filePath = Path.Combine(Directory.GetCurrentDirectory(), "Media", "Profile Images", user.Avatar);
-                        //byte[] fileBytes = File.ReadAllBytes(filePath);
-                        //string base64String = Convert.ToBase64String(fileBytes);
                         userModel.Avatar = _imageExtension.GetImage(user);
                     }
 
@@ -47,7 +45,7 @@ namespace Author.microservice.Repository
                 response.Items = items;
                 response.TotalItems = totalUsers;
                 response.Success = true;
-                response.Message = "Authors retrieved successfully";
+                response.Message = String.Format(Messages.SuccessMessage, "Authors retrived");
             }
             catch (Exception ex)
             {

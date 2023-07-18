@@ -13,19 +13,19 @@ public partial class TbComment
 
     public long? CreatedBy { get; set; }
 
-    public string? Name { get; set; }
+    public string Name { get; set; }
 
-    public string? Email { get; set; }
+    public string Email { get; set; }
 
-    public string? Website { get; set; }
+    public string Website { get; set; }
 
     public DateTime CreatedOn { get; set; }
 
-    public DateTime? UpdatedOn { get; set; }
+    public DateTime UpdatedOn { get; set; }
 
-    public bool? IsActive { get; set; }
+    public bool IsActive { get; set; }
 
     public virtual TbBlog Blog { get; set; } = null!;
 
-    public virtual TbUser? CreatedByNavigation { get; set; }
+    public virtual TbUser CreatedByNavigation { get; set; }
 }

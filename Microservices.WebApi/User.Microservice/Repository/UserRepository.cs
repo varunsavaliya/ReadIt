@@ -1,6 +1,7 @@
 ﻿
 using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using ReadIt.Core.Constants;
 using ReadIt.Entities.Models;
 using ReadIt.Entities.ViewModels;
 using ReadIt.Entities.ViewModels.Common;
@@ -12,9 +13,9 @@ namespace User.Microservice.Repository
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
-        private readonly IImageExtension<TbUser> _imageExtention;
+        private readonly IImageHandler<TbUser> _imageExtention;
 
-        public UserRepository(ApplicationDbContext context, IMapper mapper, IImageExtension<TbUser> imageExtention)
+        public UserRepository(ApplicationDbContext context, IMapper mapper, IImageHandler<TbUser> imageExtention)
         {
             _context = context;
             _mapper = mapper;
@@ -33,7 +34,7 @@ namespace User.Microservice.Repository
                 user.Avatar = _imageExtention.GetImage(tbUser);
                 response.Data = user;
                 response.Success = true;
-                response.Message = "User details retrieved successfully";
+                response.Message = String.Format(Messages.SuccessMessage, "User details retrived");
             }
             catch (Exception ex)
             {
@@ -59,7 +60,7 @@ namespace User.Microservice.Repository
                     _imageExtention.AddImages(user.AvatarImage, tbUser);
                 }
                 response.Success = true;
-                response.Message = "User details updated successfully";
+                response.Message = String.Format(Messages.UpdateMessage, "User details");
             }
             catch (Exception ex)
             {

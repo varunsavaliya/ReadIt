@@ -5,14 +5,12 @@ using ReadIt.Entities.Models;
 
 namespace ReadIt.Extentions.ImageExtention
 {
-    public class ImageExtension<T> : IImageExtension<T> where T : class
+    public class ImageHandler<T> : IImageHandler<T> where T : class
     {
         private readonly ApplicationDbContext _context;
-        private readonly IConfiguration _configuration;
-        public ImageExtension(ApplicationDbContext context, IConfiguration configuration)
+        public ImageHandler(ApplicationDbContext context)
         {
             _context = context;
-            _configuration = configuration;
         }
         public void DeleteImages(long id)
         {

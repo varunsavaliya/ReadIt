@@ -1,5 +1,6 @@
 ﻿
 using AutoMapper;
+using ReadIt.Core.Constants;
 using ReadIt.Entities.Models;
 using ReadIt.Entities.ViewModels;
 using ReadIt.Entities.ViewModels.Common;
@@ -33,7 +34,7 @@ namespace Category.Microservice.Repository
                 }
                 response.Items = categoryList;
                 response.Success = true;
-                response.Message = "Category list retrieved successfully";
+                response.Message = String.Format(Messages.SuccessMessage, "Categories retrived");
             }
             catch (Exception ex)
             {
@@ -50,7 +51,7 @@ namespace Category.Microservice.Repository
             {
                 response.Data = _mapper.Map<CategoryModel>(_context.TbCategories.Find(id));
                 response.Success = true;
-                response.Message = "Category retrieved successfully";
+                response.Message = String.Format(Messages.SuccessMessage, "Category retrived");
             }
             catch (Exception ex)
             {

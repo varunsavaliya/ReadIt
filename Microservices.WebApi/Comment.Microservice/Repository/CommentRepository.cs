@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using ReadIt.Core.Constants;
 using ReadIt.Entities.Models;
 using ReadIt.Entities.ViewModels;
 using ReadIt.Entities.ViewModels.Common;
@@ -11,9 +12,9 @@ namespace Comment.Microservice.Repository
     {
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
-        private readonly IImageExtension<TbUser> _imageExtension;
+        private readonly IImageHandler<TbUser> _imageExtension;
 
-        public CommentRepository(ApplicationDbContext context, IMapper mapper, IImageExtension<TbUser> imageExtension)
+        public CommentRepository(ApplicationDbContext context, IMapper mapper, IImageHandler<TbUser> imageExtension)
         {
             _context = context;
             _mapper = mapper;
@@ -26,7 +27,7 @@ namespace Comment.Microservice.Repository
             {
                 response.Data = _mapper.Map<CommentModel>(_context.TbComments.Find(id));
                 response.Success = true;
-                response.Message = "Comment retrived successfully";
+                response.Message = String.Format(Messages.SuccessMessage, "Comment retrived");
             }
             catch (Exception ex)
             {
@@ -62,7 +63,7 @@ namespace Comment.Microservice.Repository
 
                 response.Items = comments;
                 response.Success = true;
-                response.Message = "Comments retrived successfully";
+                response.Message = String.Format(Messages.SuccessMessage, "Comments retrived");
             }
             catch (Exception ex)
             {
@@ -81,7 +82,7 @@ namespace Comment.Microservice.Repository
                 _context.TbComments.Add(tbComment);
                 _context.SaveChanges();
 
-                response.Message = "Comment added successfully";
+                response.Message = String.Format(Messages.NewItemMessage, "Comment");
                 response.Success = true;
             }
             catch (Exception ex)
