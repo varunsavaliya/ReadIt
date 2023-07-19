@@ -164,3 +164,4 @@ D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\obj\Debug
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\obj\Debug\net6.0\ref\Gateway.WebApi.dll
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\obj\Debug\net6.0\Gateway.WebApi.pdb
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\obj\Debug\net6.0\Gateway.WebApi.genruntimeconfig.cache
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\bin\Debug\net6.0\ocelot.author.json
