@@ -1,6 +1,6 @@
 using Auth.Microservice.Repository;
 using Microsoft.EntityFrameworkCore;
-using ReadIt.Entities.Models;
+using ReadIt.Core.DataModels;
 using ReadIt.Extentions;
 
 var builder = WebApplication.CreateBuilder(args);

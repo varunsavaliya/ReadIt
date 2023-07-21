@@ -164,3 +164,4 @@ D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\o
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\obj\Debug\net6.0\ref\UserBlogs.Microservice.dll
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\obj\Debug\net6.0\UserBlogs.Microservice.pdb
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\obj\Debug\net6.0\UserBlogs.Microservice.genruntimeconfig.cache
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

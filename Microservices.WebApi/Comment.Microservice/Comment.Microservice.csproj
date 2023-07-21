@@ -11,6 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Notification.Microservice\Notification.Microservice.csproj" />
     <ProjectReference Include="..\ReadIt.Entities\ReadIt.Core.csproj" />
   </ItemGroup>
 

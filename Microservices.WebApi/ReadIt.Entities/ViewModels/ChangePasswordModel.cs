@@ -1,4 +1,4 @@
-﻿namespace ReadIt.Entities.ViewModels
+﻿namespace ReadIt.Core.ViewModels
 {
     public class ChangePasswordModel
     {

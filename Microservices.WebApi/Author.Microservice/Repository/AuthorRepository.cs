@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using ReadIt.Core.Constants;
-using ReadIt.Entities.Models;
-using ReadIt.Entities.ViewModels;
-using ReadIt.Entities.ViewModels.Common;
+using ReadIt.Core.DataModels;
+using ReadIt.Core.ViewModels;
+using ReadIt.Core.ViewModels.Common;
 using ReadIt.Extentions.ImageExtention;
 
 namespace Author.microservice.Repository

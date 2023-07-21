@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using ReadIt.Core.Constants;
+using ReadIt.Core.DataModels;
 using ReadIt.Core.Extensions;
-using ReadIt.Entities.Models;
-using ReadIt.Entities.ViewModels;
-using ReadIt.Entities.ViewModels.Common;
+using ReadIt.Core.ViewModels;
+using ReadIt.Core.ViewModels.Common;
 
 namespace Auth.Microservice.Repository
 {
@@ -36,7 +36,7 @@ namespace Auth.Microservice.Repository
                 {
                     validUser.Password = null;
                     response.Data = _mapper.Map<UserModel>(validUser);
-                    //response.Token = JWTExtention.GetJwtToken(validUser, _configuration);
+                    response.Token = JWTExtention.GetJwtToken(validUser, _configuration);
                     response.Success = true;
                     response.Message = AuthMessages.LogInMessage;
                 }
@@ -78,7 +78,7 @@ namespace Auth.Microservice.Repository
 
                     validUser.Password = null;
                     response.Data = _mapper.Map<UserModel>(validUser);
-                    //response.Token = JWTExtention.GetJwtToken(validUser, _configuration);
+                    response.Token = JWTExtention.GetJwtToken(validUser, _configuration);
                     response.Success = true;
                     response.Message = AuthMessages.SignUpMessage;
                 }

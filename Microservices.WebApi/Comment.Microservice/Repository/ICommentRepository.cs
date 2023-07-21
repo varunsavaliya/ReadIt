@@ -1,6 +1,6 @@
 ﻿
-using ReadIt.Entities.ViewModels;
-using ReadIt.Entities.ViewModels.Common;
+using ReadIt.Core.ViewModels;
+using ReadIt.Core.ViewModels.Common;
 
 namespace Comment.Microservice.Repository
 {
@@ -9,7 +9,7 @@ namespace Comment.Microservice.Repository
         public ResponseDataModel<CommentModel> GetById(long id);
         public ResponseListModel<CommentModel> GetAllByBlogId(long id, bool showAllComments);
 
-        public ResponseModel Create(CommentModel comment);
+        public Task<ResponseModel> Create(CommentModel comment);
 
     }
 }

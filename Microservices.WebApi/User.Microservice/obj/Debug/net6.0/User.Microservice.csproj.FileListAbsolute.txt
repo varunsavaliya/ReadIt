@@ -76,3 +76,4 @@ D:\Projects\Read It Project\ReadIt\Microservices.WebApi\User.Microservice\obj\De
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\User.Microservice\obj\Debug\net6.0\ref\User.Microservice.dll
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\User.Microservice\obj\Debug\net6.0\User.Microservice.pdb
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\User.Microservice\obj\Debug\net6.0\User.Microservice.genruntimeconfig.cache
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\User.Microservice\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -1,8 +1,8 @@
 ﻿using Comment.Microservice.Repository;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ReadIt.Entities.ViewModels;
-using ReadIt.Entities.ViewModels.Common;
+using ReadIt.Core.ViewModels;
+using ReadIt.Core.ViewModels.Common;
 
 namespace ReadIt.Controllers
 {
@@ -18,9 +18,9 @@ namespace ReadIt.Controllers
         }
 
         [HttpPost]
-        public ResponseModel Create([FromBody] CommentModel comment)
+        public async Task<ResponseModel> Create([FromBody] CommentModel comment)
         {
-            return _commentService.Create(comment);
+            return await _commentService.Create(comment);
         }
 
         //[HttpGet("{id}")]

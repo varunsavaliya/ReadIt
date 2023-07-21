@@ -1,7 +1,7 @@
 ﻿using Author.microservice.Repository;
 using Microsoft.AspNetCore.Mvc;
-using ReadIt.Entities.ViewModels;
-using ReadIt.Entities.ViewModels.Common;
+using ReadIt.Core.ViewModels;
+using ReadIt.Core.ViewModels.Common;
 
 namespace Author.microservice.Controllers
 {

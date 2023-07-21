@@ -1,8 +1,11 @@
 using Blog.Microservice.Repository;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using ReadIt.Entities.Models;
+using Microsoft.IdentityModel.Tokens;
+using ReadIt.Core.DataModels;
 using ReadIt.Extentions;
 using ReadIt.Extentions.ImageExtention;
+using System.Text;
 using UserBlogs.Microservice.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +16,26 @@ builder.Services.AddAutoMapper(typeof(MapperConfig));
 builder.Services.AddScoped<IUserBlogsRepository, UserBlogsRepository>();
 builder.Services.AddScoped<IBlogRepository, BlogRepository>();
 builder.Services.AddScoped(typeof(IImageHandler<>), typeof(ImageHandler<>));
+
+builder.Services.AddAuthentication(options =>
+{
+    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(o =>
+{
+    o.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Issuer"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"])),
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = false,
+        ValidateIssuerSigningKey = true
+    };
+});
+
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(
     builder.Configuration.GetConnectionString("ReadIt")
@@ -32,8 +55,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+app.UseAuthentication();
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

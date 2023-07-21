@@ -1,6 +1,6 @@
 using Blog.Microservice.Repository;
 using Microsoft.EntityFrameworkCore;
-using ReadIt.Entities.Models;
+using ReadIt.Core.DataModels;
 using ReadIt.Extentions;
 using ReadIt.Extentions.ImageExtention;
 

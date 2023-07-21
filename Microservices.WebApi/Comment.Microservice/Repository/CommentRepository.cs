@@ -1,9 +1,12 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
+using Notification.Microservice.Models;
+using Notification.Microservice.Repository;
 using ReadIt.Core.Constants;
-using ReadIt.Entities.Models;
-using ReadIt.Entities.ViewModels;
-using ReadIt.Entities.ViewModels.Common;
+using ReadIt.Core.DataModels;
+using ReadIt.Core.ViewModels;
+using ReadIt.Core.ViewModels.Common;
 using ReadIt.Extentions.ImageExtention;
 
 namespace Comment.Microservice.Repository
@@ -13,12 +16,14 @@ namespace Comment.Microservice.Repository
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
         private readonly IImageHandler<TbUser> _imageExtension;
+        //private readonly IHubContext<NotifyHub, INotificationHub> _notify;
 
-        public CommentRepository(ApplicationDbContext context, IMapper mapper, IImageHandler<TbUser> imageExtension)
+        public CommentRepository(ApplicationDbContext context, IMapper mapper, IImageHandler<TbUser> imageExtension /*IHubContext<NotifyHub, INotificationHub> notify*/)
         {
             _context = context;
             _mapper = mapper;
             _imageExtension = imageExtension;
+            //_notify = notify;
         }
         public ResponseDataModel<CommentModel> GetById(long id)
         {
@@ -73,7 +78,7 @@ namespace Comment.Microservice.Repository
             return response;
         }
 
-        public ResponseModel Create(CommentModel comment)
+        public async Task<ResponseModel> Create(CommentModel comment)
         {
             ResponseModel response = new();
             try
@@ -81,6 +86,23 @@ namespace Comment.Microservice.Repository
                 TbComment tbComment = _mapper.Map<TbComment>(comment);
                 _context.TbComments.Add(tbComment);
                 _context.SaveChanges();
+
+                NotificationModel notifModel = new();
+
+                string notifMessage = String.Empty;
+                
+                if(comment.CreatedBy != null)
+                {
+                    notifMessage = _context.TbUsers.Find(comment.CreatedBy).Name + " commented on your post: " + _context.TbBlogs.Find(comment.BlogId).Title;
+                }
+                else
+                {
+                    notifMessage = comment.Name + " commented on your post: " + _context.TbBlogs.Find(comment.BlogId).Title;
+                }
+
+                notifModel.NotificationMessage = notifMessage;
+
+                //await _notify.Clients.All.BroadcastMessage(notifModel);
 
                 response.Message = String.Format(Messages.NewItemMessage, "Comment");
                 response.Success = true;

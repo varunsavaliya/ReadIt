@@ -1,8 +1,8 @@
 ﻿
 using Microsoft.AspNetCore.Http;
-using ReadIt.Entities.ViewModels.Common;
+using ReadIt.Core.ViewModels.Common;
 
-namespace ReadIt.Entities.ViewModels
+namespace ReadIt.Core.ViewModels
 {
     public class UserModel: BaseModel
     {

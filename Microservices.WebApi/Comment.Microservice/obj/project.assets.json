@@ -905,6 +905,23 @@
           }
         }
       },
+      "Notification.Microservice/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "dependencies": {
+          "ReadIt.Core": "1.0.0",
+          "Swashbuckle.AspNetCore": "6.2.3"
+        },
+        "compile": {
+          "bin/placeholder/Notification.Microservice.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Notification.Microservice.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
       "ReadIt.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v6.0",
@@ -2802,6 +2819,11 @@
         "useSharedDesignerContext.txt"
       ]
     },
+    "Notification.Microservice/1.0.0": {
+      "type": "project",
+      "path": "../Notification.Microservice/Notification.Microservice.csproj",
+      "msbuildProject": "../Notification.Microservice/Notification.Microservice.csproj"
+    },
     "ReadIt.Core/1.0.0": {
       "type": "project",
       "path": "../ReadIt.Entities/ReadIt.Core.csproj",
@@ -2810,6 +2832,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "Notification.Microservice >= 1.0.0",
       "ReadIt.Core >= 1.0.0",
       "Swashbuckle.AspNetCore >= 6.2.3"
     ]
@@ -2848,6 +2871,9 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
+            "D:\\Projects\\Read It Project\\ReadIt\\Microservices.WebApi\\Notification.Microservice\\Notification.Microservice.csproj": {
+              "projectPath": "D:\\Projects\\Read It Project\\ReadIt\\Microservices.WebApi\\Notification.Microservice\\Notification.Microservice.csproj"
+            },
             "D:\\Projects\\Read It Project\\ReadIt\\Microservices.WebApi\\ReadIt.Entities\\ReadIt.Core.csproj": {
               "projectPath": "D:\\Projects\\Read It Project\\ReadIt\\Microservices.WebApi\\ReadIt.Entities\\ReadIt.Core.csproj"
             }

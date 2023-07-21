@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ReadIt.Entities.Models;
+namespace ReadIt.Core.DataModels;
 
 public partial class TbCategory
 {
     public long Id { get; set; }
 
-    public string Name { get; set; } = null!;
+    public string Name { get; set; }
 
     public DateTime CreatedOn { get; set; }
 

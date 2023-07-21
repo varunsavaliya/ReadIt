@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using ReadIt.Core.Constants;
-using ReadIt.Entities.Models;
+using ReadIt.Core.DataModels;
 
 namespace ReadIt.Extentions.ImageExtention
 {

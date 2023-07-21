@@ -1,15 +1,15 @@
 ﻿using Blog.Microservice.Repository;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ReadIt.Entities.ViewModels;
-using ReadIt.Entities.ViewModels.Common;
+using ReadIt.Core.ViewModels;
+using ReadIt.Core.ViewModels.Common;
 using UserBlogs.Microservice.Repository;
 
 namespace UserBlogs.Microservice.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    //[Authorize]
+    [Authorize]
     public class UserBlogsController : ControllerBase
     {
         private readonly IUserBlogsRepository _userBlogsService;

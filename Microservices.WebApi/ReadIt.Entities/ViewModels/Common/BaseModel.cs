@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ReadIt.Entities.ViewModels.Common
+namespace ReadIt.Core.ViewModels.Common
 {
     public class BaseModel
     {

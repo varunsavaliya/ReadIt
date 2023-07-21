@@ -15,15 +15,17 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{7F9B2F93-4
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReadIt.Core", "ReadIt.Entities\ReadIt.Core.csproj", "{32BDFA2A-8A0F-4B6F-9005-C128A732A5E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Auth.Microservice", "Auth.Microservice\Auth.Microservice.csproj", "{28A46376-E449-48A5-B2C8-70A72DA525C1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Auth.Microservice", "Auth.Microservice\Auth.Microservice.csproj", "{28A46376-E449-48A5-B2C8-70A72DA525C1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Category.Microservice", "Category.Microservice\Category.Microservice.csproj", "{0239890F-0E71-46E3-99D7-5D1212EB0214}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Category.Microservice", "Category.Microservice\Category.Microservice.csproj", "{0239890F-0E71-46E3-99D7-5D1212EB0214}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Comment.Microservice", "Comment.Microservice\Comment.Microservice.csproj", "{C120B132-B85A-4515-846A-53E6253B5DF7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Comment.Microservice", "Comment.Microservice\Comment.Microservice.csproj", "{C120B132-B85A-4515-846A-53E6253B5DF7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserBlogs.Microservice", "UserBlogs.Microservice\UserBlogs.Microservice.csproj", "{8605638C-04F6-4E35-9556-257D3AF0C2F4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "UserBlogs.Microservice", "UserBlogs.Microservice\UserBlogs.Microservice.csproj", "{8605638C-04F6-4E35-9556-257D3AF0C2F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "User.Microservice", "User.Microservice\User.Microservice.csproj", "{A8181BB0-3223-4DD7-9F55-37C2C1721913}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "User.Microservice", "User.Microservice\User.Microservice.csproj", "{A8181BB0-3223-4DD7-9F55-37C2C1721913}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notification.Microservice", "Notification.Microservice\Notification.Microservice.csproj", "{5DBCAECF-BB65-4335-983F-E2284582E024}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,10 @@ Global
 		{A8181BB0-3223-4DD7-9F55-37C2C1721913}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A8181BB0-3223-4DD7-9F55-37C2C1721913}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A8181BB0-3223-4DD7-9F55-37C2C1721913}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5DBCAECF-BB65-4335-983F-E2284582E024}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DBCAECF-BB65-4335-983F-E2284582E024}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DBCAECF-BB65-4335-983F-E2284582E024}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DBCAECF-BB65-4335-983F-E2284582E024}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +86,7 @@ Global
 		{C120B132-B85A-4515-846A-53E6253B5DF7} = {F8AD83D0-E402-4E49-A6E2-BA69DC749CE8}
 		{8605638C-04F6-4E35-9556-257D3AF0C2F4} = {F8AD83D0-E402-4E49-A6E2-BA69DC749CE8}
 		{A8181BB0-3223-4DD7-9F55-37C2C1721913} = {F8AD83D0-E402-4E49-A6E2-BA69DC749CE8}
+		{5DBCAECF-BB65-4335-983F-E2284582E024} = {F8AD83D0-E402-4E49-A6E2-BA69DC749CE8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {583D482C-50E8-4D25-B394-217E2EC81BBD}

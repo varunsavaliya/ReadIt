@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 
-namespace ReadIt.Entities.Models;
+namespace ReadIt.Core.DataModels;
 
 public partial class ApplicationDbContext : DbContext
 {
@@ -23,14 +23,13 @@ public partial class ApplicationDbContext : DbContext
 
     public virtual DbSet<TbComment> TbComments { get; set; }
 
+    public virtual DbSet<TbNotification> TbNotifications { get; set; }
+
     public virtual DbSet<TbUser> TbUsers { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-       => optionsBuilder.UseSqlServer("Name=ConnectionStrings:ReadIt");
-
-//    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-//#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
-//        => optionsBuilder.UseSqlServer("Data Source=PCT35\\SQL2017;Initial Catalog=ReadIt;User ID=sa;Password=Tatva@123;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
+#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see http://go.microsoft.com/fwlink/?LinkId=723263.
+        => optionsBuilder.UseSqlServer("Server=PCT35\\SQL2017;Database=ReadIt;User ID=sa;Password=Tatva@123;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -43,10 +42,14 @@ public partial class ApplicationDbContext : DbContext
             entity.Property(e => e.CreatedOn)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
-            entity.Property(e => e.Description).IsUnicode(false);
+            entity.Property(e => e.Description)
+                .IsRequired()
+                .IsUnicode(false);
             entity.Property(e => e.IsActive).HasDefaultValue(true);
             entity.Property(e => e.Tags).IsUnicode(false);
-            entity.Property(e => e.Title).IsUnicode(false);
+            entity.Property(e => e.Title)
+                .IsRequired()
+                .IsUnicode(false);
             entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
 
             entity.HasOne(d => d.Category).WithMany(p => p.TbBlogs)
@@ -70,7 +73,9 @@ public partial class ApplicationDbContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
             entity.Property(e => e.IsActive).HasDefaultValue(true);
-            entity.Property(e => e.MediaPath).IsUnicode(false);
+            entity.Property(e => e.MediaPath)
+                .IsRequired()
+                .IsUnicode(false);
             entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
 
             entity.HasOne(d => d.Blog).WithMany(p => p.TbBlogMedia)
@@ -90,6 +95,7 @@ public partial class ApplicationDbContext : DbContext
                 .HasColumnType("datetime");
             entity.Property(e => e.IsActive).HasDefaultValue(true);
             entity.Property(e => e.Name)
+                .IsRequired()
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
@@ -113,7 +119,9 @@ public partial class ApplicationDbContext : DbContext
             entity.Property(e => e.Name)
                 .HasMaxLength(50)
                 .IsUnicode(false);
-            entity.Property(e => e.Text).IsUnicode(false);
+            entity.Property(e => e.Text)
+                .IsRequired()
+                .IsUnicode(false);
             entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
             entity.Property(e => e.Website)
                 .HasMaxLength(50)
@@ -130,6 +138,22 @@ public partial class ApplicationDbContext : DbContext
                 .HasConstraintName("FK_Comments_User_UserId");
         });
 
+        modelBuilder.Entity<TbNotification>(entity =>
+        {
+            entity
+                .HasNoKey()
+                .ToTable("tbNotification");
+
+            entity.Property(e => e.CreatedOn)
+                .HasDefaultValueSql("(getdate())")
+                .HasColumnType("datetime");
+            entity.Property(e => e.Id).ValueGeneratedOnAdd();
+            entity.Property(e => e.IsRead)
+                .IsRequired()
+                .HasDefaultValue(false);
+            entity.Property(e => e.UpdatedOn).HasColumnType("datetime");
+        });
+
         modelBuilder.Entity<TbUser>(entity =>
         {
             entity.HasKey(e => e.Id).HasName("PK_Users");
@@ -141,12 +165,16 @@ public partial class ApplicationDbContext : DbContext
             entity.Property(e => e.CreatedOn)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
-            entity.Property(e => e.Email).IsUnicode(false);
+            entity.Property(e => e.Email)
+                .IsRequired()
+                .IsUnicode(false);
             entity.Property(e => e.IsActive).HasDefaultValue(true);
             entity.Property(e => e.Name)
+                .IsRequired()
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.Password)
+                .IsRequired()
                 .HasMaxLength(50)
                 .IsUnicode(false);
             entity.Property(e => e.UpdatedOn).HasColumnType("datetime");

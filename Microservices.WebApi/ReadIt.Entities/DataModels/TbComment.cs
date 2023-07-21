@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ReadIt.Entities.Models;
+namespace ReadIt.Core.DataModels;
 
 public partial class TbComment
 {
     public long Id { get; set; }
 
-    public string Text { get; set; } = null!;
+    public string Text { get; set; }
 
     public long BlogId { get; set; }
 
@@ -21,11 +21,11 @@ public partial class TbComment
 
     public DateTime CreatedOn { get; set; }
 
-    public DateTime UpdatedOn { get; set; }
+    public DateTime? UpdatedOn { get; set; }
 
-    public bool IsActive { get; set; }
+    public bool? IsActive { get; set; }
 
-    public virtual TbBlog Blog { get; set; } = null!;
+    public virtual TbBlog Blog { get; set; }
 
     public virtual TbUser CreatedByNavigation { get; set; }
 }

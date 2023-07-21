@@ -1,6 +1,7 @@
 using Comment.Microservice.Repository;
 using Microsoft.EntityFrameworkCore;
-using ReadIt.Entities.Models;
+using Notification.Microservice.Repository;
+using ReadIt.Core.DataModels;
 using ReadIt.Extentions;
 using ReadIt.Extentions.ImageExtention;
 

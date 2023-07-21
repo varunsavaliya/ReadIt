@@ -1,4 +1,4 @@
-﻿namespace ReadIt.Entities.ViewModels.Common
+﻿namespace ReadIt.Core.ViewModels.Common
 {
     public class ResponseListModel<T> : ResponseModel
     {

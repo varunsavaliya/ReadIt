@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ReadIt.Entities.Models;
+namespace ReadIt.Core.DataModels;
 
 public partial class TbBlog
 {
     public long Id { get; set; }
 
-    public string Title { get; set; } = null!;
+    public string Title { get; set; }
 
-    public string Description { get; set; } = null!;
+    public string Description { get; set; }
 
-    public string? Tags { get; set; }
+    public string Tags { get; set; }
 
     public long CreatedBy { get; set; }
 
@@ -23,9 +23,9 @@ public partial class TbBlog
 
     public bool? IsActive { get; set; }
 
-    public virtual TbCategory Category { get; set; } = null!;
+    public virtual TbCategory Category { get; set; }
 
-    public virtual TbUser CreatedByNavigation { get; set; } = null!;
+    public virtual TbUser CreatedByNavigation { get; set; }
 
     public virtual ICollection<TbBlogMedium> TbBlogMedia { get; set; } = new List<TbBlogMedium>();
 

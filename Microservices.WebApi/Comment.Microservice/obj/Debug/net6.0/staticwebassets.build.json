@@ -1,11 +1,23 @@
 {
   "Version": 1,
-  "Hash": "1QkDeS04qYnI0M9zj5HqEfSsBRLom07/gd9/6oE5vT8=",
+  "Hash": "dAhytlKoAgEG4OM2v/EMLTQD6GbsMqFYZMmqBscjr+I=",
   "Source": "Comment.Microservice",
   "BasePath": "_content/Comment.Microservice",
   "Mode": "Default",
   "ManifestType": "Build",
-  "ReferencedProjectsConfiguration": [],
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "D:\\Projects\\Read It Project\\ReadIt\\Microservices.WebApi\\Notification.Microservice\\Notification.Microservice.csproj",
+      "Version": 2,
+      "Source": "Notification.Microservice",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    }
+  ],
   "DiscoveryPatterns": [],
   "Assets": []
 }

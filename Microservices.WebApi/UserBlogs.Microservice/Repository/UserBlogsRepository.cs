@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using ReadIt.Core.Constants;
-using ReadIt.Entities.Models;
-using ReadIt.Entities.ViewModels;
-using ReadIt.Entities.ViewModels.Common;
+using ReadIt.Core.DataModels;
+using ReadIt.Core.ViewModels;
+using ReadIt.Core.ViewModels.Common;
 using ReadIt.Extentions.ImageExtention;
 
 namespace UserBlogs.Microservice.Repository
@@ -90,7 +90,7 @@ namespace UserBlogs.Microservice.Repository
                 var blogImage = _context.TbBlogMedia.Where(image => image.BlogId == id).FirstOrDefault();
                 if (blogImage != null)
                 {
-                    _context.TbBlogMedia.Remove(blogImage);
+                    _context.TbBlogMedia.RemoveRange(blogImage);
                     _imageExtention.DeleteImages(id);
                 }
 

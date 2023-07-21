@@ -1,7 +1,8 @@
 ﻿
 using AutoMapper;
-using ReadIt.Entities.Models;
-using ReadIt.Entities.ViewModels;
+using ReadIt.Core.DataModels;
+using ReadIt.Core.ViewModels;
+using ReadIt.Core.ViewModels;
 
 namespace ReadIt.Extentions
 {
@@ -13,6 +14,7 @@ namespace ReadIt.Extentions
             CreateMap<TbCategory, CategoryModel>().ReverseMap();
             CreateMap<TbBlog, BlogModel>().ReverseMap();
             CreateMap<TbComment, CommentModel>().ReverseMap();
+            CreateMap<TbNotification, NotificationModel>().ReverseMap();
         }
     }
 }
