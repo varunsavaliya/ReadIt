@@ -44,3 +44,8 @@
         <button type="submit" role="button" value="Post Comment" class="btn py-3 px-4 btn-primary">Submit</button>
     </div>
 </form>
+
+<h2>Notification loaded from the Web API:</h2>
+<div *ngIf="notification" class="alert alert-warning" role="alert">
+    <span>Notification: {{notification}}</span>
+</div>

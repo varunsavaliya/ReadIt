@@ -1,9 +1,7 @@
 import { Component } from '@angular/core';
 import { BlogService } from 'src/app/core/apiservices/blog.service';
-import { UserBlogService } from 'src/app/core/apiservices/user-blog.service';
-import { Blog } from 'src/app/core/models/blog.model';
-import { ResponseListModel } from 'src/app/core/models/response.model';
-
+import * as signalR from '@microsoft/signalr';
+import { environment } from 'src/environments/environment';
 @Component({
   selector: 'app-blogs-list',
   templateUrl: './blogs-list.component.html',
@@ -17,10 +15,10 @@ export class BlogsListComponent {
   constructor(private blogService: BlogService) { }
 
   ngOnInit() {
-    this.getBlogs()
+    this.getBlogs();
   }
 
-  getBlogs(){
+  getBlogs() {
     this.blogService.getArticles(this.blogsPerPage, this.currentPage).subscribe({
       next: (response) => {
         this.allBlogs = response.items;
@@ -28,7 +26,7 @@ export class BlogsListComponent {
       }
     })
   }
-  
+
   onPageChange(page: number) {
     this.currentPage = page;
     this.getBlogs();

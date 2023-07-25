@@ -83,6 +83,7 @@ D:\Projects\Microservices.WebApi\Gateway.WebApi\bin\Debug\net6.0\AutoMapper.Exte
 D:\Projects\Microservices.WebApi\Gateway.WebApi\obj\Debug\net6.0\Gateway.WebApi.MvcApplicationPartsAssemblyInfo.cs
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\bin\Debug\net6.0\appsettings.Development.json
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\bin\Debug\net6.0\appsettings.json
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\bin\Debug\net6.0\ocelot.author.json
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\bin\Debug\net6.0\ocelot.json
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\bin\Debug\net6.0\Gateway.WebApi.exe
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\bin\Debug\net6.0\Gateway.WebApi.deps.json
@@ -149,7 +150,6 @@ D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\bin\Debug
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\bin\Debug\net6.0\ReadIt.Core.dll
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\bin\Debug\net6.0\ReadIt.Core.pdb
-D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\obj\Debug\net6.0\Gateway.WebApi.csproj.AssemblyReference.cache
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\obj\Debug\net6.0\Gateway.WebApi.GeneratedMSBuildEditorConfig.editorconfig
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\obj\Debug\net6.0\Gateway.WebApi.AssemblyInfoInputs.cache
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\obj\Debug\net6.0\Gateway.WebApi.AssemblyInfo.cs
@@ -164,4 +164,4 @@ D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\obj\Debug
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\obj\Debug\net6.0\ref\Gateway.WebApi.dll
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\obj\Debug\net6.0\Gateway.WebApi.pdb
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\obj\Debug\net6.0\Gateway.WebApi.genruntimeconfig.cache
-D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\bin\Debug\net6.0\ocelot.author.json
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Gateway.WebApi\obj\Debug\net6.0\Gateway.WebApi.csproj.AssemblyReference.cache

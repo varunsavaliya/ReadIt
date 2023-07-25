@@ -2,10 +2,12 @@ import { CommaExpr } from '@angular/compiler';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import * as signalR from '@microsoft/signalr';
 import { CommentService } from 'src/app/core/apiservices/comment.service';
 import { CommentModel } from 'src/app/core/models/comment.model';
 import { UserModel } from 'src/app/core/models/user.model';
 import { UserAuthService } from 'src/app/core/services/user-auth.service';
+import { NotificationModel } from 'src/app/core/models/notification.model';
 
 @Component({
   selector: 'app-comment-form',
@@ -16,6 +18,8 @@ export class CommentFormComponent {
   @Input() blogId!: number;
   @Output() commentAdded: EventEmitter<void> = new EventEmitter<void>();
   user!: UserModel;
+  private connection: signalR.HubConnection;
+  notification: any;
   comment: CommentModel = {
     id: 0,
     blogId: this.blogId,
@@ -47,10 +51,29 @@ export class CommentFormComponent {
   constructor(private userAuthService: UserAuthService, private commentService: CommentService, private router: Router) { }
   ngOnInit() {
     this.setForm()
+    this.startConnection();
+
+
+  }
+
+  public startConnection = () => {
+    this.connection = new signalR.HubConnectionBuilder()
+      .configureLogging(signalR.LogLevel.Information)
+      .withUrl('https://localhost:7058/notify', {
+        skipNegotiation: true,
+        transport: signalR.HttpTransportType.WebSockets
+      })
+      .build();
+    this.connection.start().then(function () {
+      console.log('SignalR Connected!');
+    }).catch(function (err) {
+      return console.error(err.toString());
+    });
+
   }
 
   ngOnChanges() {
-    this.setForm()
+    this.setForm();
   }
   setForm() {
     this.comment.blogId = this.blogId
@@ -67,7 +90,7 @@ export class CommentFormComponent {
     }
   }
 
-  onSubmit(event : Event) {
+  onSubmit(event: Event) {
     event.preventDefault();
     if (this.commentForm.valid) {
       if (!this.comment.createdBy) {
@@ -79,6 +102,12 @@ export class CommentFormComponent {
       this.commentService.add(this.comment).subscribe({
         next: (response) => {
           if (response.success) {
+            this.connection.on("BroadcastMessage", (notification: any) => {
+              this.notification = notification;
+              debugger
+              console.log(notification);
+              console.log("hello");
+            });
             this.commentForm.reset();
             if (this.userAuthService.getUser()) {
               this.commentForm.patchValue({

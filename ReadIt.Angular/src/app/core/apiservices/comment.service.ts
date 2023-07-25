@@ -14,7 +14,7 @@ export class CommentService {
   constructor(private http: HttpClient) { }
 
   add(comment: CommentModel):Observable<ResponseModel>{
-    return this.http.post<ResponseModel>(this.ApiUrl + '/', comment);
+    return this.http.post<ResponseModel>(this.ApiUrl, comment);
   }
   
   getCommentsByBlogId(blogId: number, showAllComments: boolean): Observable<ResponseListModel<CommentModel>> {

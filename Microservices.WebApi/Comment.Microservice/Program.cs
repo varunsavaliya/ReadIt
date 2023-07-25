@@ -1,5 +1,6 @@
 using Comment.Microservice.Repository;
 using Microsoft.EntityFrameworkCore;
+using Notification.Microservice.Models;
 using Notification.Microservice.Repository;
 using ReadIt.Core.DataModels;
 using ReadIt.Extentions;
@@ -10,6 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddAutoMapper(typeof(MapperConfig));
 
+builder.Services.AddSignalR();
+//builder.Services.AddScoped<INotificationHub, NotifyHub>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
 builder.Services.AddScoped(typeof(IImageHandler<>), typeof(ImageHandler<>));
 
@@ -33,7 +36,6 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
-
 app.MapControllers();
 
 app.Run();

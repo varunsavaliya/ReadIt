@@ -16,14 +16,14 @@ namespace Comment.Microservice.Repository
         private readonly ApplicationDbContext _context;
         private readonly IMapper _mapper;
         private readonly IImageHandler<TbUser> _imageExtension;
-        //private readonly IHubContext<NotifyHub, INotificationHub> _notify;
+        private readonly IHubContext<NotifyHub, INotificationHub> _notify;
 
-        public CommentRepository(ApplicationDbContext context, IMapper mapper, IImageHandler<TbUser> imageExtension /*IHubContext<NotifyHub, INotificationHub> notify*/)
+        public CommentRepository(ApplicationDbContext context, IMapper mapper, IImageHandler<TbUser> imageExtension, IHubContext<NotifyHub, INotificationHub> notify)
         {
             _context = context;
             _mapper = mapper;
             _imageExtension = imageExtension;
-            //_notify = notify;
+            _notify = notify;
         }
         public ResponseDataModel<CommentModel> GetById(long id)
         {
@@ -102,7 +102,7 @@ namespace Comment.Microservice.Repository
 
                 notifModel.NotificationMessage = notifMessage;
 
-                //await _notify.Clients.All.BroadcastMessage(notifModel);
+               await _notify.Clients.All.BroadcastMessage(notifModel);
 
                 response.Message = String.Format(Messages.NewItemMessage, "Comment");
                 response.Success = true;

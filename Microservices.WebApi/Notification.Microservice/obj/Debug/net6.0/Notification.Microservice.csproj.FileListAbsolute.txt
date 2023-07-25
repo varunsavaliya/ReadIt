@@ -1,10 +1,3 @@
-D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\Notification.Microservice.csproj.AssemblyReference.cache
-D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\Notification.Microservice.GeneratedMSBuildEditorConfig.editorconfig
-D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\Notification.Microservice.AssemblyInfoInputs.cache
-D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\Notification.Microservice.AssemblyInfo.cs
-D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\Notification.Microservice.csproj.CoreCompileInputs.cache
-D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\Notification.Microservice.MvcApplicationPartsAssemblyInfo.cs
-D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\Notification.Microservice.MvcApplicationPartsAssemblyInfo.cache
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\bin\Debug\net6.0\appsettings.Development.json
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\bin\Debug\net6.0\appsettings.json
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\bin\Debug\net6.0\Notification.Microservice.exe
@@ -68,6 +61,13 @@ D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservic
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\bin\Debug\net6.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\bin\Debug\net6.0\ReadIt.Core.dll
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\bin\Debug\net6.0\ReadIt.Core.pdb
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\Notification.Microservice.csproj.AssemblyReference.cache
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\Notification.Microservice.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\Notification.Microservice.AssemblyInfoInputs.cache
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\Notification.Microservice.AssemblyInfo.cs
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\Notification.Microservice.csproj.CoreCompileInputs.cache
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\Notification.Microservice.MvcApplicationPartsAssemblyInfo.cs
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\Notification.Microservice.MvcApplicationPartsAssemblyInfo.cache
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\staticwebassets.build.json
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\staticwebassets.development.json
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Notification.Microservice\obj\Debug\net6.0\scopedcss\bundle\Notification.Microservice.styles.css

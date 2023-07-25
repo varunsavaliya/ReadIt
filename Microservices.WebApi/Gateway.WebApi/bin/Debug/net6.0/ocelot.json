@@ -4,22 +4,22 @@
 
     // Author API
 
-    //{
-    //  "DownstreamPathTemplate": "/api/Author",
-    //  "DownstreamScheme": "https",
-    //  "DownstreamHostAndPorts": [
-    //    {
-    //      "Host": "localhost",
-    //      "Port": 7012
-    //    }
-    //  ],
-    //  "UpstreamPathTemplate": "/gateway/author",
-    //  "UpstreamHttpMethod": [ "GET" ]
-    //  //"AuthenticationOptions": {
-    //  //  "AuthenticationProviderKey": "GatewayAuthenticationKey",
-    //  //  "AllowedScopes": []
-    //  //}
-    //},
+    {
+      "DownstreamPathTemplate": "/api/Author",
+      "DownstreamScheme": "https",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 7012
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/author",
+      "UpstreamHttpMethod": [ "GET" ]
+      //"AuthenticationOptions": {
+      //  "AuthenticationProviderKey": "GatewayAuthenticationKey",
+      //  "AllowedScopes": []
+      //}
+    },
 
 
     // Blog API
@@ -247,6 +247,23 @@
       ],
       "UpstreamHttpMethod": [ "POST" ],
       "UpstreamPathTemplate": "/gateway/user/edit/{id}"
-    }
+    },
+
+
+
+    // notification api
+
+    //{
+    //  "DownstreamPathTemplate": "/notify",
+    //  "DownstreamScheme": "https",
+    //  "DownstreamHostAndPorts": [
+    //    {
+    //      "Host": "localhost",
+    //      "Port": 7058
+    //    }
+    //  ],
+    //  //"UpstreamHttpMethod": [ "POST" ],
+    //  "UpstreamPathTemplate": "/gateway/notify"
+    //}
   ]
 }

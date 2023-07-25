@@ -81,11 +81,11 @@ D:\Projects\Microservices.WebApi\UserBlogs.Microservice\obj\Debug\net6.0\UserBlo
 D:\Projects\Microservices.WebApi\UserBlogs.Microservice\obj\Debug\net6.0\ref\UserBlogs.Microservice.dll
 D:\Projects\Microservices.WebApi\UserBlogs.Microservice\obj\Debug\net6.0\UserBlogs.Microservice.pdb
 D:\Projects\Microservices.WebApi\UserBlogs.Microservice\obj\Debug\net6.0\UserBlogs.Microservice.genruntimeconfig.cache
-D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\appsettings.Development.json
-D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\appsettings.json
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\Blog.Microservice.deps.json
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\Blog.Microservice.runtimeconfig.json
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\Blog.Microservice.exe
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\appsettings.Development.json
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\appsettings.json
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\UserBlogs.Microservice.exe
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\UserBlogs.Microservice.deps.json
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\UserBlogs.Microservice.runtimeconfig.json
@@ -96,6 +96,7 @@ D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\b
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\Azure.Core.dll
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\Azure.Identity.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\Microsoft.Bcl.AsyncInterfaces.dll
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\Microsoft.Data.SqlClient.dll
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
@@ -164,4 +165,3 @@ D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\o
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\obj\Debug\net6.0\ref\UserBlogs.Microservice.dll
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\obj\Debug\net6.0\UserBlogs.Microservice.pdb
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\obj\Debug\net6.0\UserBlogs.Microservice.genruntimeconfig.cache
-D:\Projects\Read It Project\ReadIt\Microservices.WebApi\UserBlogs.Microservice\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

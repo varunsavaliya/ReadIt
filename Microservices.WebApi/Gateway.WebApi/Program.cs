@@ -10,7 +10,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("CORSPolicy", builder => builder.AllowAnyMethod().AllowAnyHeader().AllowCredentials().SetIsOriginAllowed((hosts) => true));
 });
 builder.Configuration.AddJsonFile("ocelot.json", optional: false, reloadOnChange: true);
-builder.Configuration.AddJsonFile("ocelot.author.json", optional: false, reloadOnChange: true);
+//builder.Configuration.AddJsonFile("ocelot.author.json", optional: false, reloadOnChange: true);
 builder.Services.AddOcelot(builder.Configuration);
 builder.Services.AddControllers();
 
