@@ -102,7 +102,7 @@ namespace Comment.Microservice.Repository
 
                 notifModel.NotificationMessage = notifMessage;
 
-               await _notify.Clients.All.BroadcastMessage(notifModel);
+               //await _notify.Clients.All.BroadcastMessage(notifModel);
 
                 response.Message = String.Format(Messages.NewItemMessage, "Comment");
                 response.Success = true;

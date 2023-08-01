@@ -28,7 +28,7 @@ if (app.Environment.IsDevelopment())
 app.UseCors("CORSPolicy");
 
 
-//app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 app.UseWebSockets();
 app.UseRouting();
 app.UseAuthorization();

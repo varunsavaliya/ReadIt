@@ -10,13 +10,12 @@
   "profiles": {
     "Gateway.WebApi": {
       "commandName": "Project",
+      "dotnetRunMessages": true,
       "launchBrowser": true,
-      "launchUrl": "http://localhost/Gateway",
+      "applicationUrl": "https://localhost:7292;http://localhost:5292",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
-      },
-      "applicationUrl": "https://localhost:7292;http://localhost:5292",
-      "dotnetRunMessages": true
+      }
     },
     "IIS Express": {
       "commandName": "IISExpress",
@@ -27,3 +26,4 @@
     }
   }
 }
+

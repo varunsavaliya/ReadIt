@@ -159,3 +159,10 @@ D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Comment.Microservice\obj
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Comment.Microservice\obj\Debug\net6.0\ref\Comment.Microservice.dll
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Comment.Microservice\obj\Debug\net6.0\Comment.Microservice.pdb
 D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Comment.Microservice\obj\Debug\net6.0\Comment.Microservice.genruntimeconfig.cache
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Comment.Microservice\bin\Debug\net6.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Comment.Microservice\bin\Debug\net6.0\Microsoft.AspNetCore.SignalR.Common.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Comment.Microservice\bin\Debug\net6.0\Microsoft.Extensions.Features.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Comment.Microservice\bin\Debug\net6.0\System.IO.Pipelines.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Comment.Microservice\bin\Debug\net6.0\System.Text.Encodings.Web.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Comment.Microservice\bin\Debug\net6.0\System.Text.Json.dll
+D:\Projects\Read It Project\ReadIt\Microservices.WebApi\Comment.Microservice\bin\Debug\net6.0\runtimes\browser\lib\net6.0\System.Text.Encodings.Web.dll

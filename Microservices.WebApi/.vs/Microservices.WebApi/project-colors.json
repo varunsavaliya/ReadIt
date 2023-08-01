@@ -1,0 +1,61 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "a8181bb0-3223-4dd7-9f55-37c2c1721913": {
+      "ProjectGuid": "a8181bb0-3223-4dd7-9f55-37c2c1721913",
+      "DisplayName": "User.Microservice",
+      "ColorIndex": 0
+    },
+    "180e4b18-8ae1-4576-94f8-ee2c3b56cb42": {
+      "ProjectGuid": "180e4b18-8ae1-4576-94f8-ee2c3b56cb42",
+      "DisplayName": "Gateway.WebApi",
+      "ColorIndex": 1
+    },
+    "32bdfa2a-8a0f-4b6f-9005-c128a732a5e3": {
+      "ProjectGuid": "32bdfa2a-8a0f-4b6f-9005-c128a732a5e3",
+      "DisplayName": "ReadIt.Core",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    },
+    "c120b132-b85a-4515-846a-53e6253b5df7": {
+      "ProjectGuid": "c120b132-b85a-4515-846a-53e6253b5df7",
+      "DisplayName": "Comment.Microservice",
+      "ColorIndex": 3
+    },
+    "ffc07a73-6ff6-422c-a6ad-5f562c3b4b9e": {
+      "ProjectGuid": "ffc07a73-6ff6-422c-a6ad-5f562c3b4b9e",
+      "DisplayName": "Blog.Microservice",
+      "ColorIndex": 4
+    },
+    "28a46376-e449-48a5-b2c8-70a72da525c1": {
+      "ProjectGuid": "28a46376-e449-48a5-b2c8-70a72da525c1",
+      "DisplayName": "Auth.Microservice",
+      "ColorIndex": 5
+    },
+    "a3203d6b-6c1e-4196-abef-74d9ff98b89f": {
+      "ProjectGuid": "a3203d6b-6c1e-4196-abef-74d9ff98b89f",
+      "DisplayName": "Author.Microservice",
+      "ColorIndex": 6
+    },
+    "0239890f-0e71-46e3-99d7-5d1212eb0214": {
+      "ProjectGuid": "0239890f-0e71-46e3-99d7-5d1212eb0214",
+      "DisplayName": "Category.Microservice",
+      "ColorIndex": 7
+    },
+    "8605638c-04f6-4e35-9556-257d3af0c2f4": {
+      "ProjectGuid": "8605638c-04f6-4e35-9556-257d3af0c2f4",
+      "DisplayName": "UserBlogs.Microservice",
+      "ColorIndex": 8
+    },
+    "5dbcaecf-bb65-4335-983f-e2284582e024": {
+      "ProjectGuid": "5dbcaecf-bb65-4335-983f-e2284582e024",
+      "DisplayName": "Notification.Microservice",
+      "ColorIndex": 9
+    }
+  },
+  "NextColorIndex": 10
+}

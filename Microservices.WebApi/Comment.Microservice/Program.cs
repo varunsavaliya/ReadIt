@@ -10,7 +10,10 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddAutoMapper(typeof(MapperConfig));
-
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CORSPolicy", builder => builder.AllowAnyMethod().AllowAnyOrigin().AllowAnyHeader());
+});
 builder.Services.AddSignalR();
 //builder.Services.AddScoped<INotificationHub, NotifyHub>();
 builder.Services.AddScoped<ICommentRepository, CommentRepository>();
@@ -32,6 +35,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwagger();
     app.UseSwaggerUI();
 }
+app.UseCors("CORSPolicy");
 
 app.UseHttpsRedirection();
 

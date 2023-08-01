@@ -8,9 +8,10 @@ namespace Notification.Microservice.Models
     {
 
         //public string GetConnectionId() => Context.ConnectionId;
-        //public async Task BroadcastMessage(NotificationModel notification)
-        //{
-        //    await Clients.All.BroadcastMessage(notification);
-        //}
+        public async Task SendMessage(NotificationModel notification)
+        {
+            await Clients.All.BroadcastMessage(notification);
+        }
+
     }
 }

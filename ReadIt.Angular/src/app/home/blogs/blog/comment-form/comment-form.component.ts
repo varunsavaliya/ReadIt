@@ -19,7 +19,7 @@ export class CommentFormComponent {
   @Output() commentAdded: EventEmitter<void> = new EventEmitter<void>();
   user!: UserModel;
   private connection: signalR.HubConnection;
-  notification: any;
+  // notification: any;
   comment: CommentModel = {
     id: 0,
     blogId: this.blogId,
@@ -52,8 +52,7 @@ export class CommentFormComponent {
   ngOnInit() {
     this.setForm()
     this.startConnection();
-
-
+    this.subscribeToBroadcastMessage();
   }
 
   public startConnection = () => {
@@ -69,7 +68,19 @@ export class CommentFormComponent {
     }).catch(function (err) {
       return console.error(err.toString());
     });
+  }
 
+  notification: any = {
+    notificationMessage : 'kdsjfgljn'
+  }
+
+  public subscribeToBroadcastMessage() {
+    this.connection.on("SendMessage", (notification) => {
+      debugger
+      this.notification = notification;
+      console.log(notification);
+      console.log("hello");
+    });
   }
 
   ngOnChanges() {
@@ -102,12 +113,6 @@ export class CommentFormComponent {
       this.commentService.add(this.comment).subscribe({
         next: (response) => {
           if (response.success) {
-            this.connection.on("BroadcastMessage", (notification: any) => {
-              this.notification = notification;
-              debugger
-              console.log(notification);
-              console.log("hello");
-            });
             this.commentForm.reset();
             if (this.userAuthService.getUser()) {
               this.commentForm.patchValue({
